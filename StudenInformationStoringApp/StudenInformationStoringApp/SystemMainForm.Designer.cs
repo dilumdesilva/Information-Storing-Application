@@ -29,59 +29,183 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SystemMainForm));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.menuStrip1.SuspendLayout();
+            this.insertSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentMarksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.veiwToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentDetailsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.marksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentDetailsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.marksToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.singleStudentReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.systemReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 24);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(703, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(1112, 20);
-            this.toolStripMenuItem1.Text = resources.GetString("toolStripMenuItem1.Text");
             // 
             // menuStrip2
             // 
+            this.menuStrip2.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.insertSystemToolStripMenuItem,
+            this.veiwToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.generateToolStripMenuItem,
+            this.configurationToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(703, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(1230, 24);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
+            // 
+            // insertSystemToolStripMenuItem
+            // 
+            this.insertSystemToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.studentDetailsToolStripMenuItem,
+            this.studentMarksToolStripMenuItem});
+            this.insertSystemToolStripMenuItem.Name = "insertSystemToolStripMenuItem";
+            this.insertSystemToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.insertSystemToolStripMenuItem.Text = "Insert";
+            // 
+            // studentDetailsToolStripMenuItem
+            // 
+            this.studentDetailsToolStripMenuItem.Name = "studentDetailsToolStripMenuItem";
+            this.studentDetailsToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.studentDetailsToolStripMenuItem.Text = "Student Details";
+            // 
+            // studentMarksToolStripMenuItem
+            // 
+            this.studentMarksToolStripMenuItem.Name = "studentMarksToolStripMenuItem";
+            this.studentMarksToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.studentMarksToolStripMenuItem.Text = "Student Marks";
+            // 
+            // veiwToolStripMenuItem
+            // 
+            this.veiwToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.studentDetailsToolStripMenuItem1,
+            this.marksToolStripMenuItem});
+            this.veiwToolStripMenuItem.Name = "veiwToolStripMenuItem";
+            this.veiwToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.veiwToolStripMenuItem.Text = "Veiw";
+            // 
+            // studentDetailsToolStripMenuItem1
+            // 
+            this.studentDetailsToolStripMenuItem1.Name = "studentDetailsToolStripMenuItem1";
+            this.studentDetailsToolStripMenuItem1.Size = new System.Drawing.Size(155, 22);
+            this.studentDetailsToolStripMenuItem1.Text = "Student Details";
+            // 
+            // marksToolStripMenuItem
+            // 
+            this.marksToolStripMenuItem.Name = "marksToolStripMenuItem";
+            this.marksToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.marksToolStripMenuItem.Text = "Marks";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.studentDetailsToolStripMenuItem2,
+            this.marksToolStripMenuItem1});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.editToolStripMenuItem.Text = "Update";
+            // 
+            // studentDetailsToolStripMenuItem2
+            // 
+            this.studentDetailsToolStripMenuItem2.Name = "studentDetailsToolStripMenuItem2";
+            this.studentDetailsToolStripMenuItem2.Size = new System.Drawing.Size(155, 22);
+            this.studentDetailsToolStripMenuItem2.Text = "Student Details";
+            // 
+            // marksToolStripMenuItem1
+            // 
+            this.marksToolStripMenuItem1.Name = "marksToolStripMenuItem1";
+            this.marksToolStripMenuItem1.Size = new System.Drawing.Size(155, 22);
+            this.marksToolStripMenuItem1.Text = "Marks";
+            // 
+            // generateToolStripMenuItem
+            // 
+            this.generateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.singleStudentReportToolStripMenuItem,
+            this.systemReportToolStripMenuItem});
+            this.generateToolStripMenuItem.Name = "generateToolStripMenuItem";
+            this.generateToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.generateToolStripMenuItem.Text = "Reports";
+            // 
+            // singleStudentReportToolStripMenuItem
+            // 
+            this.singleStudentReportToolStripMenuItem.Name = "singleStudentReportToolStripMenuItem";
+            this.singleStudentReportToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.singleStudentReportToolStripMenuItem.Text = "Single student report";
+            // 
+            // systemReportToolStripMenuItem
+            // 
+            this.systemReportToolStripMenuItem.Name = "systemReportToolStripMenuItem";
+            this.systemReportToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.systemReportToolStripMenuItem.Text = "System report";
+            // 
+            // configurationToolStripMenuItem
+            // 
+            this.configurationToolStripMenuItem.Name = "configurationToolStripMenuItem";
+            this.configurationToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
+            this.configurationToolStripMenuItem.Text = "Configuration";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutSystemToolStripMenuItem});
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // aboutSystemToolStripMenuItem
+            // 
+            this.aboutSystemToolStripMenuItem.Name = "aboutSystemToolStripMenuItem";
+            this.aboutSystemToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.aboutSystemToolStripMenuItem.Text = "About system";
             // 
             // SystemMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 403);
-            this.Controls.Add(this.menuStrip1);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1230, 503);
             this.Controls.Add(this.menuStrip2);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.IsMdiContainer = true;
+            this.KeyPreview = true;
             this.Name = "SystemMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem insertSystemToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem studentDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem studentMarksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem veiwToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem studentDetailsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem marksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem studentDetailsToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem marksToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem generateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem singleStudentReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem systemReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configurationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutSystemToolStripMenuItem;
     }
 }
 
