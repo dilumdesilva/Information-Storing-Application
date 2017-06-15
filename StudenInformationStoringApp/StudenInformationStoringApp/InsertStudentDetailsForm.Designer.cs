@@ -1,6 +1,6 @@
 ﻿namespace StudenInformationStoringApp
 {
-    partial class InsertStudentDetailsForm
+    partial class frmInsertStudentDetails
     {
         /// <summary>
         /// Required designer variable.
@@ -28,37 +28,180 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InsertStudentDetailsForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInsertStudentDetails));
             this.picBoxLogoMainForm = new System.Windows.Forms.PictureBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblCopyright2 = new System.Windows.Forms.Label();
+            this.lblCopyright1 = new System.Windows.Forms.Label();
+            this.btnStudentDetailsInsert = new System.Windows.Forms.Button();
+            this.txtUniversityID = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.lblStudentID = new System.Windows.Forms.Label();
+            this.lblStudentName = new System.Windows.Forms.Label();
+            this.lblInstructions = new System.Windows.Forms.Label();
+            this.txtBirthday = new System.Windows.Forms.TextBox();
+            this.lblDateOfBirth = new System.Windows.Forms.Label();
+            this.txtAge = new System.Windows.Forms.TextBox();
+            this.lblAge = new System.Windows.Forms.Label();
+            this.txtAdress = new System.Windows.Forms.TextBox();
+            this.lblAdress = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
             this.SuspendLayout();
             // 
             // picBoxLogoMainForm
             // 
             this.picBoxLogoMainForm.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxLogoMainForm.Image = ((System.Drawing.Image)(resources.GetObject("picBoxLogoMainForm.Image")));
-            this.picBoxLogoMainForm.Location = new System.Drawing.Point(107, 120);
+            resources.ApplyResources(this.picBoxLogoMainForm, "picBoxLogoMainForm");
             this.picBoxLogoMainForm.Name = "picBoxLogoMainForm";
-            this.picBoxLogoMainForm.Size = new System.Drawing.Size(165, 60);
-            this.picBoxLogoMainForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxLogoMainForm.TabIndex = 1;
             this.picBoxLogoMainForm.TabStop = false;
             // 
-            // InsertStudentDetailsForm
+            // btnRefresh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this.btnRefresh, "btnRefresh");
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            // 
+            // txtLastName
+            // 
+            resources.ApplyResources(this.txtLastName, "txtLastName");
+            this.txtLastName.Name = "txtLastName";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Name = "label1";
+            // 
+            // lblCopyright2
+            // 
+            resources.ApplyResources(this.lblCopyright2, "lblCopyright2");
+            this.lblCopyright2.BackColor = System.Drawing.Color.Transparent;
+            this.lblCopyright2.Name = "lblCopyright2";
+            // 
+            // lblCopyright1
+            // 
+            resources.ApplyResources(this.lblCopyright1, "lblCopyright1");
+            this.lblCopyright1.BackColor = System.Drawing.Color.Transparent;
+            this.lblCopyright1.Name = "lblCopyright1";
+            // 
+            // btnStudentDetailsInsert
+            // 
+            resources.ApplyResources(this.btnStudentDetailsInsert, "btnStudentDetailsInsert");
+            this.btnStudentDetailsInsert.Name = "btnStudentDetailsInsert";
+            this.btnStudentDetailsInsert.UseVisualStyleBackColor = true;
+            // 
+            // txtUniversityID
+            // 
+            resources.ApplyResources(this.txtUniversityID, "txtUniversityID");
+            this.txtUniversityID.Name = "txtUniversityID";
+            // 
+            // txtFirstName
+            // 
+            resources.ApplyResources(this.txtFirstName, "txtFirstName");
+            this.txtFirstName.Name = "txtFirstName";
+            // 
+            // lblStudentID
+            // 
+            resources.ApplyResources(this.lblStudentID, "lblStudentID");
+            this.lblStudentID.BackColor = System.Drawing.Color.Transparent;
+            this.lblStudentID.Name = "lblStudentID";
+            // 
+            // lblStudentName
+            // 
+            resources.ApplyResources(this.lblStudentName, "lblStudentName");
+            this.lblStudentName.BackColor = System.Drawing.Color.Transparent;
+            this.lblStudentName.Name = "lblStudentName";
+            // 
+            // lblInstructions
+            // 
+            resources.ApplyResources(this.lblInstructions, "lblInstructions");
+            this.lblInstructions.BackColor = System.Drawing.Color.Transparent;
+            this.lblInstructions.Name = "lblInstructions";
+            // 
+            // txtBirthday
+            // 
+            resources.ApplyResources(this.txtBirthday, "txtBirthday");
+            this.txtBirthday.Name = "txtBirthday";
+            // 
+            // lblDateOfBirth
+            // 
+            resources.ApplyResources(this.lblDateOfBirth, "lblDateOfBirth");
+            this.lblDateOfBirth.BackColor = System.Drawing.Color.Transparent;
+            this.lblDateOfBirth.Name = "lblDateOfBirth";
+            // 
+            // txtAge
+            // 
+            resources.ApplyResources(this.txtAge, "txtAge");
+            this.txtAge.Name = "txtAge";
+            // 
+            // lblAge
+            // 
+            resources.ApplyResources(this.lblAge, "lblAge");
+            this.lblAge.BackColor = System.Drawing.Color.Transparent;
+            this.lblAge.Name = "lblAge";
+            // 
+            // txtAdress
+            // 
+            resources.ApplyResources(this.txtAdress, "txtAdress");
+            this.txtAdress.Name = "txtAdress";
+            // 
+            // lblAdress
+            // 
+            resources.ApplyResources(this.lblAdress, "lblAdress");
+            this.lblAdress.BackColor = System.Drawing.Color.Transparent;
+            this.lblAdress.Name = "lblAdress";
+            // 
+            // frmInsertStudentDetails
+            // 
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 300);
+            this.Controls.Add(this.txtAdress);
+            this.Controls.Add(this.lblAdress);
+            this.Controls.Add(this.txtBirthday);
+            this.Controls.Add(this.lblDateOfBirth);
+            this.Controls.Add(this.txtAge);
+            this.Controls.Add(this.lblAge);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.txtLastName);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblCopyright2);
+            this.Controls.Add(this.lblCopyright1);
+            this.Controls.Add(this.btnStudentDetailsInsert);
+            this.Controls.Add(this.txtUniversityID);
+            this.Controls.Add(this.txtFirstName);
+            this.Controls.Add(this.lblStudentID);
+            this.Controls.Add(this.lblStudentName);
+            this.Controls.Add(this.lblInstructions);
             this.Controls.Add(this.picBoxLogoMainForm);
-            this.Name = "InsertStudentDetailsForm";
-            this.Text = "InsertStudentDetailsForm";
+            this.Name = "frmInsertStudentDetails";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox picBoxLogoMainForm;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCopyright2;
+        private System.Windows.Forms.Label lblCopyright1;
+        private System.Windows.Forms.Button btnStudentDetailsInsert;
+        private System.Windows.Forms.TextBox txtUniversityID;
+        private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.Label lblStudentID;
+        private System.Windows.Forms.Label lblStudentName;
+        private System.Windows.Forms.Label lblInstructions;
+        private System.Windows.Forms.TextBox txtBirthday;
+        private System.Windows.Forms.Label lblDateOfBirth;
+        private System.Windows.Forms.TextBox txtAge;
+        private System.Windows.Forms.Label lblAge;
+        private System.Windows.Forms.TextBox txtAdress;
+        private System.Windows.Forms.Label lblAdress;
     }
 }

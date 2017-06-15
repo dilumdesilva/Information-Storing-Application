@@ -77,6 +77,7 @@
             this.studentDetailsToolStripMenuItem.Name = "studentDetailsToolStripMenuItem";
             this.studentDetailsToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.studentDetailsToolStripMenuItem.Text = "Student Details";
+            this.studentDetailsToolStripMenuItem.Click += new System.EventHandler(this.studentDetailsToolStripMenuItem_Click);
             // 
             // studentMarksToolStripMenuItem
             // 
@@ -157,7 +158,7 @@
             // aboutSystemToolStripMenuItem
             // 
             this.aboutSystemToolStripMenuItem.Name = "aboutSystemToolStripMenuItem";
-            this.aboutSystemToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.aboutSystemToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutSystemToolStripMenuItem.Text = "About system";
             // 
             // SystemMainForm
@@ -167,12 +168,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1230, 503);
             this.Controls.Add(this.menuStrip2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.IsMdiContainer = true;
             this.KeyPreview = true;
             this.Name = "SystemMainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();

@@ -1,6 +1,6 @@
 ﻿namespace StudenInformationStoringApp
 {
-    partial class InsertStudentMarksForm
+    partial class frmInsertStudentMarks
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InsertStudentMarksForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInsertStudentMarks));
             this.picBoxLogoMainForm = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
             this.SuspendLayout();
@@ -44,13 +44,13 @@
             this.picBoxLogoMainForm.TabIndex = 1;
             this.picBoxLogoMainForm.TabStop = false;
             // 
-            // InsertStudentMarksForm
+            // frmInsertStudentMarks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.picBoxLogoMainForm);
-            this.Name = "InsertStudentMarksForm";
+            this.Name = "frmInsertStudentMarks";
             this.Text = "InsertStudentMarks";
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).EndInit();
             this.ResumeLayout(false);

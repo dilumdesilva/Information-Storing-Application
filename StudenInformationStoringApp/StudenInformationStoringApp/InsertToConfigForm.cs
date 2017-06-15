@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace StudenInformationStoringApp
 {
-    public partial class InsertToConfigForm : Form
+    public partial class frmInsertToConfig : Form
     {
-        public InsertToConfigForm()
+        public frmInsertToConfig()
         {
             InitializeComponent();
         }

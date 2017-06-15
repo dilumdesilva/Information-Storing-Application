@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace StudenInformationStoringApp
 {
-    public partial class VeiwStudenMarksForm : Form
+    public partial class frmVeiwStudenMarks : Form
     {
-        public VeiwStudenMarksForm()
+        public frmVeiwStudenMarks()
         {
             InitializeComponent();
         }

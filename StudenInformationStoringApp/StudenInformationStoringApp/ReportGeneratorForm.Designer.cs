@@ -1,6 +1,6 @@
 ﻿namespace StudenInformationStoringApp
 {
-    partial class ReportGeneratorForm
+    partial class frmReportGenerator
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportGeneratorForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportGenerator));
             this.picBoxLogoMainForm = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
             this.SuspendLayout();
@@ -44,13 +44,13 @@
             this.picBoxLogoMainForm.TabIndex = 1;
             this.picBoxLogoMainForm.TabStop = false;
             // 
-            // ReportGeneratorForm
+            // frmReportGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.picBoxLogoMainForm);
-            this.Name = "ReportGeneratorForm";
+            this.Name = "frmReportGenerator";
             this.Text = "ReportGeneratorForm";
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).EndInit();
             this.ResumeLayout(false);

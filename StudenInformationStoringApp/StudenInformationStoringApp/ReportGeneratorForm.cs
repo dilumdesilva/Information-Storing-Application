@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace StudenInformationStoringApp
 {
-    public partial class ReportGeneratorForm : Form
+    public partial class frmReportGenerator : Form
     {
-        public ReportGeneratorForm()
+        public frmReportGenerator()
         {
             InitializeComponent();
         }

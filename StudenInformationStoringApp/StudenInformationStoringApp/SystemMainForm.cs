@@ -12,9 +12,58 @@ namespace StudenInformationStoringApp
 {
     public partial class SystemMainForm : Form
     {
+        //public static extern int SetParent(int hWndChild, int hWndNewParent);
         public SystemMainForm()
         {
             InitializeComponent();
+        }
+        //method which block multiple windows opening at the same time
+        private bool IsAlreadyLoded(Form frmForm)
+        {
+            bool bllFound = false;
+
+            try
+            {
+                foreach (Form frm in this.MdiChildren)
+                {
+                    if (frm.Name.Equals(frmForm.Name.ToString()))
+                    {
+                        bllFound = true;
+                        frm.WindowState = frmForm.WindowState;
+                        frm.Focus();
+                        break;
+                    }
+                }
+                if (!bllFound)
+                {
+                    frmForm.MdiParent = this;
+                    frmForm.Show();
+                   
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return bllFound;
+        }
+        private void studentDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            frmInsertStudentDetails objfrmInsertStudentDetails = new frmInsertStudentDetails();
+
+            //this condition will check whether there is any forms loded before system loads another form.
+            if (!IsAlreadyLoded(objfrmInsertStudentDetails))
+            {
+                objfrmInsertStudentDetails.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please save and close the cuurent window !","System warnning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+            
+           
         }
     }
 }
