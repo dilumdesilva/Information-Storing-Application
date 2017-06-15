@@ -40,7 +40,6 @@
             this.studentDetailsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.marksToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.generateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.singleStudentReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.systemReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -130,22 +129,15 @@
             // generateToolStripMenuItem
             // 
             this.generateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.singleStudentReportToolStripMenuItem,
             this.systemReportToolStripMenuItem});
             this.generateToolStripMenuItem.Name = "generateToolStripMenuItem";
             this.generateToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.generateToolStripMenuItem.Text = "Reports";
             // 
-            // singleStudentReportToolStripMenuItem
-            // 
-            this.singleStudentReportToolStripMenuItem.Name = "singleStudentReportToolStripMenuItem";
-            this.singleStudentReportToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.singleStudentReportToolStripMenuItem.Text = "Single student report";
-            // 
             // systemReportToolStripMenuItem
             // 
             this.systemReportToolStripMenuItem.Name = "systemReportToolStripMenuItem";
-            this.systemReportToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.systemReportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.systemReportToolStripMenuItem.Text = "System report";
             // 
             // configurationToolStripMenuItem
@@ -201,7 +193,6 @@
         private System.Windows.Forms.ToolStripMenuItem studentDetailsToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem marksToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem generateToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem singleStudentReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem systemReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configurationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
