@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Shared_Library;
+using BALayer;
 
 namespace StudenInformationStoringApp
 {
@@ -31,6 +32,9 @@ namespace StudenInformationStoringApp
             objStudent.age = Convert.ToInt32(txtAge.Text);
             objStudent.dateOfBirth = Convert.ToInt32(txtBirthday.Text);
             objStudent.adress = txtAdress.Text;
+
+            systemManager objsystemManager = new systemManager();
+            objsystemManager.insertStudentDetails(objStudent);
 
 
         }

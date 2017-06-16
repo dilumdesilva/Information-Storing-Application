@@ -9,7 +9,7 @@ using Shared_Library;
 
 namespace DALayer
 {
-    class dataAccessWorkplace
+    public class dataAccessWorkplace
     {
         private static string query;
         private static SqlConnection con = connectionBuider.buildConection();
