@@ -14,18 +14,18 @@ namespace DALayer
         {
             try
             {
-                SqlConnection con = new SqlConnection("Data Source=nghq-it-023;Initial Catalog=dbtest;User ID=sa");
-                if (con.State == ConnectionState.Closed)
+                SqlConnection conPath = new SqlConnection("Data Source=nghq-it-023;Initial Catalog=dbtest;User ID=sa");
+                if (conPath.State == ConnectionState.Closed)
                 {
                     
-                    con.Open();
+                    conPath.Open();
                 }
                 else
                 {
-                    con.Close();
+                    conPath.Close();
                 }
 
-                return con;
+                return conPath;
             }
             catch (Exception ex)
             {
