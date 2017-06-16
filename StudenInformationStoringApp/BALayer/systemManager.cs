@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shared_Library
+namespace BALayer
 {
-    public class Class1
+    public class systemManager
     {
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BALayer
+namespace DALayer
 {
-    public class Class1
+    public class connectionBuider
     {
     }
 }
