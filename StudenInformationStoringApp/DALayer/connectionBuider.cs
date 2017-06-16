@@ -14,7 +14,7 @@ namespace DALayer
         {
             try
             {
-                SqlConnection conPath = new SqlConnection("Data Source=nghq-it-023;Initial Catalog=dbtest;User ID=sa");
+                SqlConnection conPath = new SqlConnection("Data Source=nghq-it-023;Initial Catalog=University_Information;User ID=sa");
                 if (conPath.State == ConnectionState.Closed)
                 {
                     

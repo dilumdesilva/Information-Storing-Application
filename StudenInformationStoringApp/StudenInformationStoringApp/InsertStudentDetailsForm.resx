@@ -1363,27 +1363,6 @@
   <data name="&gt;&gt;lblInstructions.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
-  <data name="txtBirthday.Location" type="System.Drawing.Point, System.Drawing">
-    <value>163, 241</value>
-  </data>
-  <data name="txtBirthday.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 20</value>
-  </data>
-  <data name="txtBirthday.TabIndex" type="System.Int32, mscorlib">
-    <value>78</value>
-  </data>
-  <data name="&gt;&gt;txtBirthday.Name" xml:space="preserve">
-    <value>txtBirthday</value>
-  </data>
-  <data name="&gt;&gt;txtBirthday.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtBirthday.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;txtBirthday.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="lblDateOfBirth.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1481,7 +1460,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtAdress.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblAdress.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1508,7 +1487,28 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblAdress.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <data name="dtpBirthDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>163, 236</value>
+  </data>
+  <data name="dtpBirthDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 20</value>
+  </data>
+  <data name="dtpBirthDate.TabIndex" type="System.Int32, mscorlib">
+    <value>81</value>
+  </data>
+  <data name="&gt;&gt;dtpBirthDate.Name" xml:space="preserve">
+    <value>dtpBirthDate</value>
+  </data>
+  <data name="&gt;&gt;dtpBirthDate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dtpBirthDate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dtpBirthDate.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

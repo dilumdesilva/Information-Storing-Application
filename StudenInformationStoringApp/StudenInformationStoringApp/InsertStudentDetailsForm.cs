@@ -30,7 +30,7 @@ namespace StudenInformationStoringApp
             objStudent.lastName = txtLastName.Text;
             objStudent.universityID = txtUniversityID.Text;
             objStudent.age = Convert.ToInt32(txtAge.Text);
-            objStudent.dateOfBirth = Convert.ToInt32(txtBirthday.Text);
+            objStudent.dateOfBirth = Convert.ToDateTime(dtpBirthDate.Value);
             objStudent.adress = txtAdress.Text;
 
             systemManager objsystemManager = new systemManager();
@@ -39,7 +39,18 @@ namespace StudenInformationStoringApp
 
         }
 
+        private void btnStudentDetailsInsert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                getData();
+                MessageBox.Show(txtFirstName.Text+" has been recorded successfuly!","Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
 
-
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

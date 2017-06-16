@@ -41,12 +41,12 @@
             this.lblStudentID = new System.Windows.Forms.Label();
             this.lblStudentName = new System.Windows.Forms.Label();
             this.lblInstructions = new System.Windows.Forms.Label();
-            this.txtBirthday = new System.Windows.Forms.TextBox();
             this.lblDateOfBirth = new System.Windows.Forms.Label();
             this.txtAge = new System.Windows.Forms.TextBox();
             this.lblAge = new System.Windows.Forms.Label();
             this.txtAdress = new System.Windows.Forms.TextBox();
             this.lblAdress = new System.Windows.Forms.Label();
+            this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,6 +91,7 @@
             resources.ApplyResources(this.btnStudentDetailsInsert, "btnStudentDetailsInsert");
             this.btnStudentDetailsInsert.Name = "btnStudentDetailsInsert";
             this.btnStudentDetailsInsert.UseVisualStyleBackColor = true;
+            this.btnStudentDetailsInsert.Click += new System.EventHandler(this.btnStudentDetailsInsert_Click);
             // 
             // txtUniversityID
             // 
@@ -120,11 +121,6 @@
             this.lblInstructions.BackColor = System.Drawing.Color.Transparent;
             this.lblInstructions.Name = "lblInstructions";
             // 
-            // txtBirthday
-            // 
-            resources.ApplyResources(this.txtBirthday, "txtBirthday");
-            this.txtBirthday.Name = "txtBirthday";
-            // 
             // lblDateOfBirth
             // 
             resources.ApplyResources(this.lblDateOfBirth, "lblDateOfBirth");
@@ -153,13 +149,19 @@
             this.lblAdress.BackColor = System.Drawing.Color.Transparent;
             this.lblAdress.Name = "lblAdress";
             // 
+            // dtpBirthDate
+            // 
+            this.dtpBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            resources.ApplyResources(this.dtpBirthDate, "dtpBirthDate");
+            this.dtpBirthDate.Name = "dtpBirthDate";
+            // 
             // frmInsertStudentDetails
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dtpBirthDate);
             this.Controls.Add(this.txtAdress);
             this.Controls.Add(this.lblAdress);
-            this.Controls.Add(this.txtBirthday);
             this.Controls.Add(this.lblDateOfBirth);
             this.Controls.Add(this.txtAge);
             this.Controls.Add(this.lblAge);
@@ -197,11 +199,11 @@
         private System.Windows.Forms.Label lblStudentID;
         private System.Windows.Forms.Label lblStudentName;
         private System.Windows.Forms.Label lblInstructions;
-        private System.Windows.Forms.TextBox txtBirthday;
         private System.Windows.Forms.Label lblDateOfBirth;
         private System.Windows.Forms.TextBox txtAge;
         private System.Windows.Forms.Label lblAge;
         private System.Windows.Forms.TextBox txtAdress;
         private System.Windows.Forms.Label lblAdress;
+        private System.Windows.Forms.DateTimePicker dtpBirthDate;
     }
 }

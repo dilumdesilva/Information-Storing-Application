@@ -23,6 +23,7 @@ namespace DALayer
         {
             if(cmdType == 1)
             {
+                cmd.Connection = con;
                 cmd.CommandType = CommandType.StoredProcedure;
                 adp.SelectCommand = cmd;
             }
@@ -34,10 +35,8 @@ namespace DALayer
             try
             {
                 query = "storeStudentDetails";
-                commandTypeSelector(1);
-
-               // @StuCode,@StuName,@StuAge,@Address,@DateIfBirth
-
+                cmd= commandTypeSelector(1);
+                cmd.CommandText = query;
                 cmd.Parameters.AddWithValue("@StuCode", student.universityID);
                 cmd.Parameters.AddWithValue("@StuName", student.firstName + " " + student.lastName);
                 cmd.Parameters.AddWithValue("@StuAge", student.age);

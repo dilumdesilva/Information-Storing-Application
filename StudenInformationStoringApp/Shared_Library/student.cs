@@ -11,7 +11,7 @@ namespace Shared_Library
         public string firstName { get; set; }
         public string lastName { get; set; }
         public int age { get; set; }
-        public int dateOfBirth { get; set; }
+        public DateTime dateOfBirth { get; set; }
         public string universityID { get; set; }
         public string adress { get; set; }
     }
