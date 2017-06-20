@@ -86,6 +86,7 @@
             this.studentMarksToolStripMenuItem.Name = "studentMarksToolStripMenuItem";
             this.studentMarksToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.studentMarksToolStripMenuItem.Text = "Student Marks";
+            this.studentMarksToolStripMenuItem.Click += new System.EventHandler(this.studentMarksToolStripMenuItem_Click);
             // 
             // veiwToolStripMenuItem
             // 

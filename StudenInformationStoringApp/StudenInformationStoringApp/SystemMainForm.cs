@@ -83,5 +83,11 @@ namespace StudenInformationStoringApp
             }
 
         }
+
+        private void studentMarksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInsertStudentMarks objfrmInsertStudentMarks = new frmInsertStudentMarks();
+            objfrmInsertStudentMarks.Show();
+        }
     }
 }
