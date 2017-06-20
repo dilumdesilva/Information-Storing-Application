@@ -47,6 +47,8 @@
             this.txtAdress = new System.Windows.Forms.TextBox();
             this.lblAdress = new System.Windows.Forms.Label();
             this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
+            this.lblDepartment = new System.Windows.Forms.Label();
+            this.cmbDepartment = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,10 +157,24 @@
             resources.ApplyResources(this.dtpBirthDate, "dtpBirthDate");
             this.dtpBirthDate.Name = "dtpBirthDate";
             // 
+            // lblDepartment
+            // 
+            resources.ApplyResources(this.lblDepartment, "lblDepartment");
+            this.lblDepartment.BackColor = System.Drawing.Color.Transparent;
+            this.lblDepartment.Name = "lblDepartment";
+            // 
+            // cmbDepartment
+            // 
+            this.cmbDepartment.FormattingEnabled = true;
+            resources.ApplyResources(this.cmbDepartment, "cmbDepartment");
+            this.cmbDepartment.Name = "cmbDepartment";
+            // 
             // frmInsertStudentDetails
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cmbDepartment);
+            this.Controls.Add(this.lblDepartment);
             this.Controls.Add(this.dtpBirthDate);
             this.Controls.Add(this.txtAdress);
             this.Controls.Add(this.lblAdress);
@@ -179,6 +195,7 @@
             this.Controls.Add(this.picBoxLogoMainForm);
             this.Name = "frmInsertStudentDetails";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.frmInsertStudentDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -205,5 +222,7 @@
         private System.Windows.Forms.TextBox txtAdress;
         private System.Windows.Forms.Label lblAdress;
         private System.Windows.Forms.DateTimePicker dtpBirthDate;
+        private System.Windows.Forms.Label lblDepartment;
+        private System.Windows.Forms.ComboBox cmbDepartment;
     }
 }

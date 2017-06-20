@@ -43,6 +43,7 @@ namespace DALayer
                 cmd.Parameters.AddWithValue("@StuAge", student.age);
                 cmd.Parameters.AddWithValue("@Address", student.adress);
                 cmd.Parameters.AddWithValue("@DateIfBirth", student.dateOfBirth);
+                cmd.Parameters.AddWithValue("@DepartmentID", student.DepartmentID);
                 cmd.ExecuteNonQuery();
 
             }

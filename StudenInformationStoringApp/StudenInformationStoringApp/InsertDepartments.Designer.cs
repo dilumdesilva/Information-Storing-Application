@@ -103,12 +103,13 @@
             // 
             this.dgvDepartment.AllowUserToAddRows = false;
             this.dgvDepartment.AllowUserToDeleteRows = false;
+            this.dgvDepartment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDepartment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmDepartmentID,
             this.clmDepartmentCode,
             this.clmDepartmentName});
-            this.dgvDepartment.Location = new System.Drawing.Point(367, 34);
+            this.dgvDepartment.Location = new System.Drawing.Point(354, 34);
             this.dgvDepartment.Name = "dgvDepartment";
             this.dgvDepartment.ReadOnly = true;
             this.dgvDepartment.Size = new System.Drawing.Size(333, 300);
@@ -144,6 +145,7 @@
             this.clmDepartmentID.HeaderText = "DepartmentID";
             this.clmDepartmentID.Name = "clmDepartmentID";
             this.clmDepartmentID.ReadOnly = true;
+            this.clmDepartmentID.Width = 98;
             // 
             // clmDepartmentCode
             // 
@@ -151,6 +153,7 @@
             this.clmDepartmentCode.HeaderText = "DepartmentCode";
             this.clmDepartmentCode.Name = "clmDepartmentCode";
             this.clmDepartmentCode.ReadOnly = true;
+            this.clmDepartmentCode.Width = 112;
             // 
             // clmDepartmentName
             // 
@@ -158,6 +161,7 @@
             this.clmDepartmentName.HeaderText = "DepartmentName";
             this.clmDepartmentName.Name = "clmDepartmentName";
             this.clmDepartmentName.ReadOnly = true;
+            this.clmDepartmentName.Width = 115;
             // 
             // InsertDepartments
             // 

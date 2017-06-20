@@ -39,6 +39,7 @@ namespace StudenInformationStoringApp
             {
                 getDepartmentData();
                 MessageBox.Show("Departmet "+txtDeptName.Text + "\nhas been recorded successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                setDataSourceToGrid();
             }
             catch (Exception EX)
             {

@@ -14,6 +14,7 @@ namespace Shared_Library
         public DateTime dateOfBirth { get; set; }
         public string universityID { get; set; }
         public string adress { get; set; }
+        public int DepartmentID { get; set; }
         public Department ObjDepartment { get; set; }
     }
 }
