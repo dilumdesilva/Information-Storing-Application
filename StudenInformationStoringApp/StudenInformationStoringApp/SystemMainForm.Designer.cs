@@ -44,6 +44,7 @@
             this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.departmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +68,8 @@
             // 
             this.insertSystemToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.studentDetailsToolStripMenuItem,
-            this.studentMarksToolStripMenuItem});
+            this.studentMarksToolStripMenuItem,
+            this.departmentsToolStripMenuItem});
             this.insertSystemToolStripMenuItem.Name = "insertSystemToolStripMenuItem";
             this.insertSystemToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.insertSystemToolStripMenuItem.Text = "Insert";
@@ -161,6 +163,12 @@
             this.aboutSystemToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutSystemToolStripMenuItem.Text = "About system";
             // 
+            // departmentsToolStripMenuItem
+            // 
+            this.departmentsToolStripMenuItem.Name = "departmentsToolStripMenuItem";
+            this.departmentsToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.departmentsToolStripMenuItem.Text = "Departments";
+            // 
             // SystemMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,6 +207,7 @@
         private System.Windows.Forms.ToolStripMenuItem configurationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutSystemToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem departmentsToolStripMenuItem;
     }
 }
 
