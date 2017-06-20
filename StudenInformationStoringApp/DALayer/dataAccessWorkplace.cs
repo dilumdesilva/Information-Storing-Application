@@ -56,6 +56,12 @@ namespace DALayer
         {
             try
             {
+                query = "storeDepartmentDetails";
+                cmd = commandTypeSelector(1);
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@DeptCode", objDepartment.DepartmenCode);
+                cmd.Parameters.AddWithValue("@DeptName", objDepartment.DepartmentName);
+                cmd.ExecuteNonQuery();
 
             }
             catch (Exception ex)

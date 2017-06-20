@@ -94,6 +94,7 @@
             this.btnInsertDepartment.TabIndex = 7;
             this.btnInsertDepartment.Text = "Insert Department";
             this.btnInsertDepartment.UseVisualStyleBackColor = true;
+            this.btnInsertDepartment.Click += new System.EventHandler(this.btnInsertDepartment_Click);
             // 
             // dataGridDepartment
             // 

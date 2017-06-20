@@ -30,6 +30,20 @@ namespace StudenInformationStoringApp
 
 
         }
+
+        private void btnInsertDepartment_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                getDepartmentData();
+                MessageBox.Show("Departmet "+txtDeptName.Text + "\nhas been recorded successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception EX)
+            {
+
+                throw EX;
+            }
+        }
     }
 
 }
