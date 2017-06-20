@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Shared_Library
 {
-    public class Department
+    public class FormControllers
     {
-        public string DepartmentName { get; set; }
-        public string DepartmenCode { get; set; }
+
     }
 }

@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="picBoxLogoMainForm.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="picBoxLogoMainForm.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1084,6 +1087,9 @@
   <data name="&gt;&gt;picBoxLogoMainForm.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
+  <metadata name="btnRefresh.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnRefresh.Location" type="System.Drawing.Point, System.Drawing">
     <value>131, 411</value>
   </data>
@@ -1108,6 +1114,9 @@
   <data name="&gt;&gt;btnRefresh.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <metadata name="txtLastName.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="txtLastName.Location" type="System.Drawing.Point, System.Drawing">
     <value>163, 171</value>
   </data>
@@ -1129,6 +1138,9 @@
   <data name="&gt;&gt;txtLastName.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <metadata name="label1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1156,6 +1168,9 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <metadata name="lblCopyright2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lblCopyright2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1186,6 +1201,9 @@
   <data name="&gt;&gt;lblCopyright2.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <metadata name="lblCopyright1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lblCopyright1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1216,6 +1234,9 @@
   <data name="&gt;&gt;lblCopyright1.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <metadata name="btnStudentDetailsInsert.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="btnStudentDetailsInsert.Location" type="System.Drawing.Point, System.Drawing">
     <value>45, 411</value>
   </data>
@@ -1240,6 +1261,9 @@
   <data name="&gt;&gt;btnStudentDetailsInsert.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <metadata name="txtUniversityID.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="txtUniversityID.Location" type="System.Drawing.Point, System.Drawing">
     <value>163, 207</value>
   </data>
@@ -1261,6 +1285,9 @@
   <data name="&gt;&gt;txtUniversityID.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <metadata name="txtFirstName.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="txtFirstName.Location" type="System.Drawing.Point, System.Drawing">
     <value>163, 138</value>
   </data>
@@ -1282,6 +1309,9 @@
   <data name="&gt;&gt;txtFirstName.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
+  <metadata name="lblStudentID.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lblStudentID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1309,6 +1339,9 @@
   <data name="&gt;&gt;lblStudentID.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
+  <metadata name="lblStudentName.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lblStudentName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1336,6 +1369,9 @@
   <data name="&gt;&gt;lblStudentName.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
+  <metadata name="lblInstructions.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lblInstructions.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1363,6 +1399,9 @@
   <data name="&gt;&gt;lblInstructions.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
+  <metadata name="lblDateOfBirth.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lblDateOfBirth.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1390,6 +1429,9 @@
   <data name="&gt;&gt;lblDateOfBirth.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <metadata name="txtAge.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="txtAge.Location" type="System.Drawing.Point, System.Drawing">
     <value>163, 277</value>
   </data>
@@ -1411,6 +1453,9 @@
   <data name="&gt;&gt;txtAge.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <metadata name="lblAge.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lblAge.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1438,6 +1483,9 @@
   <data name="&gt;&gt;lblAge.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <metadata name="txtAdress.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="txtAdress.Location" type="System.Drawing.Point, System.Drawing">
     <value>163, 312</value>
   </data>
@@ -1462,6 +1510,9 @@
   <data name="&gt;&gt;txtAdress.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <metadata name="lblAdress.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="lblAdress.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1489,6 +1540,9 @@
   <data name="&gt;&gt;lblAdress.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <metadata name="dtpBirthDate.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="dtpBirthDate.Location" type="System.Drawing.Point, System.Drawing">
     <value>163, 236</value>
   </data>

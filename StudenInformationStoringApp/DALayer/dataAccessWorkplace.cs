@@ -52,6 +52,18 @@ namespace DALayer
             }
         }
 
+        public void departmentsInToDb(Department objDepartment)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
 
     }
 }

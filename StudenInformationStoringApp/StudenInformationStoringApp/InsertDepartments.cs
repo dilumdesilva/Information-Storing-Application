@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Shared_Library;
+using BALayer;
 
 namespace StudenInformationStoringApp
 {
@@ -16,5 +18,18 @@ namespace StudenInformationStoringApp
         {
             InitializeComponent();
         }
+
+        public void getDepartmentData()
+        {
+            Department objDepartment = new Department();
+            objDepartment.DepartmentName = txtDeptName.Text;
+            objDepartment.DepartmenCode = txtDeptCode.Text;
+
+            systemManager objsystemManager = new systemManager();
+            objsystemManager.insertDepartments(objDepartment);
+
+
+        }
     }
+
 }
