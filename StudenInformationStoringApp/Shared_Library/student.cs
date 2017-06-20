@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shared_Library
 {
-    public class student
+    public class Student
     {
         public string firstName { get; set; }
         public string lastName { get; set; }
@@ -14,5 +14,6 @@ namespace Shared_Library
         public DateTime dateOfBirth { get; set; }
         public string universityID { get; set; }
         public string adress { get; set; }
+        public Department ObjDepartment { get; set; }
     }
 }

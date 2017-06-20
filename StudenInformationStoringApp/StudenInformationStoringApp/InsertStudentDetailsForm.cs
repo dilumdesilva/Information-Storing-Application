@@ -24,7 +24,7 @@ namespace StudenInformationStoringApp
         public void getData()
         {
             //creating a object from student class
-            student objStudent = new student();
+            Student objStudent = new Student();
 
             objStudent.firstName = txtFirstName.Text;
             objStudent.lastName = txtLastName.Text;

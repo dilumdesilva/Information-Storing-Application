@@ -35,11 +35,14 @@
             this.lblDeptName = new System.Windows.Forms.Label();
             this.lblDeptCode = new System.Windows.Forms.Label();
             this.btnInsertDepartment = new System.Windows.Forms.Button();
-            this.dataGridDepartment = new System.Windows.Forms.DataGridView();
+            this.dgvDepartment = new System.Windows.Forms.DataGridView();
             this.lblCopyright2 = new System.Windows.Forms.Label();
             this.lblCopyright1 = new System.Windows.Forms.Label();
+            this.clmDepartmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDepartmentCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDepartmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridDepartment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDepartment)).BeginInit();
             this.SuspendLayout();
             // 
             // picBoxLogoMainForm
@@ -96,13 +99,20 @@
             this.btnInsertDepartment.UseVisualStyleBackColor = true;
             this.btnInsertDepartment.Click += new System.EventHandler(this.btnInsertDepartment_Click);
             // 
-            // dataGridDepartment
+            // dgvDepartment
             // 
-            this.dataGridDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridDepartment.Location = new System.Drawing.Point(367, 34);
-            this.dataGridDepartment.Name = "dataGridDepartment";
-            this.dataGridDepartment.Size = new System.Drawing.Size(333, 300);
-            this.dataGridDepartment.TabIndex = 8;
+            this.dgvDepartment.AllowUserToAddRows = false;
+            this.dgvDepartment.AllowUserToDeleteRows = false;
+            this.dgvDepartment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDepartment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmDepartmentID,
+            this.clmDepartmentCode,
+            this.clmDepartmentName});
+            this.dgvDepartment.Location = new System.Drawing.Point(367, 34);
+            this.dgvDepartment.Name = "dgvDepartment";
+            this.dgvDepartment.ReadOnly = true;
+            this.dgvDepartment.Size = new System.Drawing.Size(333, 300);
+            this.dgvDepartment.TabIndex = 8;
             // 
             // lblCopyright2
             // 
@@ -128,6 +138,27 @@
             this.lblCopyright1.TabIndex = 66;
             this.lblCopyright1.Text = "Copyright";
             // 
+            // clmDepartmentID
+            // 
+            this.clmDepartmentID.DataPropertyName = "DepartmentID";
+            this.clmDepartmentID.HeaderText = "DepartmentID";
+            this.clmDepartmentID.Name = "clmDepartmentID";
+            this.clmDepartmentID.ReadOnly = true;
+            // 
+            // clmDepartmentCode
+            // 
+            this.clmDepartmentCode.DataPropertyName = "DepartmenCode";
+            this.clmDepartmentCode.HeaderText = "DepartmentCode";
+            this.clmDepartmentCode.Name = "clmDepartmentCode";
+            this.clmDepartmentCode.ReadOnly = true;
+            // 
+            // clmDepartmentName
+            // 
+            this.clmDepartmentName.DataPropertyName = "DepartmentName";
+            this.clmDepartmentName.HeaderText = "DepartmentName";
+            this.clmDepartmentName.Name = "clmDepartmentName";
+            this.clmDepartmentName.ReadOnly = true;
+            // 
             // InsertDepartments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,7 +166,7 @@
             this.ClientSize = new System.Drawing.Size(721, 375);
             this.Controls.Add(this.lblCopyright2);
             this.Controls.Add(this.lblCopyright1);
-            this.Controls.Add(this.dataGridDepartment);
+            this.Controls.Add(this.dgvDepartment);
             this.Controls.Add(this.btnInsertDepartment);
             this.Controls.Add(this.lblDeptCode);
             this.Controls.Add(this.lblDeptName);
@@ -145,8 +176,9 @@
             this.Name = "InsertDepartments";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Insert Department";
+            this.Load += new System.EventHandler(this.InsertDepartments_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridDepartment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDepartment)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,8 +192,11 @@
         private System.Windows.Forms.Label lblDeptName;
         private System.Windows.Forms.Label lblDeptCode;
         private System.Windows.Forms.Button btnInsertDepartment;
-        private System.Windows.Forms.DataGridView dataGridDepartment;
+        private System.Windows.Forms.DataGridView dgvDepartment;
         private System.Windows.Forms.Label lblCopyright2;
         private System.Windows.Forms.Label lblCopyright1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDepartmentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDepartmentCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDepartmentName;
     }
 }

@@ -30,7 +30,8 @@ namespace DALayer
             return cmd;
         }
 
-        public void studentDetailsInToDb(student student)
+        //method which stores student details to the db.
+        public void studentDetailsInToDb(Student student)
         {
             try
             {
@@ -52,6 +53,7 @@ namespace DALayer
             }
         }
 
+        //method which stores department datails to the db.
         public void departmentsInToDb(Department objDepartment)
         {
             try
@@ -69,6 +71,20 @@ namespace DALayer
 
                 throw ex;
             }
+        }
+
+        //Method which load department data from db to a data table
+        public DataTable getDepartmentToGrid()
+        {
+            query = "DepartmentDetailsForGrid";
+            cmd = commandTypeSelector(1);
+            cmd.CommandText = query;
+
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+
+            return dt;
+
         }
 
     }

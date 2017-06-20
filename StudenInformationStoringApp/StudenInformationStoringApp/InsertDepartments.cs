@@ -21,12 +21,14 @@ namespace StudenInformationStoringApp
 
         public void getDepartmentData()
         {
-            Department objDepartment = new Department();
-            objDepartment.DepartmentName = txtDeptName.Text;
-            objDepartment.DepartmenCode = txtDeptCode.Text;
+            //setting the user userinputs to a object of student class which is in the shared library
+            Department objDepartment1 = new Department();
+            objDepartment1.DepartmentName = txtDeptName.Text;
+            objDepartment1.DepartmenCode = txtDeptCode.Text;
 
+            //passing above values as a object to the business layer.
             systemManager objsystemManager = new systemManager();
-            objsystemManager.insertDepartments(objDepartment);
+            objsystemManager.insertDepartments(objDepartment1);
 
 
         }
@@ -42,6 +44,31 @@ namespace StudenInformationStoringApp
             {
 
                 throw EX;
+            }
+
+        }
+
+        private void setDataSourceToGrid()
+        {   
+            //here um setting the data source for this data grid and hide the coloumn name which is called
+            //clmDepratmentID 
+            systemManager objsystemManager2 = new systemManager();
+            dgvDepartment.DataSource = objsystemManager2.LoadDepartmentToGrid();
+            this.dgvDepartment.Columns["clmDepartmentID"].Visible = false;
+              
+        }
+
+        private void InsertDepartments_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                //Loading the data grid data during the main form get refreshed.
+                setDataSourceToGrid();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
     }

@@ -10,5 +10,8 @@ namespace Shared_Library
     {
         public string DepartmentName { get; set; }
         public string DepartmenCode { get; set; }
+        public int DepartmentID { get; set; }
+
+        
     }
 }
