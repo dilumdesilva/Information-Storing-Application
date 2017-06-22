@@ -88,5 +88,19 @@ namespace DALayer
 
         }
 
+        //Method which load student data from db to a data table
+        public DataTable getStudentData()
+        {
+            query = "GetStudentData";
+            cmd = commandTypeSelector(1);
+            cmd.CommandText = query;
+
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+
+            return dt;
+
+        }
+
     }
 }

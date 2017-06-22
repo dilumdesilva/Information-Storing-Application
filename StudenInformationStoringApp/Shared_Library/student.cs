@@ -13,8 +13,11 @@ namespace Shared_Library
         public int age { get; set; }
         public DateTime dateOfBirth { get; set; }
         public string universityID { get; set; }
+        public int StudentID { get; set; }
         public string adress { get; set; }
         public int DepartmentID { get; set; }
         public Department ObjDepartment { get; set; }
+        public string FullName { get; set; }
+        
     }
 }

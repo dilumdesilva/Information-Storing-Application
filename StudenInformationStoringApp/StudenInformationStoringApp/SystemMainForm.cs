@@ -45,7 +45,7 @@ namespace StudenInformationStoringApp
             }
             catch (Exception ex)
             {
-                throw;
+                MessageBox.Show(ex.Message);
             }
             return bllFound;
         }
@@ -87,7 +87,17 @@ namespace StudenInformationStoringApp
         private void studentMarksToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmInsertStudentMarks objfrmInsertStudentMarks = new frmInsertStudentMarks();
-            objfrmInsertStudentMarks.Show();
+           
+
+            //this condition will check whether there is any forms loded before system loads another form.
+            if (!IsAlreadyLoded(objfrmInsertStudentMarks))
+            {
+                objfrmInsertStudentMarks.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please save and close the current window !", "System warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

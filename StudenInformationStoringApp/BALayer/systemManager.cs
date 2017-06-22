@@ -26,7 +26,7 @@ namespace BALayer
             objdataAccessWorkplace2.departmentsInToDb(objDepartment);
         }
 
-        //create a list to store loded data table from DAL
+        //create a list to store loded Department data table from DAL
         public List<Department> LoadDepartmentToGrid()
         {
             List<Department> lstDepartment = new List<Department>();
@@ -47,5 +47,29 @@ namespace BALayer
             }
             return lstDepartment;
         }
+
+        //create a list to store loded student basic data table from DAL
+        public List<Student> GetStudentBasicData()
+        {
+            List<Student> lstStudent = new List<Student>();
+            Student objStudent = null;
+            dataAccessWorkplace objobjdataAccessWorkplace3 = new dataAccessWorkplace();
+            DataTable dt = new DataTable();
+            dt = objobjdataAccessWorkplace3.getStudentData();
+            if (dt != null)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    objStudent = new Student();
+                    objStudent.StudentID = (int)dr["StudentID"];
+                    objStudent.universityID = dr["StudentCode"].ToString();
+                    objStudent.FullName = dr["StdentName"].ToString();
+
+                    lstStudent.Add(objStudent);
+                }
+            }
+            return lstStudent;
+        }
+
     }
 }

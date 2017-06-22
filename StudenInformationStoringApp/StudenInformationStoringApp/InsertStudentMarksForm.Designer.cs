@@ -33,17 +33,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cmbDepartment = new System.Windows.Forms.ComboBox();
+            this.cmbStudentID = new System.Windows.Forms.ComboBox();
+            this.txtMarks = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cmbSemester = new System.Windows.Forms.ComboBox();
+            this.cmbSubject = new System.Windows.Forms.ComboBox();
+            this.btnInsertMarks = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblCopyright2 = new System.Windows.Forms.Label();
             this.lblCopyright1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtStudentName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -80,39 +82,40 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 180);
+            this.label3.Location = new System.Drawing.Point(32, 217);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Semester";
             // 
-            // comboBox1
+            // cmbDepartment
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(133, 112);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(146, 21);
-            this.comboBox1.TabIndex = 5;
+            this.cmbDepartment.FormattingEnabled = true;
+            this.cmbDepartment.Location = new System.Drawing.Point(133, 112);
+            this.cmbDepartment.Name = "cmbDepartment";
+            this.cmbDepartment.Size = new System.Drawing.Size(146, 21);
+            this.cmbDepartment.TabIndex = 5;
             // 
-            // comboBox2
+            // cmbStudentID
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(133, 144);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(146, 21);
-            this.comboBox2.TabIndex = 6;
+            this.cmbStudentID.FormattingEnabled = true;
+            this.cmbStudentID.Location = new System.Drawing.Point(133, 144);
+            this.cmbStudentID.Name = "cmbStudentID";
+            this.cmbStudentID.Size = new System.Drawing.Size(146, 21);
+            this.cmbStudentID.TabIndex = 6;
+            this.cmbStudentID.SelectionChangeCommitted += new System.EventHandler(this.cmbStudentID_SelectionChangeCommitted);
             // 
-            // textBox1
+            // txtMarks
             // 
-            this.textBox1.Location = new System.Drawing.Point(133, 246);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtMarks.Location = new System.Drawing.Point(133, 283);
+            this.txtMarks.Name = "txtMarks";
+            this.txtMarks.Size = new System.Drawing.Size(146, 20);
+            this.txtMarks.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 214);
+            this.label4.Location = new System.Drawing.Point(32, 251);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 8;
@@ -121,36 +124,36 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(33, 249);
+            this.label5.Location = new System.Drawing.Point(33, 286);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "Mark";
             // 
-            // comboBox3
+            // cmbSemester
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(133, 177);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(146, 21);
-            this.comboBox3.TabIndex = 10;
+            this.cmbSemester.FormattingEnabled = true;
+            this.cmbSemester.Location = new System.Drawing.Point(133, 214);
+            this.cmbSemester.Name = "cmbSemester";
+            this.cmbSemester.Size = new System.Drawing.Size(146, 21);
+            this.cmbSemester.TabIndex = 10;
             // 
-            // comboBox4
+            // cmbSubject
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(133, 211);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(146, 21);
-            this.comboBox4.TabIndex = 11;
+            this.cmbSubject.FormattingEnabled = true;
+            this.cmbSubject.Location = new System.Drawing.Point(133, 248);
+            this.cmbSubject.Name = "cmbSubject";
+            this.cmbSubject.Size = new System.Drawing.Size(146, 21);
+            this.cmbSubject.TabIndex = 11;
             // 
-            // button1
+            // btnInsertMarks
             // 
-            this.button1.Location = new System.Drawing.Point(35, 289);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Insert Marks";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnInsertMarks.Location = new System.Drawing.Point(35, 318);
+            this.btnInsertMarks.Name = "btnInsertMarks";
+            this.btnInsertMarks.Size = new System.Drawing.Size(75, 23);
+            this.btnInsertMarks.TabIndex = 12;
+            this.btnInsertMarks.Text = "Insert Marks";
+            this.btnInsertMarks.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -184,28 +187,47 @@
             this.lblCopyright1.TabIndex = 68;
             this.lblCopyright1.Text = "Copyright";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(33, 183);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 13);
+            this.label6.TabIndex = 71;
+            this.label6.Text = "Student Name";
+            // 
+            // txtStudentName
+            // 
+            this.txtStudentName.Location = new System.Drawing.Point(133, 180);
+            this.txtStudentName.Name = "txtStudentName";
+            this.txtStudentName.Size = new System.Drawing.Size(146, 20);
+            this.txtStudentName.TabIndex = 70;
+            // 
             // frmInsertStudentMarks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(753, 363);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtStudentName);
             this.Controls.Add(this.lblCopyright2);
             this.Controls.Add(this.lblCopyright1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.btnInsertMarks);
+            this.Controls.Add(this.cmbSubject);
+            this.Controls.Add(this.cmbSemester);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txtMarks);
+            this.Controls.Add(this.cmbStudentID);
+            this.Controls.Add(this.cmbDepartment);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.picBoxLogoMainForm);
             this.Name = "frmInsertStudentMarks";
             this.Text = "InsertStudentMarks";
+            this.Load += new System.EventHandler(this.frmInsertStudentMarks_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -219,16 +241,18 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cmbDepartment;
+        private System.Windows.Forms.ComboBox cmbStudentID;
+        private System.Windows.Forms.TextBox txtMarks;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cmbSemester;
+        private System.Windows.Forms.ComboBox cmbSubject;
+        private System.Windows.Forms.Button btnInsertMarks;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblCopyright2;
         private System.Windows.Forms.Label lblCopyright1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtStudentName;
     }
 }
