@@ -99,5 +99,20 @@ namespace StudenInformationStoringApp
                 MessageBox.Show("Please save and close the current window !", "System warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void semestersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InsertSemesterDetailsForm objInsertSemesterDetailsForm = new InsertSemesterDetailsForm();
+
+            //this condition will check whether there is any forms loded before system loads another form.
+            if (!IsAlreadyLoded(objInsertSemesterDetailsForm))
+            {
+                objInsertSemesterDetailsForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please save and close the current window !", "System warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

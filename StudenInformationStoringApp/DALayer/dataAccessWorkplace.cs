@@ -74,6 +74,26 @@ namespace DALayer
             }
         }
 
+        //method which semester datails to the db.
+        public void SemesterDataInToDb(Semesters objSemesters)
+        {
+            try
+            {
+                query = "StoreSemesterDetails";
+                cmd = commandTypeSelector(1);
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@SemCode", objSemesters.SemesterCode);
+                cmd.Parameters.AddWithValue("@SemName", objSemesters.SemesterName);
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         //Method which load department data from db to a data table
         public DataTable getDepartmentToGrid()
         {

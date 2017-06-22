@@ -72,6 +72,7 @@ namespace StudenInformationStoringApp
                 MessageBox.Show(ex.Message);
             }
         }
+
     }
 
 }
