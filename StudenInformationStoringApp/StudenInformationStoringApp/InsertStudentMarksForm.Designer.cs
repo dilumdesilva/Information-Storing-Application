@@ -95,6 +95,7 @@
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(146, 21);
             this.cmbDepartment.TabIndex = 5;
+            this.cmbDepartment.SelectedIndexChanged += new System.EventHandler(this.cmbDepartment_SelectedIndexChanged);
             // 
             // cmbStudentID
             // 
@@ -226,6 +227,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.picBoxLogoMainForm);
             this.Name = "frmInsertStudentMarks";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InsertStudentMarks";
             this.Load += new System.EventHandler(this.frmInsertStudentMarks_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).EndInit();

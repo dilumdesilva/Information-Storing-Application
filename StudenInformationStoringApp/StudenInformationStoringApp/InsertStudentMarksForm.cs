@@ -21,8 +21,18 @@ namespace StudenInformationStoringApp
 
         private void frmInsertStudentMarks_Load(object sender, EventArgs e)
         {
-            setCmbDepartment();
-            setCmbStudent();
+            try
+            {
+                setCmbDepartment();
+                setCmbStudent();
+                setcmbSemester();
+ 
+    }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //method which loads the departments to the combobox.
@@ -35,6 +45,19 @@ namespace StudenInformationStoringApp
 
             //because of this department combo's display inedex will shown as a blank index
             cmbDepartment.SelectedIndex = -1;
+        }
+
+        //method which loads the semesters and name into the combobox.
+        public void setcmbSemester()
+        {
+            systemManager objsystemManager = new systemManager();
+            cmbSemester.DataSource = objsystemManager.GetSemestersData();
+            cmbSemester.ValueMember = "SemesterID";
+            cmbSemester.DisplayMember = "SemesterCode";
+
+
+            //because of this department combo's display inedex will shown as a blank index
+            cmbSemester.SelectedIndex = -1;
         }
 
         //method which loads the studentID and name into the combobox.
@@ -75,6 +98,11 @@ namespace StudenInformationStoringApp
 
                 throw ex ;
             }
+        }
+
+        private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

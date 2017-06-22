@@ -122,5 +122,19 @@ namespace DALayer
 
         }
 
+         //Method which load semester data from db to a data table
+        public DataTable getSemestertData()
+        {
+            query = "GetSemesterData";
+            cmd = commandTypeSelector(1);
+            cmd.CommandText = query;
+
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+
+            return dt;
+
+        }
+
     }
 }

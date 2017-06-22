@@ -76,6 +76,12 @@
     <Compile Include="InsertStudentMarksForm.Designer.cs">
       <DependentUpon>InsertStudentMarksForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InsertSubjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertSubjectForm.Designer.cs">
+      <DependentUpon>InsertSubjectForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InsertToConfigForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InsertStudentMarksForm.resx">
       <DependentUpon>InsertStudentMarksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertSubjectForm.resx">
+      <DependentUpon>InsertSubjectForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InsertToConfigForm.resx">
       <DependentUpon>InsertToConfigForm.cs</DependentUpon>

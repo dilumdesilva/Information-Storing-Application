@@ -46,6 +46,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.semestersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.subjectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +72,8 @@
             this.studentDetailsToolStripMenuItem,
             this.studentMarksToolStripMenuItem,
             this.departmentsToolStripMenuItem,
-            this.semestersToolStripMenuItem});
+            this.semestersToolStripMenuItem,
+            this.subjectsToolStripMenuItem});
             this.insertSystemToolStripMenuItem.Name = "insertSystemToolStripMenuItem";
             this.insertSystemToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.insertSystemToolStripMenuItem.Text = "Insert";
@@ -180,6 +182,13 @@
             this.semestersToolStripMenuItem.Text = "Semesters";
             this.semestersToolStripMenuItem.Click += new System.EventHandler(this.semestersToolStripMenuItem_Click);
             // 
+            // subjectsToolStripMenuItem
+            // 
+            this.subjectsToolStripMenuItem.Name = "subjectsToolStripMenuItem";
+            this.subjectsToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.subjectsToolStripMenuItem.Text = "Subjects";
+            this.subjectsToolStripMenuItem.Click += new System.EventHandler(this.subjectsToolStripMenuItem_Click);
+            // 
             // SystemMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -220,6 +229,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutSystemToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem departmentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem semestersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem subjectsToolStripMenuItem;
     }
 }
 

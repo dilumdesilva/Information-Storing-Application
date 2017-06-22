@@ -78,5 +78,28 @@ namespace BALayer
             return lstStudent;
         }
 
+        //create a list to store loded semester data table from DAL
+        public List<Semesters> GetSemestersData()
+        {
+            List<Semesters> lstSemesters = new List<Semesters>();
+            Semesters objSemesters = null;
+            dataAccessWorkplace objobjdataAccessWorkplace4 = new dataAccessWorkplace();
+            DataTable dt = new DataTable();
+            dt = objobjdataAccessWorkplace4.getSemestertData();
+            if (dt != null)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    objSemesters = new Semesters();
+                    objSemesters.SemesterID = (int)dr["SemesterID"];
+                    objSemesters.SemesterCode = dr["SemesterCode"].ToString();
+                    objSemesters.SemesterName = dr["SemesterName"].ToString();
+
+                    lstSemesters.Add(objSemesters);
+                }
+            }
+            return lstSemesters;
+        }
+
     }
 }

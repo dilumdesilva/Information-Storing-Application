@@ -8,7 +8,9 @@ namespace Shared_Library
 {
     public class Semesters
     {
+        public int SemesterID { get; set; }
         public string SemesterCode { get; set; }
         public string SemesterName { get; set; }
+       
     }
 }
