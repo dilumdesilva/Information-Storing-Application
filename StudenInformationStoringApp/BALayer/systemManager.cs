@@ -33,6 +33,14 @@ namespace BALayer
             objdataAccessWorkplace3.SemesterDataInToDb(objSemesters);
         }
 
+        public void insertSubjects(Department objsystemManager)
+        {
+            //passing the values as object to the dataAccessLayer to store in b
+            dataAccessWorkplace objdataAccessWorkplace4 = new dataAccessWorkplace();
+            objdataAccessWorkplace4.SubjectDataInToDb(objsystemManager);
+        }
+
+
         //create a list to store loded Department data table from DAL
         public List<Department> LoadDepartmentToGrid()
         {

@@ -94,6 +94,26 @@ namespace DALayer
             }
         }
 
+        //method which subject datails to the db.
+        public void SubjectDataInToDb(Department objsystemManager)
+        {
+            try
+            {
+                query = "StoreSubjectDetails";
+                cmd = commandTypeSelector(1);
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@SubjectCode", objsystemManager.SubjectCode);
+                cmd.Parameters.AddWithValue("@SubjectName", objsystemManager.SubjectName);
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         //Method which load department data from db to a data table
         public DataTable getDepartmentToGrid()
         {

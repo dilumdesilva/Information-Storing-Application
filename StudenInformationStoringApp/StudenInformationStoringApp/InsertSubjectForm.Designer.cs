@@ -72,6 +72,7 @@
             this.btnInsertSubject.TabIndex = 82;
             this.btnInsertSubject.Text = "Insert Subject";
             this.btnInsertSubject.UseVisualStyleBackColor = true;
+            this.btnInsertSubject.Click += new System.EventHandler(this.btnInsertSubject_Click);
             // 
             // txtSubjectCode
             // 

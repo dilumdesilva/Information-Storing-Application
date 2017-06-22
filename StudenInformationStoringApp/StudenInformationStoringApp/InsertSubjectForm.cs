@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BALayer;
+using Shared_Library;
 
 namespace StudenInformationStoringApp
 {
@@ -15,6 +17,30 @@ namespace StudenInformationStoringApp
         public InsertSubjectForm()
         {
             InitializeComponent();
+        }
+
+        public void getSubjectDetails()
+        {
+            Department objDepartment = new Department();
+            objDepartment.SubjectCode = txtSubjectCode.Text;
+            objDepartment.SubjectName = txtSubjectName.Text;
+
+            systemManager objsystemManager = new systemManager();
+            objsystemManager.insertSubjects(objDepartment);
+        }
+
+        private void btnInsertSubject_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                getSubjectDetails();
+                MessageBox.Show(txtSubjectName.Text + "\nhas been recorded successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
