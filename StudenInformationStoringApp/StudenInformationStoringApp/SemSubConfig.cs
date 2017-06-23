@@ -17,6 +17,12 @@ namespace StudenInformationStoringApp
         public SemSubConfig()
         {
             InitializeComponent();
+            dgvSemesterSubject.AutoGenerateColumns = false;
+            List<SemesterSubject> lst = new List<SemesterSubject>();
+            dgvSemesterSubject.DataSource = lst;
+            
+
+            
         }
 
         public void setSemToCmb()
@@ -56,36 +62,58 @@ namespace StudenInformationStoringApp
   
         public void FillToGrid()
         {
-            List<SemesterSubject> lstSemesterSubject = new List<SemesterSubject>();
-            SemesterSubject objSemesterSubject = new SemesterSubject();
-
-            if(dgvSemesterSubject.DataSource != null)
-            {
-                lstSemesterSubject = (List<SemesterSubject>)dgvSemesterSubject.DataSource;
-                objSemesterSubject.SemesterID = Convert.ToInt32(cmbSemesterSelect.SelectedValue);
-                objSemesterSubject.SemesterName = cmbSemesterSelect.Text;
-                objSemesterSubject.SubjectID = Convert.ToInt32(cmbSubjectSelect.SelectedValue);
-                objSemesterSubject.SubjectName = cmbSubjectSelect.Text;
-                lstSemesterSubject.Add(objSemesterSubject);
-
-                dgvSemesterSubject.AutoGenerateColumns = false;
-                dgvSemesterSubject.DataSource = null;
-                dgvSemesterSubject.DataSource = lstSemesterSubject;
-            }
-            else
-            {
-                objSemesterSubject.SemesterID = Convert.ToInt32(cmbSemesterSelect.SelectedValue);
-                objSemesterSubject.SemesterName = cmbSemesterSelect.Text;
-                objSemesterSubject.SubjectID = Convert.ToInt32(cmbSubjectSelect.SelectedValue);
-                objSemesterSubject.SubjectName = cmbSubjectSelect.Text;
-                lstSemesterSubject.Add(objSemesterSubject);
-
-                dgvSemesterSubject.AutoGenerateColumns = false;
-                dgvSemesterSubject.DataSource = null;
-                dgvSemesterSubject.DataSource = lstSemesterSubject;
-            }
-
+            List<SemesterSubject> alreadyGridList = (List<SemesterSubject>)dgvSemesterSubject.DataSource;
+            SemesterSubject obj = FillSemesterObject();
+            alreadyGridList.Add(obj);
+            dgvSemesterSubject.DataSource = null;
+            dgvSemesterSubject.DataSource = alreadyGridList;
             
+            
+            
+
+            // an alternative way to get grid values to a list.
+
+            //List<SemesterSubject> lstSemesterSubject = new List<SemesterSubject>();
+            //SemesterSubject objSemesterSubject = new SemesterSubject();
+
+            //if(dgvSemesterSubject.DataSource != null)
+            //{
+            //    lstSemesterSubject = (List<SemesterSubject>)dgvSemesterSubject.DataSource;
+            //    objSemesterSubject.SemesterID = Convert.ToInt32(cmbSemesterSelect.SelectedValue);
+            //    objSemesterSubject.SemesterName = cmbSemesterSelect.Text;
+            //    objSemesterSubject.SubjectID = Convert.ToInt32(cmbSubjectSelect.SelectedValue);
+            //    objSemesterSubject.SubjectName = cmbSubjectSelect.Text;
+            //    lstSemesterSubject.Add(objSemesterSubject);
+
+            //    dgvSemesterSubject.AutoGenerateColumns = false;
+            //    dgvSemesterSubject.DataSource = null;
+            //    dgvSemesterSubject.DataSource = lstSemesterSubject;
+            //}
+            //else
+            //{
+            //    objSemesterSubject.SemesterID = Convert.ToInt32(cmbSemesterSelect.SelectedValue);
+            //    objSemesterSubject.SemesterName = cmbSemesterSelect.Text;
+            //    objSemesterSubject.SubjectID = Convert.ToInt32(cmbSubjectSelect.SelectedValue);
+            //    objSemesterSubject.SubjectName = cmbSubjectSelect.Text;
+            //    lstSemesterSubject.Add(objSemesterSubject);
+
+            //    dgvSemesterSubject.AutoGenerateColumns = false;
+            //    dgvSemesterSubject.DataSource = null;
+            //    dgvSemesterSubject.DataSource = lstSemesterSubject;
+            //}
+
+
+        }
+
+        private SemesterSubject FillSemesterObject()
+        {
+
+            SemesterSubject obj = new SemesterSubject();
+            obj.SemesterID = (int)cmbSemesterSelect.SelectedValue;
+            obj.SemesterName = cmbSemesterSelect.Text.ToString();
+            obj.SubjectID = (int)cmbSubjectSelect.SelectedValue;
+            obj.SubjectName = cmbSubjectSelect.Text.ToString();
+            return obj;
         }
 
         private void btnSelectionsToGrid_Click(object sender, EventArgs e)
@@ -122,6 +150,44 @@ namespace StudenInformationStoringApp
             }
         }
 
+        //created an array which holds all the values of semIDs
+        //public Array insertSubSemGridToDb()
+        //{
+        //    int[] semID = new int[dgvSemesterSubject.RowCount];
+        //    int[] subID = new int[dgvSemesterSubject.RowCount];
+
+        //    foreach (DataGridViewRow dr in dgvSemesterSubject.Rows)
+        //    {
+        //        for (int i =0;  i < dgvSemesterSubject.RowCount; i++)
+        //        {
+        //            int semesterID = Convert.ToInt32(dr.Cells[0].Value);
+        //            semID[i] = i; 
+        //        }
+
+        //        for (int x =0;  x < dgvSemesterSubject.RowCount; x++)
+        //        {
+        //            int subjectID = Convert.ToInt32(dr.Cells[0].Value);
+        //            subID[x] = x;
+        //        }
+
+        //    }
+
+        //    return semID;
+        //}
+
+        private void btnUpdateDatabse_Click(object sender, EventArgs e)
+        {
+            //validataSave();
+
+            List<SemesterSubject> saveList = (List<SemesterSubject>)dgvSemesterSubject.DataSource;
+            
+
+        }
+
+        private void validataSave()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 

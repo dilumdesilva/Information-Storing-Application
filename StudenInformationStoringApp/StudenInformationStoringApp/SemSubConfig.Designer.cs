@@ -32,6 +32,10 @@
             this.picBoxLogoMainForm = new System.Windows.Forms.PictureBox();
             this.cmbSemesterSelect = new System.Windows.Forms.ComboBox();
             this.dgvSemesterSubject = new System.Windows.Forms.DataGridView();
+            this.clmSemeterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSemesterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSubjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblSemester = new System.Windows.Forms.Label();
             this.lblSubject = new System.Windows.Forms.Label();
             this.cmbSubjectSelect = new System.Windows.Forms.ComboBox();
@@ -40,10 +44,6 @@
             this.lblCopyright1 = new System.Windows.Forms.Label();
             this.btnUpdateDatabse = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.clmSemeterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSemesterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSubjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSemesterSubject)).BeginInit();
             this.SuspendLayout();
@@ -83,6 +83,44 @@
             this.dgvSemesterSubject.ReadOnly = true;
             this.dgvSemesterSubject.Size = new System.Drawing.Size(315, 196);
             this.dgvSemesterSubject.TabIndex = 4;
+            // 
+            // clmSemeterID
+            // 
+            this.clmSemeterID.DataPropertyName = "SemesterID";
+            this.clmSemeterID.HeaderText = "SemeterID";
+            this.clmSemeterID.Name = "clmSemeterID";
+            this.clmSemeterID.ReadOnly = true;
+            this.clmSemeterID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.clmSemeterID.Visible = false;
+            this.clmSemeterID.Width = 82;
+            // 
+            // clmSemesterName
+            // 
+            this.clmSemesterName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.clmSemesterName.DataPropertyName = "SemesterName";
+            this.clmSemesterName.HeaderText = "SemesterName";
+            this.clmSemesterName.Name = "clmSemesterName";
+            this.clmSemesterName.ReadOnly = true;
+            this.clmSemesterName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.clmSemesterName.Width = 104;
+            // 
+            // clmSubjectID
+            // 
+            this.clmSubjectID.DataPropertyName = "SubjectID";
+            this.clmSubjectID.HeaderText = "SubjectID";
+            this.clmSubjectID.Name = "clmSubjectID";
+            this.clmSubjectID.ReadOnly = true;
+            this.clmSubjectID.Visible = false;
+            // 
+            // clmSubjectName
+            // 
+            this.clmSubjectName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.clmSubjectName.DataPropertyName = "SubjectName";
+            this.clmSubjectName.HeaderText = "SubjectName";
+            this.clmSubjectName.Name = "clmSubjectName";
+            this.clmSubjectName.ReadOnly = true;
+            this.clmSubjectName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.clmSubjectName.Width = 96;
             // 
             // lblSemester
             // 
@@ -152,6 +190,7 @@
             this.btnUpdateDatabse.TabIndex = 87;
             this.btnUpdateDatabse.Text = "Update Databse";
             this.btnUpdateDatabse.UseVisualStyleBackColor = true;
+            this.btnUpdateDatabse.Click += new System.EventHandler(this.btnUpdateDatabse_Click);
             // 
             // label1
             // 
@@ -161,44 +200,6 @@
             this.label1.Size = new System.Drawing.Size(145, 13);
             this.label1.TabIndex = 88;
             this.label1.Text = "Your selected details preview";
-            // 
-            // clmSemeterID
-            // 
-            this.clmSemeterID.DataPropertyName = "SemesterID";
-            this.clmSemeterID.HeaderText = "SemeterID";
-            this.clmSemeterID.Name = "clmSemeterID";
-            this.clmSemeterID.ReadOnly = true;
-            this.clmSemeterID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.clmSemeterID.Visible = false;
-            this.clmSemeterID.Width = 82;
-            // 
-            // clmSemesterName
-            // 
-            this.clmSemesterName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.clmSemesterName.DataPropertyName = "SemesterName";
-            this.clmSemesterName.HeaderText = "SemesterName";
-            this.clmSemesterName.Name = "clmSemesterName";
-            this.clmSemesterName.ReadOnly = true;
-            this.clmSemesterName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.clmSemesterName.Width = 104;
-            // 
-            // clmSubjectID
-            // 
-            this.clmSubjectID.DataPropertyName = "SubjectID";
-            this.clmSubjectID.HeaderText = "SubjectID";
-            this.clmSubjectID.Name = "clmSubjectID";
-            this.clmSubjectID.ReadOnly = true;
-            this.clmSubjectID.Visible = false;
-            // 
-            // clmSubjectName
-            // 
-            this.clmSubjectName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.clmSubjectName.DataPropertyName = "SubjectName";
-            this.clmSubjectName.HeaderText = "SubjectName";
-            this.clmSubjectName.Name = "clmSubjectName";
-            this.clmSubjectName.ReadOnly = true;
-            this.clmSubjectName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.clmSubjectName.Width = 96;
             // 
             // SemSubConfig
             // 
