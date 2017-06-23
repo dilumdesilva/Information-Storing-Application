@@ -21,12 +21,12 @@ namespace StudenInformationStoringApp
 
         public void getSubjectDetails()
         {
-            Department objDepartment = new Department();
-            objDepartment.SubjectCode = txtSubjectCode.Text;
-            objDepartment.SubjectName = txtSubjectName.Text;
+            Subjects objSubjects = new Subjects();
+            objSubjects.SubjectCode = txtSubjectCode.Text;
+            objSubjects.SubjectName = txtSubjectName.Text;
 
             systemManager objsystemManager = new systemManager();
-            objsystemManager.insertSubjects(objDepartment);
+            objsystemManager.insertSubjects(objSubjects);
         }
 
         private void btnInsertSubject_Click(object sender, EventArgs e)

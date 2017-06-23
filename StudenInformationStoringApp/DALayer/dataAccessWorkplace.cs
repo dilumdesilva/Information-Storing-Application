@@ -95,7 +95,7 @@ namespace DALayer
         }
 
         //method which inserts subject datails to the db.
-        public void SubjectDataInToDb(Department objsystemManager)
+        public void SubjectDataInToDb(Subjects objsystemManager)
         {
             try
             {
