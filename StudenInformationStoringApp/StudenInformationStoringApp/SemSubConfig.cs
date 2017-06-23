@@ -107,6 +107,7 @@ namespace StudenInformationStoringApp
             }
         }
 
+        //this method will avoid duolications of the subjects 
         private void SubduplicateValidation()
         {
             int selectedSubID = Convert.ToInt32(cmbSubjectSelect.SelectedValue);
