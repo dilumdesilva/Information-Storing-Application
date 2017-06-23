@@ -100,7 +100,7 @@ namespace StudenInformationStoringApp
             //    dgvSemesterSubject.AutoGenerateColumns = false;
             //    dgvSemesterSubject.DataSource = null;
             //    dgvSemesterSubject.DataSource = lstSemesterSubject;
-            //}
+            // }
 
 
         }
@@ -184,10 +184,10 @@ namespace StudenInformationStoringApp
 
         }
 
-        private void validataSave()
-        {
-            throw new NotImplementedException();
-        }
+        //private void validataSave()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 
 
