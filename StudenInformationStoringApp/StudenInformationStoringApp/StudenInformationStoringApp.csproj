@@ -94,6 +94,12 @@
     <Compile Include="ReportGeneratorForm.Designer.cs">
       <DependentUpon>ReportGeneratorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SemSubConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SemSubConfig.Designer.cs">
+      <DependentUpon>SemSubConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="SystemMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </Compile>
     <EmbeddedResource Include="ReportGeneratorForm.resx">
       <DependentUpon>ReportGeneratorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SemSubConfig.resx">
+      <DependentUpon>SemSubConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SystemMainForm.resx">
       <DependentUpon>SystemMainForm.cs</DependentUpon>
