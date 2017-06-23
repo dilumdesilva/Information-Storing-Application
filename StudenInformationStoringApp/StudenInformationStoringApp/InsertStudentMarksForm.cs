@@ -26,7 +26,9 @@ namespace StudenInformationStoringApp
                 setCmbDepartment();
                 setCmbStudent();
                 setcmbSemester();
- 
+                setcmbSubject();
+
+
     }
             catch (Exception ex)
             {
@@ -58,6 +60,19 @@ namespace StudenInformationStoringApp
 
             //because of this department combo's display inedex will shown as a blank index
             cmbSemester.SelectedIndex = -1;
+        }
+
+        //method which loads the semesters and name into the combobox.
+        public void setcmbSubject()
+        {
+            systemManager objsystemManager = new systemManager();
+            cmbSubject.DataSource = objsystemManager.GetSubjectData();
+            cmbSubject.ValueMember = "SubjectID";
+            cmbSubject.DisplayMember = "SubjectName";
+
+
+            //because of this department combo's display inedex will shown as a blank index
+            cmbSubject.SelectedIndex = -1;
         }
 
         //method which loads the studentID and name into the combobox.

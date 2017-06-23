@@ -74,7 +74,7 @@ namespace DALayer
             }
         }
 
-        //method which semester datails to the db.
+        //method which inserts semester datails to the db.
         public void SemesterDataInToDb(Semesters objSemesters)
         {
             try
@@ -94,7 +94,7 @@ namespace DALayer
             }
         }
 
-        //method which subject datails to the db.
+        //method which inserts subject datails to the db.
         public void SubjectDataInToDb(Department objsystemManager)
         {
             try
@@ -142,10 +142,24 @@ namespace DALayer
 
         }
 
-         //Method which load semester data from db to a data table
+        //Method which load semester data from db to a data table
         public DataTable getSemestertData()
         {
             query = "GetSemesterData";
+            cmd = commandTypeSelector(1);
+            cmd.CommandText = query;
+
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+
+            return dt;
+
+        }
+
+        //Method which load semester data from db to a data table
+        public DataTable getSubjectData()
+        {
+            query = "GetSubjectData";
             cmd = commandTypeSelector(1);
             cmd.CommandText = query;
 

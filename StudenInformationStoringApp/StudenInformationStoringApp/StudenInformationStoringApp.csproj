@@ -102,11 +102,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UdateStudentRecordsForm.cs">
+    <Compile Include="UpdateStudentRecordsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UdateStudentRecordsForm.Designer.cs">
-      <DependentUpon>UdateStudentRecordsForm.cs</DependentUpon>
+    <Compile Include="UpdateStudentRecordsForm.Designer.cs">
+      <DependentUpon>UpdateStudentRecordsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="VeiwStudenMarksForm.cs">
       <SubType>Form</SubType>
@@ -156,8 +156,8 @@
     <EmbeddedResource Include="SystemMainForm.resx">
       <DependentUpon>SystemMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UdateStudentRecordsForm.resx">
-      <DependentUpon>UdateStudentRecordsForm.cs</DependentUpon>
+    <EmbeddedResource Include="UpdateStudentRecordsForm.resx">
+      <DependentUpon>UpdateStudentRecordsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VeiwStudenMarksForm.resx">
       <DependentUpon>VeiwStudenMarksForm.cs</DependentUpon>

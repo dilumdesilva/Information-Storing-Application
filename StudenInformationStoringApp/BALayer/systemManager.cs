@@ -109,5 +109,28 @@ namespace BALayer
             return lstSemesters;
         }
 
+        //create a list to store loded Subject data table from DAL
+        public List<Department> GetSubjectData()
+        {
+            List<Department> lstDepartment = new List<Department>();
+            Department objDepartment = null;
+            dataAccessWorkplace objobjdataAccessWorkplace4 = new dataAccessWorkplace();
+            DataTable dt = new DataTable();
+            dt = objobjdataAccessWorkplace4.getSubjectData();
+            if (dt != null)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    objDepartment = new Department();
+                    objDepartment.SubjectID = (int)dr["SubjectID"];
+                    objDepartment.SubjectCode = dr["SubjectCode"].ToString();
+                    objDepartment.SubjectName = dr["SubjectName"].ToString();
+
+                    lstDepartment.Add(objDepartment);
+                }
+            }
+            return lstDepartment;
+        }
+
     }
 }
