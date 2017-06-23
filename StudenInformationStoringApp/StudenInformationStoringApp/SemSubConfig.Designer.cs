@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SemSubConfig));
             this.picBoxLogoMainForm = new System.Windows.Forms.PictureBox();
             this.cmbSemesterSelect = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvSemesterSubject = new System.Windows.Forms.DataGridView();
             this.lblSemester = new System.Windows.Forms.Label();
             this.lblSubject = new System.Windows.Forms.Label();
             this.cmbSubjectSelect = new System.Windows.Forms.ComboBox();
@@ -40,8 +40,12 @@
             this.lblCopyright1 = new System.Windows.Forms.Label();
             this.btnUpdateDatabse = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.clmSemeterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSemesterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSubjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSemesterSubject)).BeginInit();
             this.SuspendLayout();
             // 
             // picBoxLogoMainForm
@@ -63,13 +67,22 @@
             this.cmbSemesterSelect.Size = new System.Drawing.Size(183, 21);
             this.cmbSemesterSelect.TabIndex = 3;
             // 
-            // dataGridView1
+            // dgvSemesterSubject
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(270, 54);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(405, 196);
-            this.dataGridView1.TabIndex = 4;
+            this.dgvSemesterSubject.AllowUserToAddRows = false;
+            this.dgvSemesterSubject.AllowUserToDeleteRows = false;
+            this.dgvSemesterSubject.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvSemesterSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSemesterSubject.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmSemeterID,
+            this.clmSemesterName,
+            this.clmSubjectID,
+            this.clmSubjectName});
+            this.dgvSemesterSubject.Location = new System.Drawing.Point(270, 54);
+            this.dgvSemesterSubject.Name = "dgvSemesterSubject";
+            this.dgvSemesterSubject.ReadOnly = true;
+            this.dgvSemesterSubject.Size = new System.Drawing.Size(315, 196);
+            this.dgvSemesterSubject.TabIndex = 4;
             // 
             // lblSemester
             // 
@@ -105,6 +118,7 @@
             this.btnSelectionsToGrid.TabIndex = 8;
             this.btnSelectionsToGrid.Text = "Set Selections";
             this.btnSelectionsToGrid.UseVisualStyleBackColor = true;
+            this.btnSelectionsToGrid.Click += new System.EventHandler(this.btnSelectionsToGrid_Click);
             // 
             // lblCopyright2
             // 
@@ -112,7 +126,7 @@
             this.lblCopyright2.BackColor = System.Drawing.Color.Transparent;
             this.lblCopyright2.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F);
             this.lblCopyright2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCopyright2.Location = new System.Drawing.Point(353, 332);
+            this.lblCopyright2.Location = new System.Drawing.Point(292, 342);
             this.lblCopyright2.Name = "lblCopyright2";
             this.lblCopyright2.Size = new System.Drawing.Size(27, 7);
             this.lblCopyright2.TabIndex = 86;
@@ -124,7 +138,7 @@
             this.lblCopyright1.BackColor = System.Drawing.Color.Transparent;
             this.lblCopyright1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
             this.lblCopyright1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCopyright1.Location = new System.Drawing.Point(310, 328);
+            this.lblCopyright1.Location = new System.Drawing.Point(249, 338);
             this.lblCopyright1.Name = "lblCopyright1";
             this.lblCopyright1.Size = new System.Drawing.Size(45, 12);
             this.lblCopyright1.TabIndex = 85;
@@ -132,7 +146,7 @@
             // 
             // btnUpdateDatabse
             // 
-            this.btnUpdateDatabse.Location = new System.Drawing.Point(564, 271);
+            this.btnUpdateDatabse.Location = new System.Drawing.Point(459, 271);
             this.btnUpdateDatabse.Name = "btnUpdateDatabse";
             this.btnUpdateDatabse.Size = new System.Drawing.Size(111, 25);
             this.btnUpdateDatabse.TabIndex = 87;
@@ -148,11 +162,49 @@
             this.label1.TabIndex = 88;
             this.label1.Text = "Your selected details preview";
             // 
+            // clmSemeterID
+            // 
+            this.clmSemeterID.DataPropertyName = "SemesterID";
+            this.clmSemeterID.HeaderText = "SemeterID";
+            this.clmSemeterID.Name = "clmSemeterID";
+            this.clmSemeterID.ReadOnly = true;
+            this.clmSemeterID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.clmSemeterID.Visible = false;
+            this.clmSemeterID.Width = 82;
+            // 
+            // clmSemesterName
+            // 
+            this.clmSemesterName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.clmSemesterName.DataPropertyName = "SemesterName";
+            this.clmSemesterName.HeaderText = "SemesterName";
+            this.clmSemesterName.Name = "clmSemesterName";
+            this.clmSemesterName.ReadOnly = true;
+            this.clmSemesterName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.clmSemesterName.Width = 104;
+            // 
+            // clmSubjectID
+            // 
+            this.clmSubjectID.DataPropertyName = "SubjectID";
+            this.clmSubjectID.HeaderText = "SubjectID";
+            this.clmSubjectID.Name = "clmSubjectID";
+            this.clmSubjectID.ReadOnly = true;
+            this.clmSubjectID.Visible = false;
+            // 
+            // clmSubjectName
+            // 
+            this.clmSubjectName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.clmSubjectName.DataPropertyName = "SubjectName";
+            this.clmSubjectName.HeaderText = "SubjectName";
+            this.clmSubjectName.Name = "clmSubjectName";
+            this.clmSubjectName.ReadOnly = true;
+            this.clmSubjectName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.clmSubjectName.Width = 96;
+            // 
             // SemSubConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 358);
+            this.ClientSize = new System.Drawing.Size(614, 358);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnUpdateDatabse);
             this.Controls.Add(this.lblCopyright2);
@@ -161,7 +213,7 @@
             this.Controls.Add(this.cmbSubjectSelect);
             this.Controls.Add(this.lblSubject);
             this.Controls.Add(this.lblSemester);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvSemesterSubject);
             this.Controls.Add(this.cmbSemesterSelect);
             this.Controls.Add(this.picBoxLogoMainForm);
             this.Name = "SemSubConfig";
@@ -169,7 +221,7 @@
             this.Text = "SemesterSubjectAllocationForm";
             this.Load += new System.EventHandler(this.SemSubConfig_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSemesterSubject)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,7 +231,7 @@
 
         private System.Windows.Forms.PictureBox picBoxLogoMainForm;
         private System.Windows.Forms.ComboBox cmbSemesterSelect;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvSemesterSubject;
         private System.Windows.Forms.Label lblSemester;
         private System.Windows.Forms.Label lblSubject;
         private System.Windows.Forms.ComboBox cmbSubjectSelect;
@@ -188,5 +240,9 @@
         private System.Windows.Forms.Label lblCopyright1;
         private System.Windows.Forms.Button btnUpdateDatabse;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSemeterID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSemesterName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSubjectID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSubjectName;
     }
 }
