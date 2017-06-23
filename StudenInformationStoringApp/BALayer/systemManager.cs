@@ -110,10 +110,10 @@ namespace BALayer
         }
 
         //create a list to store loded Subject data table from DAL
-        public List<Department> GetSubjectData()
+        public List<Subjects> GetSubjectData()
         {
-            List<Department> lstDepartment = new List<Department>();
-            Department objDepartment = null;
+            List<Subjects> lstSubjects = new List<Subjects>();
+            Subjects objSubjects = null;
             dataAccessWorkplace objobjdataAccessWorkplace4 = new dataAccessWorkplace();
             DataTable dt = new DataTable();
             dt = objobjdataAccessWorkplace4.getSubjectData();
@@ -121,15 +121,15 @@ namespace BALayer
             {
                 foreach (DataRow dr in dt.Rows)
                 {
-                    objDepartment = new Department();
-                    objDepartment.SubjectID = (int)dr["SubjectID"];
-                    objDepartment.SubjectCode = dr["SubjectCode"].ToString();
-                    objDepartment.SubjectName = dr["SubjectName"].ToString();
+                    objSubjects = new Subjects();
+                    objSubjects.SubjectID = (int)dr["SubjectID"];
+                    objSubjects.SubjectCode = dr["SubjectCode"].ToString();
+                    objSubjects.SubjectName = dr["SubjectName"].ToString();
 
-                    lstDepartment.Add(objDepartment);
+                    lstSubjects.Add(objSubjects);
                 }
             }
-            return lstDepartment;
+            return lstSubjects;
         }
 
     }

@@ -12,9 +12,9 @@ namespace Shared_Library
         public string DepartmenCode { get; set; }
         public int DepartmentID { get; set; }
 
-        public int SubjectID { get; set; }
-        public string SubjectCode { get; set; }
-        public string SubjectName { get; set; }
+        //public int SubjectID { get; set; }
+        //public string SubjectCode { get; set; }
+        //public string SubjectName { get; set; }
 
     }
 }

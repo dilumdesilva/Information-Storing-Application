@@ -52,5 +52,13 @@ namespace StudenInformationStoringApp
                 MessageBox.Show(ex.Message);
             }
         }
+
+        public void comboToDatagri()
+        {
+            string data1 = cmbSemesterSelect.SelectedValue.ToString();
+            string data2 = cmbSubjectSelect.SelectedValue.ToString();
+
+
+        }
     }
 }
