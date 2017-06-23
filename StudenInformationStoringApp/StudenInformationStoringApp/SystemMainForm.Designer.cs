@@ -199,6 +199,7 @@
             this.semesterSubjectAllocationToolStripMenuItem.Name = "semesterSubjectAllocationToolStripMenuItem";
             this.semesterSubjectAllocationToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.semesterSubjectAllocationToolStripMenuItem.Text = "Semester Subject allocation";
+            this.semesterSubjectAllocationToolStripMenuItem.Click += new System.EventHandler(this.semesterSubjectAllocationToolStripMenuItem_Click);
             // 
             // studentSemsterAllocationToolStripMenuItem
             // 

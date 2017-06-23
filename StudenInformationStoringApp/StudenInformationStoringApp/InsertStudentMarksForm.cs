@@ -69,8 +69,7 @@ namespace StudenInformationStoringApp
             cmbSubject.DataSource = objsystemManager.GetSubjectData();
             cmbSubject.ValueMember = "SubjectID";
             cmbSubject.DisplayMember = "SubjectName";
-
-
+            
             //because of this department combo's display inedex will shown as a blank index
             cmbSubject.SelectedIndex = -1;
         }

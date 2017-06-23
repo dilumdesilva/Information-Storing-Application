@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Shared_Library;
+using BALayer;
 
 namespace StudenInformationStoringApp
 {
@@ -15,6 +17,40 @@ namespace StudenInformationStoringApp
         public SemSubConfig()
         {
             InitializeComponent();
+        }
+
+        public void setSemToCmb()
+        {
+            systemManager objsystemManager1 = new systemManager();
+            cmbSemesterSelect.DataSource = objsystemManager1.GetSemestersData();
+            cmbSemesterSelect.DisplayMember = "SemesterCode";
+            cmbSemesterSelect.ValueMember = "SemesterID";
+
+            cmbSemesterSelect.SelectedIndex =  -1;
+        }
+
+        public void setSubToCmb()
+        {
+            systemManager objsystemManager2 = new systemManager();
+            cmbSubjectSelect.DataSource = objsystemManager2.GetSubjectData();
+            cmbSubjectSelect.DisplayMember = "SubjectName";
+            cmbSubjectSelect.ValueMember = "SubjectID";
+
+            cmbSubjectSelect.SelectedIndex = -1;
+        }
+
+        private void SemSubConfig_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                setSemToCmb();
+                setSubToCmb();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

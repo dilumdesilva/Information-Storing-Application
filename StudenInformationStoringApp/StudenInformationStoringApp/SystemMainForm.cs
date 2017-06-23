@@ -131,5 +131,20 @@ namespace StudenInformationStoringApp
             }
 
         }
+
+        private void semesterSubjectAllocationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SemSubConfig objSemSubConfig = new SemSubConfig();
+
+            //this condition will check whether there is any forms loded before system loads another form.
+            if (!IsAlreadyLoded(objSemSubConfig))
+            {
+                objSemSubConfig.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please save and close the current window !", "System warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }
