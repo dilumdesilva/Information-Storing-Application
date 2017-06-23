@@ -92,7 +92,7 @@ namespace StudenInformationStoringApp
         {
             try
             {
-                duplicateValidation();
+                SubduplicateValidation();
                 FillToGrid();
 
             }
@@ -107,7 +107,7 @@ namespace StudenInformationStoringApp
             }
         }
 
-        private void duplicateValidation()
+        private void SubduplicateValidation()
         {
             int selectedSubID = Convert.ToInt32(cmbSubjectSelect.SelectedValue);
             int selectedSemID = Convert.ToInt32(cmbSemesterSelect.SelectedValue);
