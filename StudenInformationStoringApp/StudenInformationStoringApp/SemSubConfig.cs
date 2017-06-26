@@ -177,35 +177,42 @@ namespace StudenInformationStoringApp
 
         private void btnUpdateDatabse_Click(object sender, EventArgs e)
         {
-           
-            List<SemesterSubject> saveList = (List<SemesterSubject>)dgvSemesterSubject.DataSource;
-
-            if (saveList.Count != 0)
+            try
             {
-                systemManager objsystemManager = new systemManager();
+                List<SemesterSubject> saveList = (List<SemesterSubject>)dgvSemesterSubject.DataSource;
 
-                Subjects objSubjects = null;
-                List<Subjects> lstSubjects = new List<Subjects>();
-                foreach (var item in saveList)
+                if (saveList.Count != 0)
                 {
-                    objSubjects = new Subjects();
-                    objSubjects.ObjSemesters = new Semesters();
-                    objSubjects.SubjectID = item.SubjectID;
-                    objSubjects.ObjSemesters.SemesterID = item.SemesterID;
-                    lstSubjects.Add(objSubjects);
-                }
-                bool res = objsystemManager.insertSubSem(lstSubjects);
-                if (res)
-                {
-                    MessageBox.Show("Saved Successfully");
-                    dgvSemesterSubject.DataSource = null;
+                    systemManager objsystemManager = new systemManager();
+
+                    Subjects objSubjects = null;
+                    List<Subjects> lstSubjects = new List<Subjects>();
+                    foreach (var item in saveList)
+                    {
+                        objSubjects = new Subjects();
+                        objSubjects.ObjSemesters = new Semesters();
+                        objSubjects.SubjectID = item.SubjectID;
+                        objSubjects.ObjSemesters.SemesterID = item.SemesterID;
+                        lstSubjects.Add(objSubjects);
+                    }
+                    bool res = objsystemManager.insertSubSem(lstSubjects);
+                    if (res)
+                    {
+                        MessageBox.Show("Saved Successfully");
+                        dgvSemesterSubject.DataSource = null;
+                    }
+
                 }
 
+                else
+                {
+                    MessageBox.Show("No records has found....\nPlease set values to the feilds before update", "System warning");
+                }
             }
-
-            else
+            catch (Exception ex )
             {
-                MessageBox.Show("No records has found....\nPlease set values to the feilds before update","System warning");
+
+                MessageBox.Show(ex.Message);
             }
         }
 
