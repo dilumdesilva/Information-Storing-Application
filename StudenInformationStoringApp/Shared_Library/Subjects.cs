@@ -11,5 +11,6 @@ namespace Shared_Library
         public int SubjectID { get; set; }
         public string SubjectCode { get; set; }
         public string SubjectName { get; set; }
+        public Semesters ObjSemesters { get; set; }
     }
 }

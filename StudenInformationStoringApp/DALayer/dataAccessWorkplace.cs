@@ -114,6 +114,34 @@ namespace DALayer
             }
         }
 
+        public bool SubSemDataInToDb(DataTable dt)
+        {
+            bool res = false;
+            try
+            {
+                query = "spSaveSubjects";
+                cmd = commandTypeSelector(1);
+               
+                cmd.CommandText = query;                
+                SqlParameter parameter = new SqlParameter();               
+                parameter.ParameterName = "@dtSubjects";
+                parameter.SqlDbType = System.Data.SqlDbType.Structured;
+                parameter.Value = dt;
+                cmd.Parameters.Add(parameter);
+                cmd.ExecuteNonQuery();
+                res = true;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            return res;
+        }
+
+
+
         //Method which load department data from db to a data table
         public DataTable getDepartmentToGrid()
         {

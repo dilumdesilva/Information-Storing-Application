@@ -63,8 +63,8 @@ namespace StudenInformationStoringApp
         public void FillToGrid()
         {
             List<SemesterSubject> alreadyGridList = (List<SemesterSubject>)dgvSemesterSubject.DataSource;
-            SemesterSubject obj = FillSemesterObject();
-            alreadyGridList.Add(obj);
+            SemesterSubject objSemesterSubject = FillSemesterObject();
+            alreadyGridList.Add(objSemesterSubject);
             dgvSemesterSubject.DataSource = null;
             dgvSemesterSubject.DataSource = alreadyGridList;
             
@@ -177,10 +177,28 @@ namespace StudenInformationStoringApp
 
         private void btnUpdateDatabse_Click(object sender, EventArgs e)
         {
-            //validataSave();
+           
+            List<SemesterSubject> saveList = (List<SemesterSubject>)dgvSemesterSubject.DataSource;            
+            systemManager objsystemManager = new systemManager();
 
-            List<SemesterSubject> saveList = (List<SemesterSubject>)dgvSemesterSubject.DataSource;
+            Subjects objSubjects = null;
+            List<Subjects> lstSubjects = new List<Subjects>();
+            foreach (var item in saveList)
+            {
+                objSubjects = new Subjects();
+                objSubjects.ObjSemesters = new Semesters();
+                objSubjects.SubjectID = item.SubjectID;
+                objSubjects.ObjSemesters.SemesterID = item.SemesterID;
+                lstSubjects.Add(objSubjects);
+            }
+           bool res =  objsystemManager.insertSubSem(lstSubjects);
+            if(res)
+            {
+                MessageBox.Show("Saved Successfully");
+                dgvSemesterSubject.DataSource = null;
+            }
             
+
 
         }
 

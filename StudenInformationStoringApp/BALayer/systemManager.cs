@@ -7,6 +7,7 @@ using Shared_Library;
 using DALayer;
 using System.Data;
 
+
 namespace BALayer
 {
     public class systemManager
@@ -38,6 +39,34 @@ namespace BALayer
             //passing the values as object to the dataAccessLayer to store in b
             dataAccessWorkplace objdataAccessWorkplace4 = new dataAccessWorkplace();
             objdataAccessWorkplace4.SubjectDataInToDb(objsystemManager);
+        }
+
+        private DataTable CreateItemTable()
+        {
+            DataTable dt = new DataTable();
+            DataColumn clmSubjectID = new DataColumn("SubjectID", typeof(int));
+            DataColumn clmSemesterID = new DataColumn("SemesterID", typeof(int));      
+           
+            dt.Columns.Add(clmSubjectID);
+            dt.Columns.Add(clmSemesterID);
+            return dt;
+        }
+
+        public bool insertSubSem(List<Subjects> lstSubjects)
+        {
+            //passing the values as object to the dataAccessLayer to store in b           
+            DataTable dt = CreateItemTable();
+
+            DataRow dr;
+            foreach (var item in lstSubjects)
+            {
+                dr = dt.NewRow();
+                dr["SubjectID"] = item.SubjectID;
+                dr["SemesterID"] = item.ObjSemesters.SemesterID;               
+                dt.Rows.Add(dr);
+            }
+            dataAccessWorkplace objdataAccessWorkplace5 = new dataAccessWorkplace();
+            return objdataAccessWorkplace5.SubSemDataInToDb(dt);
         }
 
 
