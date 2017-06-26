@@ -46,6 +46,13 @@
             this.lblCopyright1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtStudentName = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.clmStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmStudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSemester = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmMarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +61,7 @@
             // 
             this.picBoxLogoMainForm.BackColor = System.Drawing.Color.Transparent;
             this.picBoxLogoMainForm.Image = ((System.Drawing.Image)(resources.GetObject("picBoxLogoMainForm.Image")));
-            this.picBoxLogoMainForm.Location = new System.Drawing.Point(65, 15);
+            this.picBoxLogoMainForm.Location = new System.Drawing.Point(69, 22);
             this.picBoxLogoMainForm.Name = "picBoxLogoMainForm";
             this.picBoxLogoMainForm.Size = new System.Drawing.Size(165, 60);
             this.picBoxLogoMainForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -95,7 +102,7 @@
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(146, 21);
             this.cmbDepartment.TabIndex = 5;
-            this.cmbDepartment.SelectedIndexChanged += new System.EventHandler(this.cmbDepartment_SelectedIndexChanged);
+           // this.cmbDepartment.SelectedIndexChanged += new System.EventHandler(this.cmbDepartment_SelectedIndexChanged);
             // 
             // cmbStudentID
             // 
@@ -151,17 +158,27 @@
             // 
             this.btnInsertMarks.Location = new System.Drawing.Point(35, 318);
             this.btnInsertMarks.Name = "btnInsertMarks";
-            this.btnInsertMarks.Size = new System.Drawing.Size(75, 23);
+            this.btnInsertMarks.Size = new System.Drawing.Size(90, 23);
             this.btnInsertMarks.TabIndex = 12;
             this.btnInsertMarks.Text = "Insert Marks";
             this.btnInsertMarks.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmStudent,
+            this.clmStudentID,
+            this.clmDepartment,
+            this.clmSubject,
+            this.clmSemester,
+            this.clmMarks});
             this.dataGridView1.Location = new System.Drawing.Point(324, 22);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(403, 290);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(521, 281);
             this.dataGridView1.TabIndex = 13;
             // 
             // lblCopyright2
@@ -170,7 +187,7 @@
             this.lblCopyright2.BackColor = System.Drawing.Color.Transparent;
             this.lblCopyright2.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F);
             this.lblCopyright2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCopyright2.Location = new System.Drawing.Point(387, 346);
+            this.lblCopyright2.Location = new System.Drawing.Point(493, 375);
             this.lblCopyright2.Name = "lblCopyright2";
             this.lblCopyright2.Size = new System.Drawing.Size(27, 7);
             this.lblCopyright2.TabIndex = 69;
@@ -182,7 +199,7 @@
             this.lblCopyright1.BackColor = System.Drawing.Color.Transparent;
             this.lblCopyright1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
             this.lblCopyright1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCopyright1.Location = new System.Drawing.Point(344, 342);
+            this.lblCopyright1.Location = new System.Drawing.Point(450, 371);
             this.lblCopyright1.Name = "lblCopyright1";
             this.lblCopyright1.Size = new System.Drawing.Size(45, 12);
             this.lblCopyright1.TabIndex = 68;
@@ -204,11 +221,57 @@
             this.txtStudentName.Size = new System.Drawing.Size(146, 20);
             this.txtStudentName.TabIndex = 70;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(756, 318);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(89, 23);
+            this.button1.TabIndex = 72;
+            this.button1.Text = "Update system";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // clmStudent
+            // 
+            this.clmStudent.HeaderText = "Student";
+            this.clmStudent.Name = "clmStudent";
+            this.clmStudent.ReadOnly = true;
+            // 
+            // clmStudentID
+            // 
+            this.clmStudentID.HeaderText = "Student ID";
+            this.clmStudentID.Name = "clmStudentID";
+            this.clmStudentID.ReadOnly = true;
+            // 
+            // clmDepartment
+            // 
+            this.clmDepartment.HeaderText = "Department";
+            this.clmDepartment.Name = "clmDepartment";
+            this.clmDepartment.ReadOnly = true;
+            // 
+            // clmSubject
+            // 
+            this.clmSubject.HeaderText = "Subject";
+            this.clmSubject.Name = "clmSubject";
+            this.clmSubject.ReadOnly = true;
+            // 
+            // clmSemester
+            // 
+            this.clmSemester.HeaderText = "Semester";
+            this.clmSemester.Name = "clmSemester";
+            this.clmSemester.ReadOnly = true;
+            // 
+            // clmMarks
+            // 
+            this.clmMarks.HeaderText = "Marks";
+            this.clmMarks.Name = "clmMarks";
+            this.clmMarks.ReadOnly = true;
+            // 
             // frmInsertStudentMarks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 363);
+            this.ClientSize = new System.Drawing.Size(878, 392);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtStudentName);
             this.Controls.Add(this.lblCopyright2);
@@ -256,5 +319,12 @@
         private System.Windows.Forms.Label lblCopyright1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtStudentName;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmStudent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmStudentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDepartment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSubject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSemester;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmMarks;
     }
 }

@@ -114,9 +114,6 @@ namespace StudenInformationStoringApp
             }
         }
 
-        private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

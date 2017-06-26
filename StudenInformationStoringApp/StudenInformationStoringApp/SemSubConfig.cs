@@ -215,11 +215,6 @@ namespace StudenInformationStoringApp
                 MessageBox.Show(ex.Message);
             }
         }
-
-        //private void validataSave()
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 
 
