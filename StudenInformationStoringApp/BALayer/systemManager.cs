@@ -105,7 +105,7 @@ namespace BALayer
                 foreach (DataRow dr in dt.Rows)
                 {
                     objStudent = new Student();
-                    objStudent.StudentID = (int)dr["StudentID"];
+                    objStudent.StudentID = (int)dr["StudentID"]; 
                     objStudent.universityID = dr["StudentCode"].ToString();
                     objStudent.FullName = dr["StdentName"].ToString();
 
