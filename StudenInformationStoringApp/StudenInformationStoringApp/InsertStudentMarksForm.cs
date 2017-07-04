@@ -17,6 +17,9 @@ namespace StudenInformationStoringApp
         public frmInsertStudentMarks()
         {
             InitializeComponent();
+            dgvStuMarks.AutoGenerateColumns = false;
+            List<formDetails> lst = new List<formDetails>();
+            dgvStuMarks.DataSource = lst;
         }
 
         private void frmInsertStudentMarks_Load(object sender, EventArgs e)
@@ -27,6 +30,7 @@ namespace StudenInformationStoringApp
                 setCmbStudent();
                 setcmbSemester();
                 setcmbSubject();
+                //SetMyCustomFormat();
 
 
     }
@@ -114,8 +118,80 @@ namespace StudenInformationStoringApp
             }
         }
 
-        f
-        
-       
+        public void fillToGrid()
+        {
+            //method to add data to the grid 
+            List<formDetails> alreadyGridList = new List<formDetails>();
+            if(dgvStuMarks.DataSource != null)
+            {
+                alreadyGridList = (List<formDetails>)dgvStuMarks.DataSource;
+            }   
+            
+            formDetails objSemesterSubject = fillStuMarksObject();
+            alreadyGridList.Add(objSemesterSubject);
+            dgvStuMarks.DataSource = null;
+            dgvStuMarks.DataSource = alreadyGridList;
+
+        }
+
+        private formDetails fillStuMarksObject()
+        {
+            formDetails objformDetails = new formDetails();
+            objformDetails.DepartmentID = (int)cmbDepartment.SelectedValue;
+            objformDetails.DepartmentName = cmbDepartment.Text.ToString();
+            objformDetails.StudentID = (int)cmbStudentID.SelectedValue;
+            objformDetails.universityID = cmbStudentID.Text.ToString();
+            objformDetails.stuFullName = txtStudentName.Text;
+            objformDetails.Year = Convert.ToInt32(txtYear.Text);
+            objformDetails.SemesterID = (int)cmbSemester.SelectedValue;
+            objformDetails.SemesterCode = cmbSemester.Text.ToString();
+            objformDetails.SubjectID = (int)cmbSubject.SelectedValue;
+            objformDetails.SubjectCode = cmbSubject.Text.ToString();
+            objformDetails.Mark = Convert.ToInt32(txtMarks.Text);
+            objformDetails.Grade = cmbGrade.Text;
+
+            return objformDetails;
+        }
+
+        private void btnInsertMarks_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                fillToGrid();
+            }
+            catch (Exception EX)
+            {
+
+                MessageBox.Show(EX.Message);
+            }
+        }
+
+        //the way of changin the format of default DateTimePicker
+        //public void SetMyCustomFormat()
+        //{
+        //    // Set the Format type and the CustomFormat string.
+        //    dateTimePicker1.Format = DateTimePickerFormat.Custom;
+        //    dateTimePicker1.CustomFormat = "yyyy";
+        //}
+
+    }
+
+    public class formDetails
+    {
+        //crated a class to fill stuMarks form details.
+        public string DepartmentName { get; set; }
+        public int DepartmentID { get; set; }
+        public int StudentID { get; set; }
+        public string stuFullName { get; set; }
+        public string universityID { get; set; }
+        public int Year { get; set; }
+        public int SubjectID { get; set; }
+        public string SubjectCode { get; set; }
+        public string SubjectName { get; set; }
+        public int SemesterID { get; set; }
+        public string SemesterCode { get; set; }
+        public int Mark { get; set; }
+        public string Grade { get; set; }
+
     }
 }

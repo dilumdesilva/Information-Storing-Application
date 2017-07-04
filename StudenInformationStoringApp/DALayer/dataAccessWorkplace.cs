@@ -121,15 +121,19 @@ namespace DALayer
             {
                 query = "spSaveSubjects";
                 cmd = commandTypeSelector(1);
-               
-                cmd.CommandText = query;                
-                SqlParameter parameter = new SqlParameter();               
+
+                cmd.CommandText = query;
+                SqlParameter parameter = new SqlParameter();
                 parameter.ParameterName = "@dtSubjects";
                 parameter.SqlDbType = System.Data.SqlDbType.Structured;
                 parameter.Value = dt;
                 cmd.Parameters.Add(parameter);
                 cmd.ExecuteNonQuery();
                 res = true;
+            }
+            catch (SqlException se)
+            {
+                throw;
             }
             catch (Exception ex)
             {
