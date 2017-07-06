@@ -49,7 +49,18 @@
             this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
             this.lblDepartment = new System.Windows.Forms.Label();
             this.cmbDepartment = new System.Windows.Forms.ComboBox();
+            this.dgvStudentDetails = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.clmUniversityID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDepartmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDataOfBirth = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // picBoxLogoMainForm
@@ -169,10 +180,92 @@
             resources.ApplyResources(this.cmbDepartment, "cmbDepartment");
             this.cmbDepartment.Name = "cmbDepartment";
             // 
+            // dgvStudentDetails
+            // 
+            this.dgvStudentDetails.AllowUserToAddRows = false;
+            this.dgvStudentDetails.AllowUserToDeleteRows = false;
+            this.dgvStudentDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudentDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmUniversityID,
+            this.clmFirstName,
+            this.clmLastName,
+            this.clmDepartment,
+            this.clmDepartmentID,
+            this.clmDataOfBirth,
+            this.clmAge,
+            this.clmAddress});
+            resources.ApplyResources(this.dgvStudentDetails, "dgvStudentDetails");
+            this.dgvStudentDetails.Name = "dgvStudentDetails";
+            this.dgvStudentDetails.ReadOnly = true;
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // clmUniversityID
+            // 
+            this.clmUniversityID.DataPropertyName = "universityID";
+            resources.ApplyResources(this.clmUniversityID, "clmUniversityID");
+            this.clmUniversityID.Name = "clmUniversityID";
+            this.clmUniversityID.ReadOnly = true;
+            // 
+            // clmFirstName
+            // 
+            this.clmFirstName.DataPropertyName = "firstName";
+            resources.ApplyResources(this.clmFirstName, "clmFirstName");
+            this.clmFirstName.Name = "clmFirstName";
+            this.clmFirstName.ReadOnly = true;
+            // 
+            // clmLastName
+            // 
+            this.clmLastName.DataPropertyName = "lastName";
+            resources.ApplyResources(this.clmLastName, "clmLastName");
+            this.clmLastName.Name = "clmLastName";
+            this.clmLastName.ReadOnly = true;
+            // 
+            // clmDepartment
+            // 
+            this.clmDepartment.DataPropertyName = "DepartmentName";
+            resources.ApplyResources(this.clmDepartment, "clmDepartment");
+            this.clmDepartment.Name = "clmDepartment";
+            this.clmDepartment.ReadOnly = true;
+            // 
+            // clmDepartmentID
+            // 
+            this.clmDepartmentID.DataPropertyName = "DepartmentID";
+            resources.ApplyResources(this.clmDepartmentID, "clmDepartmentID");
+            this.clmDepartmentID.Name = "clmDepartmentID";
+            this.clmDepartmentID.ReadOnly = true;
+            // 
+            // clmDataOfBirth
+            // 
+            this.clmDataOfBirth.DataPropertyName = "dateOfBirth";
+            resources.ApplyResources(this.clmDataOfBirth, "clmDataOfBirth");
+            this.clmDataOfBirth.Name = "clmDataOfBirth";
+            this.clmDataOfBirth.ReadOnly = true;
+            // 
+            // clmAge
+            // 
+            this.clmAge.DataPropertyName = "age";
+            resources.ApplyResources(this.clmAge, "clmAge");
+            this.clmAge.Name = "clmAge";
+            this.clmAge.ReadOnly = true;
+            // 
+            // clmAddress
+            // 
+            this.clmAddress.DataPropertyName = "adress";
+            resources.ApplyResources(this.clmAddress, "clmAddress");
+            this.clmAddress.Name = "clmAddress";
+            this.clmAddress.ReadOnly = true;
+            // 
             // frmInsertStudentDetails
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dgvStudentDetails);
             this.Controls.Add(this.cmbDepartment);
             this.Controls.Add(this.lblDepartment);
             this.Controls.Add(this.dtpBirthDate);
@@ -197,6 +290,7 @@
             this.TopMost = true;
             this.Load += new System.EventHandler(this.frmInsertStudentDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentDetails)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,5 +318,15 @@
         private System.Windows.Forms.DateTimePicker dtpBirthDate;
         private System.Windows.Forms.Label lblDepartment;
         private System.Windows.Forms.ComboBox cmbDepartment;
+        private System.Windows.Forms.DataGridView dgvStudentDetails;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmUniversityID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmFirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmLastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDepartment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDepartmentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDataOfBirth;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmAge;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmAddress;
     }
 }

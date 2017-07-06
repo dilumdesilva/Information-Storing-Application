@@ -1082,7 +1082,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;picBoxLogoMainForm.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>21</value>
   </data>
   <data name="btnRefresh.Location" type="System.Drawing.Point, System.Drawing">
     <value>125, 456</value>
@@ -1106,7 +1106,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnRefresh.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="txtLastName.Location" type="System.Drawing.Point, System.Drawing">
     <value>157, 171</value>
@@ -1127,7 +1127,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtLastName.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1154,7 +1154,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="lblCopyright2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1163,7 +1163,7 @@
     <value>Microsoft Sans Serif, 5.25pt</value>
   </data>
   <data name="lblCopyright2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>183, 520</value>
+    <value>560, 532</value>
   </data>
   <data name="lblCopyright2.Size" type="System.Drawing.Size, System.Drawing">
     <value>27, 7</value>
@@ -1184,7 +1184,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblCopyright2.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="lblCopyright1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1193,7 +1193,7 @@
     <value>Microsoft Sans Serif, 6.75pt</value>
   </data>
   <data name="lblCopyright1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>140, 516</value>
+    <value>517, 528</value>
   </data>
   <data name="lblCopyright1.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 12</value>
@@ -1214,7 +1214,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblCopyright1.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <data name="btnStudentDetailsInsert.Location" type="System.Drawing.Point, System.Drawing">
     <value>39, 456</value>
@@ -1238,7 +1238,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnStudentDetailsInsert.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="txtUniversityID.Location" type="System.Drawing.Point, System.Drawing">
     <value>157, 207</value>
@@ -1259,7 +1259,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtUniversityID.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>16</value>
   </data>
   <data name="txtFirstName.Location" type="System.Drawing.Point, System.Drawing">
     <value>157, 138</value>
@@ -1280,7 +1280,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtFirstName.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>17</value>
   </data>
   <data name="lblStudentID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1307,7 +1307,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblStudentID.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>18</value>
   </data>
   <data name="lblStudentName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1334,7 +1334,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblStudentName.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>19</value>
   </data>
   <data name="lblInstructions.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1361,7 +1361,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblInstructions.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>20</value>
   </data>
   <data name="lblDateOfBirth.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1388,7 +1388,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblDateOfBirth.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="txtAge.Location" type="System.Drawing.Point, System.Drawing">
     <value>157, 322</value>
@@ -1409,7 +1409,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtAge.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="lblAge.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1436,7 +1436,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblAge.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="txtAdress.Location" type="System.Drawing.Point, System.Drawing">
     <value>157, 357</value>
@@ -1460,7 +1460,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtAdress.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="lblAdress.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1469,13 +1469,13 @@
     <value>37, 360</value>
   </data>
   <data name="lblAdress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 13</value>
+    <value>45, 13</value>
   </data>
   <data name="lblAdress.TabIndex" type="System.Int32, mscorlib">
     <value>79</value>
   </data>
   <data name="lblAdress.Text" xml:space="preserve">
-    <value>Adress</value>
+    <value>Address</value>
   </data>
   <data name="&gt;&gt;lblAdress.Name" xml:space="preserve">
     <value>lblAdress</value>
@@ -1487,7 +1487,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblAdress.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="dtpBirthDate.Location" type="System.Drawing.Point, System.Drawing">
     <value>157, 283</value>
@@ -1508,7 +1508,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dtpBirthDate.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lblDepartment.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1538,7 +1538,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblDepartment.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="cmbDepartment.Location" type="System.Drawing.Point, System.Drawing">
     <value>157, 246</value>
@@ -1559,6 +1559,105 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmbDepartment.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="clmUniversityID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="clmUniversityID.HeaderText" xml:space="preserve">
+    <value>University ID</value>
+  </data>
+  <metadata name="clmFirstName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="clmFirstName.HeaderText" xml:space="preserve">
+    <value>FirstName</value>
+  </data>
+  <metadata name="clmLastName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="clmLastName.HeaderText" xml:space="preserve">
+    <value>LastName</value>
+  </data>
+  <metadata name="clmDepartment.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="clmDepartment.HeaderText" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <metadata name="clmDepartmentID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="clmDepartmentID.HeaderText" xml:space="preserve">
+    <value>DepartmentID</value>
+  </data>
+  <data name="clmDepartmentID.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <metadata name="clmDataOfBirth.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="clmDataOfBirth.HeaderText" xml:space="preserve">
+    <value>Data of birth</value>
+  </data>
+  <metadata name="clmAge.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="clmAge.HeaderText" xml:space="preserve">
+    <value>Age</value>
+  </data>
+  <metadata name="clmAddress.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="clmAddress.HeaderText" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="dgvStudentDetails.Location" type="System.Drawing.Point, System.Drawing">
+    <value>355, 41</value>
+  </data>
+  <data name="dgvStudentDetails.Size" type="System.Drawing.Size, System.Drawing">
+    <value>620, 386</value>
+  </data>
+  <data name="dgvStudentDetails.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="&gt;&gt;dgvStudentDetails.Name" xml:space="preserve">
+    <value>dgvStudentDetails</value>
+  </data>
+  <data name="&gt;&gt;dgvStudentDetails.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvStudentDetails.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dgvStudentDetails.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>845, 456</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 27</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>85</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value> Update System</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -1568,7 +1667,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>357, 548</value>
+    <value>1018, 548</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2082,6 +2181,54 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Insert Student Details</value>
+  </data>
+  <data name="&gt;&gt;clmUniversityID.Name" xml:space="preserve">
+    <value>clmUniversityID</value>
+  </data>
+  <data name="&gt;&gt;clmUniversityID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmFirstName.Name" xml:space="preserve">
+    <value>clmFirstName</value>
+  </data>
+  <data name="&gt;&gt;clmFirstName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmLastName.Name" xml:space="preserve">
+    <value>clmLastName</value>
+  </data>
+  <data name="&gt;&gt;clmLastName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmDepartment.Name" xml:space="preserve">
+    <value>clmDepartment</value>
+  </data>
+  <data name="&gt;&gt;clmDepartment.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmDepartmentID.Name" xml:space="preserve">
+    <value>clmDepartmentID</value>
+  </data>
+  <data name="&gt;&gt;clmDepartmentID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmDataOfBirth.Name" xml:space="preserve">
+    <value>clmDataOfBirth</value>
+  </data>
+  <data name="&gt;&gt;clmDataOfBirth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmAge.Name" xml:space="preserve">
+    <value>clmAge</value>
+  </data>
+  <data name="&gt;&gt;clmAge.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmAddress.Name" xml:space="preserve">
+    <value>clmAddress</value>
+  </data>
+  <data name="&gt;&gt;clmAddress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmInsertStudentDetails</value>

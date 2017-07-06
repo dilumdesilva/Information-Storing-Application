@@ -127,8 +127,8 @@ namespace StudenInformationStoringApp
                 alreadyGridList = (List<formDetails>)dgvStuMarks.DataSource;
             }   
             
-            formDetails objSemesterSubject = fillStuMarksObject();
-            alreadyGridList.Add(objSemesterSubject);
+            formDetails objmarks = fillStuMarksObject();
+            alreadyGridList.Add(objmarks);
             dgvStuMarks.DataSource = null;
             dgvStuMarks.DataSource = alreadyGridList;
 
@@ -157,7 +157,13 @@ namespace StudenInformationStoringApp
         {
             try
             {
+                duplicationValidate();
                 fillToGrid();
+               
+            }
+            catch (ApplicationException ax)
+            {
+                MessageBox.Show(ax.Message, "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             catch (Exception EX)
             {
@@ -174,6 +180,20 @@ namespace StudenInformationStoringApp
         //    dateTimePicker1.CustomFormat = "yyyy";
         //}
 
+        private void duplicationValidate()
+        {
+            //int SubjectID = Convert.ToInt32(cmbSubject.SelectedValue);
+             String SubjectName  = cmbSubject.Text.ToString();
+            string SemesterName = cmbSemester.Text.ToString();
+
+            foreach (DataGridViewRow dr in dgvStuMarks.Rows)
+            {
+                if (SemesterName == dr.Cells[4].Value.ToString() && SubjectName == dr.Cells[5].Value.ToString())
+                {
+                    throw new ApplicationException("Record duplication found!\nA student Cannot have multiple mark records for the same subject in " + SemesterName);
+                }
+            }
+        }
     }
 
     public class formDetails

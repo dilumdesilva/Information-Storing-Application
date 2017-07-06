@@ -18,6 +18,11 @@ namespace StudenInformationStoringApp
         public frmInsertStudentDetails()
         {
             InitializeComponent();
+           
+            dgvStudentDetails.AutoGenerateColumns = false;
+            List<Student> lst = new List<Student>();
+            dgvStudentDetails.DataSource = lst;
+            
         }
 
         //to get user inputs
@@ -44,7 +49,8 @@ namespace StudenInformationStoringApp
         {
             try
             {
-                getData();
+                fillToGrid();
+                //getData();
                 MessageBox.Show(txtFirstName.Text+" has been recorded successfuly!","Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -77,5 +83,37 @@ namespace StudenInformationStoringApp
                 MessageBox.Show(ex.Message);
             }
         }
+        public void fillToGrid()
+        {
+            //method to add data to the grid 
+            List<Student> alreadyGridList = new List<Student>();
+            if (dgvStudentDetails.DataSource != null)
+            {
+                alreadyGridList = (List<Student>)dgvStudentDetails.DataSource;
+            }
+
+            Student objStudent = fillStudentDetailsObject();
+            alreadyGridList.Add(objStudent);
+            dgvStudentDetails.DataSource = null;
+            dgvStudentDetails.DataSource = alreadyGridList;
+        }
+        private Student fillStudentDetailsObject()
+        {
+            Student objStudent = new Student();
+            objStudent.firstName = txtFirstName.Text;
+            objStudent.lastName = txtLastName.Text;
+            objStudent.universityID = txtUniversityID.Text;
+
+            objStudent.ObjDepartment = new Department();
+            objStudent.ObjDepartment.DepartmentName = cmbDepartment.Text.ToString();
+            objStudent.ObjDepartment.DepartmentID = (int)cmbDepartment.SelectedValue;
+            objStudent.dateOfBirth = Convert.ToDateTime(dtpBirthDate.Value);
+            objStudent.age = Convert.ToInt32(txtAge.Text);
+            objStudent.adress = txtAdress.Text;
+
+            return objStudent;
+        }
+
     }
+
 }
