@@ -185,6 +185,12 @@ namespace StudenInformationStoringApp
             //int SubjectID = Convert.ToInt32(cmbSubject.SelectedValue);
              String SubjectName  = cmbSubject.Text.ToString();
             string SemesterName = cmbSemester.Text.ToString();
+            string Year = txtYear.Text;
+
+            if (SubjectName == string.Empty || SemesterName == string.Empty || Year == string.Empty)
+            {
+                throw new ApplicationException("Please enter values to the feilds");
+            }
 
             foreach (DataGridViewRow dr in dgvStuMarks.Rows)
             {

@@ -12,7 +12,7 @@ using BALayer;
 
 namespace StudenInformationStoringApp
 {
-    public partial class InsertSemesterDetailsForm : Form
+    public partial class InsertSemesterDetailsForm : System.Windows.Forms.Form
     {
         public InsertSemesterDetailsForm()
         {
