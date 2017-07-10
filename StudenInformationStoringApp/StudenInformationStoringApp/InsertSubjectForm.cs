@@ -44,7 +44,7 @@ namespace StudenInformationStoringApp
 
                 if (Validation())
                 {
-                    getSubjectDetails();
+                    //getSubjectDetails();
                     fillToGrid();
                     //MessageBox.Show(txtSubjectName.Text + "\nhas been recorded successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

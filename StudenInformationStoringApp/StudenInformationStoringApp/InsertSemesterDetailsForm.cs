@@ -17,6 +17,9 @@ namespace StudenInformationStoringApp
         public InsertSemesterDetailsForm()
         {
             InitializeComponent();
+            dgvSemDetails.AutoGenerateColumns = false;
+            List<Semesters> lst = new List<Semesters>();
+            dgvSemDetails.DataSource = lst;
         }
 
         public void getSemesterDetails()
@@ -36,8 +39,31 @@ namespace StudenInformationStoringApp
         {
             try
             {
-                getSemesterDetails();
-                MessageBox.Show(txtSemName.Text + "\nhas been recorded successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (Validation())
+                {
+
+                    if (SemDtlduplicateValidation())
+                    {
+                        fillToGrid();
+                        //getSemesterDetails();
+                        //essageBox.Show(txtSemName.Text + "\nhas been recorded successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }                   
+                    else
+                    {
+                        throw new ApplicationException("Record duplication found!\nCannot proceed with same records");
+                    }
+
+                }
+
+                else
+                {
+                    MessageBox.Show("Empty records has found\nPlease fill the feilds before proceed...", "Empty records", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch(ApplicationException ax)
+            {
+                MessageBox.Show(ax.Message);
             }
             catch (Exception ex)
             {
@@ -45,5 +71,53 @@ namespace StudenInformationStoringApp
                 MessageBox.Show(ex.Message);
             }
         }
+
+        //method which fills the grid with user entered data.
+        public void fillToGrid()
+        {
+            List<Semesters> alreadyGridList = (List<Semesters>)dgvSemDetails.DataSource;
+            Semesters objSemesters = getSemstersDtl();
+            alreadyGridList.Add(objSemesters);
+            dgvSemDetails.DataSource = null;
+            dgvSemDetails.DataSource = alreadyGridList;
+        }
+
+        //method which get user enterd data.
+        private Semesters getSemstersDtl()
+        {
+            Semesters objSemesters = new Semesters();
+            objSemesters.SemesterCode = txtSemCode.Text.ToString();
+            objSemesters.SemesterName = txtSemName.Text.ToString();
+            return objSemesters;
+        }
+
+        //this method will check whether the textboxes(feilds) are empty when user insert data.
+        private Boolean Validation()
+        {
+            bool flag = true;
+            if (txtSemCode.Text == String.Empty || txtSemName.Text == String.Empty)
+            {
+                flag = false;
+            }
+            return flag;
+        }
+
+        //this method will check for whether user is going to insert duplicated records.
+        private Boolean SemDtlduplicateValidation()
+        {
+            string SemesterCode = txtSemCode.Text.ToString();
+            string SemesterName = txtSemName.Text.ToString();
+            bool flag = true;
+
+            foreach (DataGridViewRow dr in dgvSemDetails.Rows)
+            {
+                if (SemesterCode == dr.Cells[0].Value.ToString() || SemesterName == dr.Cells[1].Value.ToString())
+                {
+                    flag = false;
+                }
+            }
+            return flag;
+        }
     }
 }
+

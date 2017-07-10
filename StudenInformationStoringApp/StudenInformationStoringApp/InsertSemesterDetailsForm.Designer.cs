@@ -37,7 +37,12 @@
             this.btnInsertSemesters = new System.Windows.Forms.Button();
             this.lblCopyright2 = new System.Windows.Forms.Label();
             this.lblCopyright1 = new System.Windows.Forms.Label();
+            this.dgvSemDetails = new System.Windows.Forms.DataGridView();
+            this.btnUpdateDB = new System.Windows.Forms.Button();
+            this.clmSemsterCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSemesterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSemDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // picBoxLogoMainForm
@@ -104,7 +109,7 @@
             this.lblCopyright2.BackColor = System.Drawing.Color.Transparent;
             this.lblCopyright2.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F);
             this.lblCopyright2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCopyright2.Location = new System.Drawing.Point(170, 272);
+            this.lblCopyright2.Location = new System.Drawing.Point(383, 271);
             this.lblCopyright2.Name = "lblCopyright2";
             this.lblCopyright2.Size = new System.Drawing.Size(27, 7);
             this.lblCopyright2.TabIndex = 76;
@@ -116,17 +121,57 @@
             this.lblCopyright1.BackColor = System.Drawing.Color.Transparent;
             this.lblCopyright1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
             this.lblCopyright1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCopyright1.Location = new System.Drawing.Point(127, 268);
+            this.lblCopyright1.Location = new System.Drawing.Point(340, 267);
             this.lblCopyright1.Name = "lblCopyright1";
             this.lblCopyright1.Size = new System.Drawing.Size(45, 12);
             this.lblCopyright1.TabIndex = 75;
             this.lblCopyright1.Text = "Copyright";
             // 
+            // dgvSemDetails
+            // 
+            this.dgvSemDetails.AllowUserToAddRows = false;
+            this.dgvSemDetails.AllowUserToDeleteRows = false;
+            this.dgvSemDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSemDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmSemsterCode,
+            this.clmSemesterName});
+            this.dgvSemDetails.Location = new System.Drawing.Point(342, 30);
+            this.dgvSemDetails.Name = "dgvSemDetails";
+            this.dgvSemDetails.ReadOnly = true;
+            this.dgvSemDetails.Size = new System.Drawing.Size(306, 155);
+            this.dgvSemDetails.TabIndex = 77;
+            // 
+            // btnUpdateDB
+            // 
+            this.btnUpdateDB.Location = new System.Drawing.Point(550, 212);
+            this.btnUpdateDB.Name = "btnUpdateDB";
+            this.btnUpdateDB.Size = new System.Drawing.Size(98, 23);
+            this.btnUpdateDB.TabIndex = 78;
+            this.btnUpdateDB.Text = "Upadate system";
+            this.btnUpdateDB.UseVisualStyleBackColor = true;
+            // 
+            // clmSemsterCode
+            // 
+            this.clmSemsterCode.DataPropertyName = "SemesterCode";
+            this.clmSemsterCode.HeaderText = "Semster Code";
+            this.clmSemsterCode.Name = "clmSemsterCode";
+            this.clmSemsterCode.ReadOnly = true;
+            // 
+            // clmSemesterName
+            // 
+            this.clmSemesterName.DataPropertyName = "SemesterName";
+            this.clmSemesterName.HeaderText = "Semester Name";
+            this.clmSemesterName.Name = "clmSemesterName";
+            this.clmSemesterName.ReadOnly = true;
+            this.clmSemesterName.Width = 170;
+            // 
             // InsertSemesterDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(331, 289);
+            this.ClientSize = new System.Drawing.Size(677, 297);
+            this.Controls.Add(this.btnUpdateDB);
+            this.Controls.Add(this.dgvSemDetails);
             this.Controls.Add(this.lblCopyright2);
             this.Controls.Add(this.lblCopyright1);
             this.Controls.Add(this.btnInsertSemesters);
@@ -139,6 +184,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InsertSemesterDetailsForm";
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSemDetails)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,5 +200,9 @@
         private System.Windows.Forms.Button btnInsertSemesters;
         private System.Windows.Forms.Label lblCopyright2;
         private System.Windows.Forms.Label lblCopyright1;
+        private System.Windows.Forms.DataGridView dgvSemDetails;
+        private System.Windows.Forms.Button btnUpdateDB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSemsterCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSemesterName;
     }
 }
