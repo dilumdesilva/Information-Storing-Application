@@ -44,13 +44,8 @@
             this.clmSemesterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSemsterCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSemesterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvSemester = new System.Windows.Forms.DataGridView();
-            this.clmSemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSemDetails)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSemester)).BeginInit();
             this.SuspendLayout();
             // 
             // picBoxLogoMainForm
@@ -147,8 +142,9 @@
             this.dgvSemDetails.Location = new System.Drawing.Point(342, 30);
             this.dgvSemDetails.Name = "dgvSemDetails";
             this.dgvSemDetails.ReadOnly = true;
-            this.dgvSemDetails.Size = new System.Drawing.Size(306, 67);
+            this.dgvSemDetails.Size = new System.Drawing.Size(306, 155);
             this.dgvSemDetails.TabIndex = 77;
+            this.dgvSemDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSemDetails_CellContentClick);
             this.dgvSemDetails.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSemDetails_RowHeaderMouseDoubleClick_1);
             // 
             // btnUpdateDB
@@ -169,6 +165,7 @@
             this.btnDeleteDB.TabIndex = 79;
             this.btnDeleteDB.Text = "Delete";
             this.btnDeleteDB.UseVisualStyleBackColor = true;
+            this.btnDeleteDB.Click += new System.EventHandler(this.btnDeleteDB_Click);
             // 
             // btnReset
             // 
@@ -201,48 +198,11 @@
             this.clmSemesterName.ReadOnly = true;
             this.clmSemesterName.Width = 170;
             // 
-            // dgvSemester
-            // 
-            this.dgvSemester.AllowUserToAddRows = false;
-            this.dgvSemester.AllowUserToDeleteRows = false;
-            this.dgvSemester.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSemester.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmSemID,
-            this.clmSemCode,
-            this.clmSemName});
-            this.dgvSemester.Location = new System.Drawing.Point(322, 112);
-            this.dgvSemester.Name = "dgvSemester";
-            this.dgvSemester.ReadOnly = true;
-            this.dgvSemester.Size = new System.Drawing.Size(326, 94);
-            this.dgvSemester.TabIndex = 81;
-            // 
-            // clmSemID
-            // 
-            this.clmSemID.DataPropertyName = "SemesterID";
-            this.clmSemID.HeaderText = "SemesterID";
-            this.clmSemID.Name = "clmSemID";
-            this.clmSemID.ReadOnly = true;
-            // 
-            // clmSemCode
-            // 
-            this.clmSemCode.DataPropertyName = "SemesterCode";
-            this.clmSemCode.HeaderText = "SemCode";
-            this.clmSemCode.Name = "clmSemCode";
-            this.clmSemCode.ReadOnly = true;
-            // 
-            // clmSemName
-            // 
-            this.clmSemName.DataPropertyName = "SemesterName";
-            this.clmSemName.HeaderText = "SemName";
-            this.clmSemName.Name = "clmSemName";
-            this.clmSemName.ReadOnly = true;
-            // 
             // InsertSemesterDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(677, 291);
-            this.Controls.Add(this.dgvSemester);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnDeleteDB);
             this.Controls.Add(this.btnUpdateDB);
@@ -261,7 +221,6 @@
             this.Load += new System.EventHandler(this.InsertSemesterDetailsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSemDetails)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSemester)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,9 +243,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSemesterID;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSemsterCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSemesterName;
-        private System.Windows.Forms.DataGridView dgvSemester;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmSemID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmSemCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmSemName;
     }
 }

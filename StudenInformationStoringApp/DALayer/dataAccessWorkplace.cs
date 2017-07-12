@@ -202,25 +202,45 @@ namespace DALayer
 
         }
 
-        //public void updateSemesterDetails()
-        //{
-        //    try
-        //    {
-        //        query = "UpdateSemDetails";
-        //        cmd = commandTypeSelector(1);
-        //        cmd.CommandText = query;
-        //        cmd.Parameters.AddWithValue("@SemesterID", sobjsystemManager.SubjectCode);
-        //        cmd.Parameters.AddWithValue("@SemesterName", sobjsystemManager.SubjectName);
-        //        cmd.Parameters.AddWithValue("@SemesterCode", sobjsystemManager.SubjectName);
-        //        cmd.ExecuteNonQuery();
+        //method which perform semester updates to db
+        public void updateSemesterDetails(Semesters objSemesters)
+        {
+            try
+            {
+                query = "UpdateSemDetails";
+                cmd = commandTypeSelector(1);
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@SemesterID", objSemesters.SemesterID);
+                cmd.Parameters.AddWithValue("@SemesterName", objSemesters.SemesterName);
+                cmd.Parameters.AddWithValue("@SemesterCode", objSemesters.SemesterCode);
+                cmd.ExecuteNonQuery();
 
-        //    }
-        //    catch (Exception ex)
-        //    {
+            }
+            catch (Exception ex)
+            {
 
-        //        throw ex;
-        //    }
-        //}
+                throw ex;
+            }
+        }
+
+        //method which perform semester delete from db
+        public void deleteSemesterDetails(Semesters objSemesters)
+        {
+            try
+            {
+                query = "DeleteSemester";
+                cmd = commandTypeSelector(1);
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@SemesterID", objSemesters.SemesterID);
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
 
     }
 }

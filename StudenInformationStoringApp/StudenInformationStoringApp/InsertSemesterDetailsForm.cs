@@ -14,8 +14,8 @@ namespace StudenInformationStoringApp
 {
     public partial class InsertSemesterDetailsForm : System.Windows.Forms.Form
     {
-        bool isUpadated = false; 
-
+        bool isSelected = false;
+        int selectedSemID = 0;
         public InsertSemesterDetailsForm()
         {
             InitializeComponent();
@@ -41,6 +41,8 @@ namespace StudenInformationStoringApp
         {
             try
             {
+                dgvSemDetails.DataSource = null;
+                
                 if (Validation())
                 {
 
@@ -77,7 +79,8 @@ namespace StudenInformationStoringApp
         //method which fills the grid with user entered data.
         public void fillToGrid()
         {
-            List<Semesters> alreadyGridList = (List<Semesters>)dgvSemDetails.DataSource;
+            List<Semesters> alreadyGridList = new List<Semesters>();
+            alreadyGridList = (List<Semesters>)dgvSemDetails.DataSource;
             Semesters objSemesters = getSemstersDtl();
             alreadyGridList.Add(objSemesters);
             dgvSemDetails.DataSource = null;
@@ -126,9 +129,9 @@ namespace StudenInformationStoringApp
         private void setDataSourceToGrid()
         {
             //here um setting the data source for this data grid 
-            dgvSemester.DataSource = null;
+            dgvSemDetails.DataSource = null;
             systemManager objsystemManager = new systemManager();
-            dgvSemester.DataSource = objsystemManager.GetSemestersData();
+            dgvSemDetails.DataSource = objsystemManager.GetSemestersData();
 
 
         }
@@ -144,9 +147,9 @@ namespace StudenInformationStoringApp
             {
                 txtSemCode.Text = dgvSemDetails.Rows[e.RowIndex].Cells[clmSemsterCode.Name].Value.ToString();
                 txtSemName.Text = dgvSemDetails.Rows[e.RowIndex].Cells[clmSemesterName.Name].Value.ToString();
-
+                selectedSemID = Convert.ToInt32(dgvSemDetails.Rows[e.RowIndex].Cells[clmSemesterID.Name].Value);
                 btnInsert.Enabled = false;
-                isUpadated = true;
+                isSelected = true;
 
             }
             catch (Exception ex)
@@ -156,14 +159,18 @@ namespace StudenInformationStoringApp
             }
         }
 
-        public void updateSemesterDetails()
+        public void selectedSemeRowDetails()
         {
-            if (isUpadated == true)
+            if (isSelected == true)
             {
                 Semesters objUpdateSemesters = new Semesters();
                 objUpdateSemesters.SemesterCode = txtSemCode.Text;
                 objUpdateSemesters.SemesterName = txtSemName.Text;
-                objUpdateSemesters.SemesterID = 
+                objUpdateSemesters.SemesterID = selectedSemID;
+
+                systemManager objsystemManagerUpdateSem = new systemManager();
+                objsystemManagerUpdateSem.passSemesterDetails(objUpdateSemesters);
+
             }
         }
 
@@ -173,8 +180,31 @@ namespace StudenInformationStoringApp
             {
                 if (btnInsert.Enabled == false)
                 {
-                    getSemesterDetails();
-                    MessageBox.Show(txtSemName.Text + "\nhas been recorded successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    selectedSemeRowDetails();
+                    MessageBox.Show(txtSemName.Text + "\nhas been updated successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    setDataSourceToGrid();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dgvSemDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnDeleteDB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (btnInsert.Enabled == false)
+                {
+                    selectedSemeRowDetails();
+                    MessageBox.Show(txtSemName.Text + "\nhas been deleted successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     setDataSourceToGrid();
                 }
             }

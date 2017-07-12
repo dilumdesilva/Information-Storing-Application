@@ -34,6 +34,13 @@ namespace BALayer
             objdataAccessWorkplace3.SemesterDataInToDb(objSemesters);
         }
 
+        public void passSemesterDetails(Semesters objSemesters)
+        {
+            //passing the values as object to the dataAccessLayer to store in b
+            dataAccessWorkplace objdataAccessWorkplaceUpdate = new dataAccessWorkplace();
+            objdataAccessWorkplaceUpdate.deleteSemesterDetails(objSemesters);
+        }
+
         public void insertSubjects(Subjects objsystemManager)
         {
             //passing the values as object to the dataAccessLayer to store in b
