@@ -49,12 +49,32 @@ namespace StudenInformationStoringApp
         {
             try
             {
-                fillToGrid();
-                //getData();
-                MessageBox.Show(txtFirstName.Text+" has been recorded successfuly!","Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                if (Validation())
+                {
+                    if (SemDtlduplicateValidation())
+                    {
+                        fillToGrid();
+                        getData();
+                        MessageBox.Show(txtFirstName.Text + " has been recorded successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        throw new ApplicationException("Record duplication found!\nCannot proceed with same records");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Empty records has found\nPlease fill the feilds before proceed...", "Empty records", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            catch (ApplicationException ax)
+            {
+                MessageBox.Show(ax.Message);
             }
             catch (Exception ex)
             {
+
                 MessageBox.Show(ex.Message);
             }
         }
@@ -110,8 +130,40 @@ namespace StudenInformationStoringApp
             objStudent.dateOfBirth = Convert.ToDateTime(dtpBirthDate.Value);
             objStudent.age = Convert.ToInt32(txtAge.Text);
             objStudent.adress = txtAdress.Text;
-
+        
             return objStudent;
+        }
+
+        //this method will check whether the textboxes(feilds) are empty when user insert data.
+        private Boolean Validation()
+        {
+            bool flag = true;
+            if (txtFirstName.Text == String.Empty || txtLastName.Text == String.Empty || txtUniversityID.Text == String.Empty || txtAdress.Text == String.Empty || cmbDepartment.SelectedIndex == -1 || txtAge.Text == String.Empty)
+            {
+                flag = false;
+            }
+            
+            return flag;
+        }
+
+        //this method will check for whether user is going to insert duplicated records.
+        private Boolean SemDtlduplicateValidation()
+        {
+            string firstName = txtFirstName.Text;
+            string lastName = txtLastName.Text;
+            string universityID = txtUniversityID.Text;
+            
+
+            bool flag = true;
+
+            foreach (DataGridViewRow dr in dgvStudentDetails.Rows)
+            {
+                if (firstName == dr.Cells[0].Value.ToString() || lastName == dr.Cells[1].Value.ToString() || universityID == dr.Cells[2].Value.ToString())
+                {
+                    flag = false;
+                }
+            }
+            return flag;
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

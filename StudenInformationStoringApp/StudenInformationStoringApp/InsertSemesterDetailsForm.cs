@@ -41,7 +41,7 @@ namespace StudenInformationStoringApp
         {
             try
             {
-                dgvSemDetails.DataSource = null;
+                //dgvSemDetails.DataSource = null;
                 
                 if (Validation())
                 {
@@ -216,7 +216,15 @@ namespace StudenInformationStoringApp
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            reset();
+            try
+            {
+                reset();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void reset()
