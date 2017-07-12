@@ -38,12 +38,12 @@
             this.lblCopyright2 = new System.Windows.Forms.Label();
             this.lblCopyright1 = new System.Windows.Forms.Label();
             this.dgvSemDetails = new System.Windows.Forms.DataGridView();
-            this.btnUpdateDB = new System.Windows.Forms.Button();
-            this.btnDeleteDB = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
             this.clmSemesterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSemsterCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSemesterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnUpdateDB = new System.Windows.Forms.Button();
+            this.btnDeleteDB = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSemDetails)).BeginInit();
             this.SuspendLayout();
@@ -147,6 +147,28 @@
             this.dgvSemDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSemDetails_CellContentClick);
             this.dgvSemDetails.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSemDetails_RowHeaderMouseDoubleClick_1);
             // 
+            // clmSemesterID
+            // 
+            this.clmSemesterID.DataPropertyName = "SemesterID";
+            this.clmSemesterID.HeaderText = "SemesterID";
+            this.clmSemesterID.Name = "clmSemesterID";
+            this.clmSemesterID.ReadOnly = true;
+            // 
+            // clmSemsterCode
+            // 
+            this.clmSemsterCode.DataPropertyName = "SemesterCode";
+            this.clmSemsterCode.HeaderText = "Semster Code";
+            this.clmSemsterCode.Name = "clmSemsterCode";
+            this.clmSemsterCode.ReadOnly = true;
+            // 
+            // clmSemesterName
+            // 
+            this.clmSemesterName.DataPropertyName = "SemesterName";
+            this.clmSemesterName.HeaderText = "Semester Name";
+            this.clmSemesterName.Name = "clmSemesterName";
+            this.clmSemesterName.ReadOnly = true;
+            this.clmSemesterName.Width = 170;
+            // 
             // btnUpdateDB
             // 
             this.btnUpdateDB.Location = new System.Drawing.Point(490, 212);
@@ -175,28 +197,7 @@
             this.btnReset.TabIndex = 80;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
-            // 
-            // clmSemesterID
-            // 
-            this.clmSemesterID.DataPropertyName = "SemesterID";
-            this.clmSemesterID.HeaderText = "SemesterID";
-            this.clmSemesterID.Name = "clmSemesterID";
-            this.clmSemesterID.ReadOnly = true;
-            // 
-            // clmSemsterCode
-            // 
-            this.clmSemsterCode.DataPropertyName = "SemesterCode";
-            this.clmSemsterCode.HeaderText = "Semster Code";
-            this.clmSemsterCode.Name = "clmSemsterCode";
-            this.clmSemsterCode.ReadOnly = true;
-            // 
-            // clmSemesterName
-            // 
-            this.clmSemesterName.DataPropertyName = "SemesterName";
-            this.clmSemesterName.HeaderText = "Semester Name";
-            this.clmSemesterName.Name = "clmSemesterName";
-            this.clmSemesterName.ReadOnly = true;
-            this.clmSemesterName.Width = 170;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // InsertSemesterDetailsForm
             // 

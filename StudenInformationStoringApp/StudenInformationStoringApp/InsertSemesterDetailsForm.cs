@@ -20,8 +20,8 @@ namespace StudenInformationStoringApp
         {
             InitializeComponent();
             dgvSemDetails.AutoGenerateColumns = false;
-            //List<Semesters> lst = new List<Semesters>();
-           // dgvSemDetails.DataSource = lst;
+            List<Semesters> lst = new List<Semesters>();
+            dgvSemDetails.DataSource = lst;
         }
 
         public void getSemesterDetails()
@@ -79,8 +79,7 @@ namespace StudenInformationStoringApp
         //method which fills the grid with user entered data.
         public void fillToGrid()
         {
-            List<Semesters> alreadyGridList = new List<Semesters>();
-            alreadyGridList = (List<Semesters>)dgvSemDetails.DataSource;
+            List<Semesters> alreadyGridList = (List<Semesters>)dgvSemDetails.DataSource;
             Semesters objSemesters = getSemstersDtl();
             alreadyGridList.Add(objSemesters);
             dgvSemDetails.DataSource = null;
@@ -212,6 +211,42 @@ namespace StudenInformationStoringApp
             {
 
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            reset();
+        }
+
+        public void reset()
+        {
+            try
+            {
+                Action<Control.ControlCollection> func = null;
+
+                func = (controls) =>
+                {
+                    foreach (Control ctrl in controls)
+                        if (ctrl is TextBox)
+                        {
+                            (ctrl as TextBox).Clear();
+                        }
+
+                        else if (ctrl is ComboBox)
+                        {
+                            (ctrl as ComboBox).SelectedValue = -1;
+                        }
+                        else
+                            func(ctrl.Controls);
+                };
+
+                func(Controls);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
     }

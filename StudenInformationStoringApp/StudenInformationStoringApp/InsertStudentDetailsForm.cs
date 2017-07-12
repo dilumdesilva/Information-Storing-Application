@@ -114,6 +114,10 @@ namespace StudenInformationStoringApp
             return objStudent;
         }
 
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

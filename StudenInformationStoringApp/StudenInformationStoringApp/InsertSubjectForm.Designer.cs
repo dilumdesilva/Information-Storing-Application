@@ -38,12 +38,12 @@
             this.lblSemName = new System.Windows.Forms.Label();
             this.picBoxLogoMainForm = new System.Windows.Forms.PictureBox();
             this.dgvSubject = new System.Windows.Forms.DataGridView();
-            this.btnSubjectGridInsertOnce = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.clmSubjectCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSubjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSubjectGridInsertOnce = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubject)).BeginInit();
             this.SuspendLayout();
@@ -147,34 +147,6 @@
             this.dgvSubject.TabIndex = 85;
             this.dgvSubject.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSubject_RowHeaderMouseDoubleClick);
             // 
-            // btnSubjectGridInsertOnce
-            // 
-            this.btnSubjectGridInsertOnce.Location = new System.Drawing.Point(460, 258);
-            this.btnSubjectGridInsertOnce.Name = "btnSubjectGridInsertOnce";
-            this.btnSubjectGridInsertOnce.Size = new System.Drawing.Size(89, 23);
-            this.btnSubjectGridInsertOnce.TabIndex = 86;
-            this.btnSubjectGridInsertOnce.Text = "Update";
-            this.btnSubjectGridInsertOnce.UseVisualStyleBackColor = true;
-            this.btnSubjectGridInsertOnce.Click += new System.EventHandler(this.btnSubjectGridInsertOnce_Click);
-            // 
-            // btnReset
-            // 
-            this.btnReset.Location = new System.Drawing.Point(147, 258);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(89, 23);
-            this.btnReset.TabIndex = 87;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(555, 258);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(89, 23);
-            this.btnDelete.TabIndex = 88;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
             // clmSubjectCode
             // 
             this.clmSubjectCode.DataPropertyName = "SubjectCode";
@@ -196,6 +168,35 @@
             this.clmSubjectID.Name = "clmSubjectID";
             this.clmSubjectID.ReadOnly = true;
             this.clmSubjectID.Visible = false;
+            // 
+            // btnSubjectGridInsertOnce
+            // 
+            this.btnSubjectGridInsertOnce.Location = new System.Drawing.Point(460, 258);
+            this.btnSubjectGridInsertOnce.Name = "btnSubjectGridInsertOnce";
+            this.btnSubjectGridInsertOnce.Size = new System.Drawing.Size(89, 23);
+            this.btnSubjectGridInsertOnce.TabIndex = 86;
+            this.btnSubjectGridInsertOnce.Text = "Update";
+            this.btnSubjectGridInsertOnce.UseVisualStyleBackColor = true;
+            this.btnSubjectGridInsertOnce.Click += new System.EventHandler(this.btnSubjectGridInsertOnce_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(147, 258);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(89, 23);
+            this.btnReset.TabIndex = 87;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(555, 258);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(89, 23);
+            this.btnDelete.TabIndex = 88;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // InsertSubjectForm
             // 
