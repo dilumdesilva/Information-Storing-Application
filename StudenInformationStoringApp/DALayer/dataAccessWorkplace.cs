@@ -202,5 +202,25 @@ namespace DALayer
 
         }
 
+        //public void updateSemesterDetails()
+        //{
+        //    try
+        //    {
+        //        query = "UpdateSemDetails";
+        //        cmd = commandTypeSelector(1);
+        //        cmd.CommandText = query;
+        //        cmd.Parameters.AddWithValue("@SemesterID", sobjsystemManager.SubjectCode);
+        //        cmd.Parameters.AddWithValue("@SemesterName", sobjsystemManager.SubjectName);
+        //        cmd.Parameters.AddWithValue("@SemesterCode", sobjsystemManager.SubjectName);
+        //        cmd.ExecuteNonQuery();
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        throw ex;
+        //    }
+        //}
+
     }
 }

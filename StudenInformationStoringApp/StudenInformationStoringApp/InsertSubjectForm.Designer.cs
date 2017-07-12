@@ -39,8 +39,11 @@
             this.picBoxLogoMainForm = new System.Windows.Forms.PictureBox();
             this.dgvSubject = new System.Windows.Forms.DataGridView();
             this.btnSubjectGridInsertOnce = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.clmSubjectCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSubjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubject)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +54,7 @@
             this.lblCopyright2.BackColor = System.Drawing.Color.Transparent;
             this.lblCopyright2.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F);
             this.lblCopyright2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCopyright2.Location = new System.Drawing.Point(333, 334);
+            this.lblCopyright2.Location = new System.Drawing.Point(336, 320);
             this.lblCopyright2.Name = "lblCopyright2";
             this.lblCopyright2.Size = new System.Drawing.Size(27, 7);
             this.lblCopyright2.TabIndex = 84;
@@ -63,7 +66,7 @@
             this.lblCopyright1.BackColor = System.Drawing.Color.Transparent;
             this.lblCopyright1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
             this.lblCopyright1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCopyright1.Location = new System.Drawing.Point(290, 330);
+            this.lblCopyright1.Location = new System.Drawing.Point(293, 316);
             this.lblCopyright1.Name = "lblCopyright1";
             this.lblCopyright1.Size = new System.Drawing.Size(45, 12);
             this.lblCopyright1.TabIndex = 83;
@@ -73,9 +76,9 @@
             // 
             this.btnInsertSubject.Location = new System.Drawing.Point(41, 258);
             this.btnInsertSubject.Name = "btnInsertSubject";
-            this.btnInsertSubject.Size = new System.Drawing.Size(99, 33);
+            this.btnInsertSubject.Size = new System.Drawing.Size(89, 23);
             this.btnInsertSubject.TabIndex = 82;
-            this.btnInsertSubject.Text = "Insert Subject";
+            this.btnInsertSubject.Text = "Insert";
             this.btnInsertSubject.UseVisualStyleBackColor = true;
             this.btnInsertSubject.Click += new System.EventHandler(this.btnInsertSubject_Click);
             // 
@@ -135,22 +138,42 @@
             this.dgvSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSubject.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmSubjectCode,
-            this.clmSubjectName});
+            this.clmSubjectName,
+            this.clmSubjectID});
             this.dgvSubject.Location = new System.Drawing.Point(363, 31);
             this.dgvSubject.Name = "dgvSubject";
             this.dgvSubject.ReadOnly = true;
             this.dgvSubject.Size = new System.Drawing.Size(281, 206);
             this.dgvSubject.TabIndex = 85;
+            this.dgvSubject.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSubject_RowHeaderMouseDoubleClick);
             // 
             // btnSubjectGridInsertOnce
             // 
-            this.btnSubjectGridInsertOnce.Location = new System.Drawing.Point(545, 258);
+            this.btnSubjectGridInsertOnce.Location = new System.Drawing.Point(460, 258);
             this.btnSubjectGridInsertOnce.Name = "btnSubjectGridInsertOnce";
-            this.btnSubjectGridInsertOnce.Size = new System.Drawing.Size(99, 33);
+            this.btnSubjectGridInsertOnce.Size = new System.Drawing.Size(89, 23);
             this.btnSubjectGridInsertOnce.TabIndex = 86;
-            this.btnSubjectGridInsertOnce.Text = "Update Database";
+            this.btnSubjectGridInsertOnce.Text = "Update";
             this.btnSubjectGridInsertOnce.UseVisualStyleBackColor = true;
             this.btnSubjectGridInsertOnce.Click += new System.EventHandler(this.btnSubjectGridInsertOnce_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(147, 258);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(89, 23);
+            this.btnReset.TabIndex = 87;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(555, 258);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(89, 23);
+            this.btnDelete.TabIndex = 88;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // clmSubjectCode
             // 
@@ -166,11 +189,21 @@
             this.clmSubjectName.Name = "clmSubjectName";
             this.clmSubjectName.ReadOnly = true;
             // 
+            // clmSubjectID
+            // 
+            this.clmSubjectID.DataPropertyName = "SubjectID";
+            this.clmSubjectID.HeaderText = "Subject ID";
+            this.clmSubjectID.Name = "clmSubjectID";
+            this.clmSubjectID.ReadOnly = true;
+            this.clmSubjectID.Visible = false;
+            // 
             // InsertSubjectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(681, 364);
+            this.ClientSize = new System.Drawing.Size(681, 337);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSubjectGridInsertOnce);
             this.Controls.Add(this.dgvSubject);
             this.Controls.Add(this.lblCopyright2);
@@ -184,6 +217,7 @@
             this.Name = "InsertSubjectForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InsertSubjectForm";
+            this.Load += new System.EventHandler(this.InsertSubjectForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubject)).EndInit();
             this.ResumeLayout(false);
@@ -203,7 +237,10 @@
         private System.Windows.Forms.PictureBox picBoxLogoMainForm;
         private System.Windows.Forms.DataGridView dgvSubject;
         private System.Windows.Forms.Button btnSubjectGridInsertOnce;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSubjectCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSubjectName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSubjectID;
     }
 }

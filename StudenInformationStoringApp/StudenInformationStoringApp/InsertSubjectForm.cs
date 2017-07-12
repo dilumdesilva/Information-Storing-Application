@@ -95,6 +95,36 @@ namespace StudenInformationStoringApp
         {
 
         }
+
+        private void setDataSourceToGrid()
+        {
+            //here um setting the data source for this data grid 
+            systemManager objsystemManager = new systemManager();
+            dgvSubject.DataSource = objsystemManager.GetSubjectData();
+          
+
+        }
+
+        private void InsertSubjectForm_Load(object sender, EventArgs e)
+        {
+            setDataSourceToGrid();
+        }
+
+        private void dgvSubject_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            //try
+            //{
+            //    txtSubjectName.Text = dgvDepartment.Rows[e.RowIndex].Cells[clmDepartmentCode.Name].Value.ToString();
+            //    txtSubjectCode.Text = dgvDepartment.Rows[e.RowIndex].Cells[clmDepartmentName.Name].Value.ToString();
+            //    selectedDeptID = Convert.ToInt32(dgvDepartment.Rows[e.RowIndex].Cells[clmDepartmentID.Name].Value);
+            //    btnInsertDepartment.Enabled = false;
+            //}
+            //catch (Exception ex)
+            //{
+
+            //    throw ex;
+            //}
+        }
     }
 
    

@@ -14,6 +14,7 @@ namespace StudenInformationStoringApp
 {
     public partial class InsertDepartments : System.Windows.Forms.Form
     {
+        public int selectedDeptID;
         public InsertDepartments()
         {
             InitializeComponent();
@@ -73,6 +74,42 @@ namespace StudenInformationStoringApp
             }
         }
 
+        public void getModifications()
+        {
+
+        }
+
+        //get selected data to update or delete
+        private void dgvDepartment_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+               txtDeptCode.Text = dgvDepartment.Rows[e.RowIndex].Cells[clmDepartmentCode.Name].Value.ToString();
+               txtDeptName.Text = dgvDepartment.Rows[e.RowIndex].Cells[clmDepartmentName.Name].Value.ToString();
+               selectedDeptID = Convert.ToInt32(dgvDepartment.Rows[e.RowIndex].Cells[clmDepartmentID.Name].Value);
+               btnInsertDepartment.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvDepartment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
 }

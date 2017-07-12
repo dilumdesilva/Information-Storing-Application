@@ -34,15 +34,23 @@
             this.lblSemCode = new System.Windows.Forms.Label();
             this.txtSemName = new System.Windows.Forms.TextBox();
             this.lblSemName = new System.Windows.Forms.Label();
-            this.btnInsertSemesters = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
             this.lblCopyright2 = new System.Windows.Forms.Label();
             this.lblCopyright1 = new System.Windows.Forms.Label();
             this.dgvSemDetails = new System.Windows.Forms.DataGridView();
             this.btnUpdateDB = new System.Windows.Forms.Button();
+            this.btnDeleteDB = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.clmSemesterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSemsterCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSemesterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvSemester = new System.Windows.Forms.DataGridView();
+            this.clmSemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSemDetails)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSemester)).BeginInit();
             this.SuspendLayout();
             // 
             // picBoxLogoMainForm
@@ -93,15 +101,15 @@
             this.lblSemName.TabIndex = 70;
             this.lblSemName.Text = "Semester Name";
             // 
-            // btnInsertSemesters
+            // btnInsert
             // 
-            this.btnInsertSemesters.Location = new System.Drawing.Point(35, 212);
-            this.btnInsertSemesters.Name = "btnInsertSemesters";
-            this.btnInsertSemesters.Size = new System.Drawing.Size(98, 23);
-            this.btnInsertSemesters.TabIndex = 74;
-            this.btnInsertSemesters.Text = "Insert Semester";
-            this.btnInsertSemesters.UseVisualStyleBackColor = true;
-            this.btnInsertSemesters.Click += new System.EventHandler(this.btnInsertSemesters_Click);
+            this.btnInsert.Location = new System.Drawing.Point(35, 212);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(76, 23);
+            this.btnInsert.TabIndex = 74;
+            this.btnInsert.Text = "Insert";
+            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsertSemesters_Click);
             // 
             // lblCopyright2
             // 
@@ -109,7 +117,7 @@
             this.lblCopyright2.BackColor = System.Drawing.Color.Transparent;
             this.lblCopyright2.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F);
             this.lblCopyright2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCopyright2.Location = new System.Drawing.Point(383, 271);
+            this.lblCopyright2.Location = new System.Drawing.Point(363, 269);
             this.lblCopyright2.Name = "lblCopyright2";
             this.lblCopyright2.Size = new System.Drawing.Size(27, 7);
             this.lblCopyright2.TabIndex = 76;
@@ -121,7 +129,7 @@
             this.lblCopyright1.BackColor = System.Drawing.Color.Transparent;
             this.lblCopyright1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
             this.lblCopyright1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCopyright1.Location = new System.Drawing.Point(340, 267);
+            this.lblCopyright1.Location = new System.Drawing.Point(320, 265);
             this.lblCopyright1.Name = "lblCopyright1";
             this.lblCopyright1.Size = new System.Drawing.Size(45, 12);
             this.lblCopyright1.TabIndex = 75;
@@ -133,22 +141,50 @@
             this.dgvSemDetails.AllowUserToDeleteRows = false;
             this.dgvSemDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSemDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmSemesterID,
             this.clmSemsterCode,
             this.clmSemesterName});
             this.dgvSemDetails.Location = new System.Drawing.Point(342, 30);
             this.dgvSemDetails.Name = "dgvSemDetails";
             this.dgvSemDetails.ReadOnly = true;
-            this.dgvSemDetails.Size = new System.Drawing.Size(306, 155);
+            this.dgvSemDetails.Size = new System.Drawing.Size(306, 67);
             this.dgvSemDetails.TabIndex = 77;
+            this.dgvSemDetails.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSemDetails_RowHeaderMouseDoubleClick_1);
             // 
             // btnUpdateDB
             // 
-            this.btnUpdateDB.Location = new System.Drawing.Point(550, 212);
+            this.btnUpdateDB.Location = new System.Drawing.Point(490, 212);
             this.btnUpdateDB.Name = "btnUpdateDB";
-            this.btnUpdateDB.Size = new System.Drawing.Size(98, 23);
+            this.btnUpdateDB.Size = new System.Drawing.Size(76, 23);
             this.btnUpdateDB.TabIndex = 78;
-            this.btnUpdateDB.Text = "Upadate system";
+            this.btnUpdateDB.Text = "Upadate";
             this.btnUpdateDB.UseVisualStyleBackColor = true;
+            this.btnUpdateDB.Click += new System.EventHandler(this.btnUpdateDB_Click);
+            // 
+            // btnDeleteDB
+            // 
+            this.btnDeleteDB.Location = new System.Drawing.Point(572, 212);
+            this.btnDeleteDB.Name = "btnDeleteDB";
+            this.btnDeleteDB.Size = new System.Drawing.Size(76, 23);
+            this.btnDeleteDB.TabIndex = 79;
+            this.btnDeleteDB.Text = "Delete";
+            this.btnDeleteDB.UseVisualStyleBackColor = true;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(117, 212);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(76, 23);
+            this.btnReset.TabIndex = 80;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            // 
+            // clmSemesterID
+            // 
+            this.clmSemesterID.DataPropertyName = "SemesterID";
+            this.clmSemesterID.HeaderText = "SemesterID";
+            this.clmSemesterID.Name = "clmSemesterID";
+            this.clmSemesterID.ReadOnly = true;
             // 
             // clmSemsterCode
             // 
@@ -165,16 +201,55 @@
             this.clmSemesterName.ReadOnly = true;
             this.clmSemesterName.Width = 170;
             // 
+            // dgvSemester
+            // 
+            this.dgvSemester.AllowUserToAddRows = false;
+            this.dgvSemester.AllowUserToDeleteRows = false;
+            this.dgvSemester.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSemester.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmSemID,
+            this.clmSemCode,
+            this.clmSemName});
+            this.dgvSemester.Location = new System.Drawing.Point(322, 112);
+            this.dgvSemester.Name = "dgvSemester";
+            this.dgvSemester.ReadOnly = true;
+            this.dgvSemester.Size = new System.Drawing.Size(326, 94);
+            this.dgvSemester.TabIndex = 81;
+            // 
+            // clmSemID
+            // 
+            this.clmSemID.DataPropertyName = "SemesterID";
+            this.clmSemID.HeaderText = "SemesterID";
+            this.clmSemID.Name = "clmSemID";
+            this.clmSemID.ReadOnly = true;
+            // 
+            // clmSemCode
+            // 
+            this.clmSemCode.DataPropertyName = "SemesterCode";
+            this.clmSemCode.HeaderText = "SemCode";
+            this.clmSemCode.Name = "clmSemCode";
+            this.clmSemCode.ReadOnly = true;
+            // 
+            // clmSemName
+            // 
+            this.clmSemName.DataPropertyName = "SemesterName";
+            this.clmSemName.HeaderText = "SemName";
+            this.clmSemName.Name = "clmSemName";
+            this.clmSemName.ReadOnly = true;
+            // 
             // InsertSemesterDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(677, 297);
+            this.ClientSize = new System.Drawing.Size(677, 291);
+            this.Controls.Add(this.dgvSemester);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.btnDeleteDB);
             this.Controls.Add(this.btnUpdateDB);
             this.Controls.Add(this.dgvSemDetails);
             this.Controls.Add(this.lblCopyright2);
             this.Controls.Add(this.lblCopyright1);
-            this.Controls.Add(this.btnInsertSemesters);
+            this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.txtSemCode);
             this.Controls.Add(this.lblSemCode);
             this.Controls.Add(this.txtSemName);
@@ -183,8 +258,10 @@
             this.Name = "InsertSemesterDetailsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InsertSemesterDetailsForm";
+            this.Load += new System.EventHandler(this.InsertSemesterDetailsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSemDetails)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSemester)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,12 +274,19 @@
         private System.Windows.Forms.Label lblSemCode;
         private System.Windows.Forms.TextBox txtSemName;
         private System.Windows.Forms.Label lblSemName;
-        private System.Windows.Forms.Button btnInsertSemesters;
+        private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Label lblCopyright2;
         private System.Windows.Forms.Label lblCopyright1;
         private System.Windows.Forms.DataGridView dgvSemDetails;
         private System.Windows.Forms.Button btnUpdateDB;
+        private System.Windows.Forms.Button btnDeleteDB;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSemesterID;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSemsterCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSemesterName;
+        private System.Windows.Forms.DataGridView dgvSemester;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSemID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSemCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSemName;
     }
 }

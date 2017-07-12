@@ -50,7 +50,6 @@
             this.lblDepartment = new System.Windows.Forms.Label();
             this.cmbDepartment = new System.Windows.Forms.ComboBox();
             this.dgvStudentDetails = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.clmUniversityID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +58,8 @@
             this.clmDataOfBirth = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentDetails)).BeginInit();
             this.SuspendLayout();
@@ -198,12 +199,6 @@
             this.dgvStudentDetails.Name = "dgvStudentDetails";
             this.dgvStudentDetails.ReadOnly = true;
             // 
-            // button1
-            // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // clmUniversityID
             // 
             this.clmUniversityID.DataPropertyName = "universityID";
@@ -260,11 +255,24 @@
             this.clmAddress.Name = "clmAddress";
             this.clmAddress.ReadOnly = true;
             // 
+            // btnUpdate
+            // 
+            resources.ApplyResources(this.btnUpdate, "btnUpdate");
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            resources.ApplyResources(this.btnDelete, "btnDelete");
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
             // frmInsertStudentDetails
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dgvStudentDetails);
             this.Controls.Add(this.cmbDepartment);
             this.Controls.Add(this.lblDepartment);
@@ -319,7 +327,7 @@
         private System.Windows.Forms.Label lblDepartment;
         private System.Windows.Forms.ComboBox cmbDepartment;
         private System.Windows.Forms.DataGridView dgvStudentDetails;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmUniversityID;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmFirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmLastName;
@@ -328,5 +336,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDataOfBirth;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmAge;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmAddress;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

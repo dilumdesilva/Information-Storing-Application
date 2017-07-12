@@ -14,12 +14,14 @@ namespace StudenInformationStoringApp
 {
     public partial class InsertSemesterDetailsForm : System.Windows.Forms.Form
     {
+        bool isUpadated = false; 
+
         public InsertSemesterDetailsForm()
         {
             InitializeComponent();
             dgvSemDetails.AutoGenerateColumns = false;
-            List<Semesters> lst = new List<Semesters>();
-            dgvSemDetails.DataSource = lst;
+            //List<Semesters> lst = new List<Semesters>();
+           // dgvSemDetails.DataSource = lst;
         }
 
         public void getSemesterDetails()
@@ -45,8 +47,8 @@ namespace StudenInformationStoringApp
                     if (SemDtlduplicateValidation())
                     {
                         fillToGrid();
-                        //getSemesterDetails();
-                        //essageBox.Show(txtSemName.Text + "\nhas been recorded successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        getSemesterDetails();
+                        MessageBox.Show(txtSemName.Text + "\nhas been recorded successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }                   
                     else
@@ -117,6 +119,70 @@ namespace StudenInformationStoringApp
                 }
             }
             return flag;
+        }
+
+
+
+        private void setDataSourceToGrid()
+        {
+            //here um setting the data source for this data grid 
+            dgvSemester.DataSource = null;
+            systemManager objsystemManager = new systemManager();
+            dgvSemester.DataSource = objsystemManager.GetSemestersData();
+
+
+        }
+
+        private void InsertSemesterDetailsForm_Load(object sender, EventArgs e)
+        {
+            setDataSourceToGrid();
+        }
+
+        private void dgvSemDetails_RowHeaderMouseDoubleClick_1(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                txtSemCode.Text = dgvSemDetails.Rows[e.RowIndex].Cells[clmSemsterCode.Name].Value.ToString();
+                txtSemName.Text = dgvSemDetails.Rows[e.RowIndex].Cells[clmSemesterName.Name].Value.ToString();
+
+                btnInsert.Enabled = false;
+                isUpadated = true;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void updateSemesterDetails()
+        {
+            if (isUpadated == true)
+            {
+                Semesters objUpdateSemesters = new Semesters();
+                objUpdateSemesters.SemesterCode = txtSemCode.Text;
+                objUpdateSemesters.SemesterName = txtSemName.Text;
+                objUpdateSemesters.SemesterID = 
+            }
+        }
+
+        private void btnUpdateDB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (btnInsert.Enabled == false)
+                {
+                    getSemesterDetails();
+                    MessageBox.Show(txtSemName.Text + "\nhas been recorded successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    setDataSourceToGrid();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

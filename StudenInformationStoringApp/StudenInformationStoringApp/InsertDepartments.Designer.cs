@@ -36,11 +36,13 @@
             this.lblDeptCode = new System.Windows.Forms.Label();
             this.btnInsertDepartment = new System.Windows.Forms.Button();
             this.dgvDepartment = new System.Windows.Forms.DataGridView();
-            this.lblCopyright2 = new System.Windows.Forms.Label();
-            this.lblCopyright1 = new System.Windows.Forms.Label();
             this.clmDepartmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDepartmentCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDepartmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblCopyright2 = new System.Windows.Forms.Label();
+            this.lblCopyright1 = new System.Windows.Forms.Label();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartment)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +52,7 @@
             this.picBoxLogoMainForm.BackColor = System.Drawing.Color.Transparent;
             this.picBoxLogoMainForm.Image = ((System.Drawing.Image)(resources.GetObject("picBoxLogoMainForm.Image")));
             this.picBoxLogoMainForm.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.picBoxLogoMainForm.Location = new System.Drawing.Point(88, 34);
+            this.picBoxLogoMainForm.Location = new System.Drawing.Point(85, 47);
             this.picBoxLogoMainForm.Name = "picBoxLogoMainForm";
             this.picBoxLogoMainForm.Size = new System.Drawing.Size(175, 65);
             this.picBoxLogoMainForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -93,9 +95,9 @@
             // 
             this.btnInsertDepartment.Location = new System.Drawing.Point(28, 262);
             this.btnInsertDepartment.Name = "btnInsertDepartment";
-            this.btnInsertDepartment.Size = new System.Drawing.Size(104, 28);
+            this.btnInsertDepartment.Size = new System.Drawing.Size(83, 28);
             this.btnInsertDepartment.TabIndex = 7;
-            this.btnInsertDepartment.Text = "Insert Department";
+            this.btnInsertDepartment.Text = "Insert";
             this.btnInsertDepartment.UseVisualStyleBackColor = true;
             this.btnInsertDepartment.Click += new System.EventHandler(this.btnInsertDepartment_Click);
             // 
@@ -112,32 +114,10 @@
             this.dgvDepartment.Location = new System.Drawing.Point(354, 34);
             this.dgvDepartment.Name = "dgvDepartment";
             this.dgvDepartment.ReadOnly = true;
-            this.dgvDepartment.Size = new System.Drawing.Size(333, 300);
+            this.dgvDepartment.Size = new System.Drawing.Size(333, 196);
             this.dgvDepartment.TabIndex = 8;
-            // 
-            // lblCopyright2
-            // 
-            this.lblCopyright2.AutoSize = true;
-            this.lblCopyright2.BackColor = System.Drawing.Color.Transparent;
-            this.lblCopyright2.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F);
-            this.lblCopyright2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCopyright2.Location = new System.Drawing.Point(352, 354);
-            this.lblCopyright2.Name = "lblCopyright2";
-            this.lblCopyright2.Size = new System.Drawing.Size(27, 7);
-            this.lblCopyright2.TabIndex = 67;
-            this.lblCopyright2.Text = "C 2017";
-            // 
-            // lblCopyright1
-            // 
-            this.lblCopyright1.AutoSize = true;
-            this.lblCopyright1.BackColor = System.Drawing.Color.Transparent;
-            this.lblCopyright1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
-            this.lblCopyright1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCopyright1.Location = new System.Drawing.Point(309, 350);
-            this.lblCopyright1.Name = "lblCopyright1";
-            this.lblCopyright1.Size = new System.Drawing.Size(45, 12);
-            this.lblCopyright1.TabIndex = 66;
-            this.lblCopyright1.Text = "Copyright";
+            this.dgvDepartment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDepartment_CellContentClick);
+           // this.dgvDepartment.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDepartment_RowHeaderMouseDoubleClick);
             // 
             // clmDepartmentID
             // 
@@ -163,11 +143,57 @@
             this.clmDepartmentName.ReadOnly = true;
             this.clmDepartmentName.Width = 115;
             // 
+            // lblCopyright2
+            // 
+            this.lblCopyright2.AutoSize = true;
+            this.lblCopyright2.BackColor = System.Drawing.Color.Transparent;
+            this.lblCopyright2.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F);
+            this.lblCopyright2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblCopyright2.Location = new System.Drawing.Point(352, 326);
+            this.lblCopyright2.Name = "lblCopyright2";
+            this.lblCopyright2.Size = new System.Drawing.Size(27, 7);
+            this.lblCopyright2.TabIndex = 67;
+            this.lblCopyright2.Text = "C 2017";
+            // 
+            // lblCopyright1
+            // 
+            this.lblCopyright1.AutoSize = true;
+            this.lblCopyright1.BackColor = System.Drawing.Color.Transparent;
+            this.lblCopyright1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
+            this.lblCopyright1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblCopyright1.Location = new System.Drawing.Point(309, 322);
+            this.lblCopyright1.Name = "lblCopyright1";
+            this.lblCopyright1.Size = new System.Drawing.Size(45, 12);
+            this.lblCopyright1.TabIndex = 66;
+            this.lblCopyright1.Text = "Copyright";
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(515, 262);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(83, 28);
+            this.btnUpdate.TabIndex = 68;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(604, 262);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(83, 28);
+            this.btnDelete.TabIndex = 69;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.button2_Click);
+            // 
             // InsertDepartments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 375);
+            this.ClientSize = new System.Drawing.Size(722, 347);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.lblCopyright2);
             this.Controls.Add(this.lblCopyright1);
             this.Controls.Add(this.dgvDepartment);
@@ -202,5 +228,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDepartmentID;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDepartmentCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDepartmentName;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
