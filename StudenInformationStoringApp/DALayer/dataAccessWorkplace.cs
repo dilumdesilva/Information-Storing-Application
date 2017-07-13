@@ -39,7 +39,7 @@ namespace DALayer
                 cmd= commandTypeSelector(1);
                 cmd.CommandText = query;
                 cmd.Parameters.AddWithValue("@StuCode", student.universityID);
-                cmd.Parameters.AddWithValue("@StuName", student.firstName + " " + student.lastName);
+                cmd.Parameters.AddWithValue("@StuName", student.firstName);
                 cmd.Parameters.AddWithValue("@StuAge", student.age);
                 cmd.Parameters.AddWithValue("@Address", student.adress);
                 cmd.Parameters.AddWithValue("@DateIfBirth", student.dateOfBirth);
@@ -232,6 +232,51 @@ namespace DALayer
                 cmd = commandTypeSelector(1);
                 cmd.CommandText = query;
                 cmd.Parameters.AddWithValue("@SemesterID", objSemesters.SemesterID);
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+
+        //method which perform students updates to db
+        public void updateStudentsDetails(Student student)
+        {
+            try
+            {
+                query = "UpdateStudent";
+                cmd = commandTypeSelector(1);
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@StuID", student.StudentID);
+                cmd.Parameters.AddWithValue("@StuCode", student.universityID);
+                cmd.Parameters.AddWithValue("@StuName",student.firstName);
+                cmd.Parameters.AddWithValue("@StuAge", student.age );
+                cmd.Parameters.AddWithValue("@Address", student.adress);
+                cmd.Parameters.AddWithValue("@DateIfBirth", student.dateOfBirth);
+                cmd.Parameters.AddWithValue("@DepartmentID", student.DepartmentID);
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        //method which perform students delete from db
+        public void deleteStudentsDetails(Student student)
+        {
+            try
+            {
+                query = "DeleteStudent";
+                cmd = commandTypeSelector(1);
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@StuID", student.StudentID);
                 cmd.ExecuteNonQuery();
 
             }

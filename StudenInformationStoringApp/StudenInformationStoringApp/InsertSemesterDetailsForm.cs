@@ -16,6 +16,8 @@ namespace StudenInformationStoringApp
     {
         bool isSelected = false;
         int selectedSemID = 0;
+        bool updateSelected = false;
+        bool deleteSelected = false;
         public InsertSemesterDetailsForm()
         {
             InitializeComponent();
@@ -48,8 +50,9 @@ namespace StudenInformationStoringApp
 
                     if (SemDtlduplicateValidation())
                     {
-                        fillToGrid();
+                       
                         getSemesterDetails();
+                        setDataSourceToGrid();
                         MessageBox.Show(txtSemName.Text + "\nhas been recorded successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }                   
@@ -168,7 +171,16 @@ namespace StudenInformationStoringApp
                 objUpdateSemesters.SemesterID = selectedSemID;
 
                 systemManager objsystemManagerUpdateSem = new systemManager();
-                objsystemManagerUpdateSem.passSemesterDetails(objUpdateSemesters);
+                if (updateSelected == true)
+                {
+                    objsystemManagerUpdateSem.passSemesterDetailsUpdate(objUpdateSemesters);
+                }
+                if (deleteSelected == true)
+                {
+                    objsystemManagerUpdateSem.passSemesterDetailsDelete(objUpdateSemesters);
+                }
+
+
 
             }
         }
@@ -177,6 +189,7 @@ namespace StudenInformationStoringApp
         {
             try
             {
+                updateSelected = true;
                 if (btnInsert.Enabled == false)
                 {
                     selectedSemeRowDetails();
@@ -200,6 +213,7 @@ namespace StudenInformationStoringApp
         {
             try
             {
+                deleteSelected = true;
                 if (btnInsert.Enabled == false)
                 {
                     selectedSemeRowDetails();

@@ -15,16 +15,18 @@ namespace StudenInformationStoringApp
     public partial class frmInsertStudentDetails : Form
     {
         bool isSelected = false;
-        int selectedSemID = 0;
+
+        int SelectedStudentID = 0;
+        int SelectedDeptID = 0;
 
         public frmInsertStudentDetails()
         {
             InitializeComponent();
-           
+
             dgvStudentDetails.AutoGenerateColumns = false;
             List<Student> lst = new List<Student>();
             dgvStudentDetails.DataSource = lst;
-            
+
         }
 
         //to get user inputs
@@ -34,7 +36,7 @@ namespace StudenInformationStoringApp
             Student objStudent = new Student();
 
             objStudent.firstName = txtFirstName.Text;
-            objStudent.lastName = txtLastName.Text;
+            //objStudent.lastName = txtLastName.Text;
             objStudent.universityID = txtUniversityID.Text;
             objStudent.age = Convert.ToInt32(txtAge.Text);
             objStudent.dateOfBirth = Convert.ToDateTime(dtpBirthDate.Value);
@@ -42,7 +44,7 @@ namespace StudenInformationStoringApp
             objStudent.DepartmentID = Convert.ToInt32(cmbDepartment.SelectedValue);
 
             systemManager objsystemManager = new systemManager();
-            objsystemManager.insertStudentDetails(objStudent);
+            objsystemManager.passStudentDetails(objStudent);
 
 
         }
@@ -53,7 +55,7 @@ namespace StudenInformationStoringApp
             {
                 if (Validation())
                 {
-                    if (SemDtlduplicateValidation())
+                    if (DtlduplicateValidation())
                     {
                         fillToGrid();
                         getData();
@@ -83,7 +85,7 @@ namespace StudenInformationStoringApp
 
         //method which loads the departments to the combobox.
         public void setCmbDepartment()
-        { 
+        {
             systemManager objsystemManager = new systemManager();
             cmbDepartment.DataSource = objsystemManager.LoadDepartmentToGrid();
             cmbDepartment.ValueMember = "DepartmentID";
@@ -125,7 +127,7 @@ namespace StudenInformationStoringApp
         {
             Student objStudent = new Student();
             objStudent.firstName = txtFirstName.Text;
-            objStudent.lastName = txtLastName.Text;
+
             objStudent.universityID = txtUniversityID.Text;
 
             objStudent.ObjDepartment = new Department();
@@ -134,7 +136,7 @@ namespace StudenInformationStoringApp
             objStudent.dateOfBirth = Convert.ToDateTime(dtpBirthDate.Value);
             objStudent.age = Convert.ToInt32(txtAge.Text);
             objStudent.adress = txtAdress.Text;
-        
+
             return objStudent;
         }
 
@@ -142,27 +144,27 @@ namespace StudenInformationStoringApp
         private Boolean Validation()
         {
             bool flag = true;
-            if (txtFirstName.Text == String.Empty || txtLastName.Text == String.Empty || txtUniversityID.Text == String.Empty || txtAdress.Text == String.Empty || cmbDepartment.SelectedIndex == -1 || txtAge.Text == String.Empty)
+            if (txtFirstName.Text == String.Empty || txtUniversityID.Text == String.Empty || txtAdress.Text == String.Empty || cmbDepartment.SelectedIndex == -1 || txtAge.Text == String.Empty)
             {
                 flag = false;
             }
-            
+
             return flag;
         }
 
         //this method will check for whether user is going to insert duplicated records.
-        private Boolean SemDtlduplicateValidation()
+        private Boolean DtlduplicateValidation()
         {
             string firstName = txtFirstName.Text;
-            string lastName = txtLastName.Text;
+
             string universityID = txtUniversityID.Text;
-            
+
 
             bool flag = true;
 
             foreach (DataGridViewRow dr in dgvStudentDetails.Rows)
             {
-                if (firstName == dr.Cells[0].Value.ToString() || lastName == dr.Cells[1].Value.ToString() || universityID == dr.Cells[2].Value.ToString())
+                if (firstName == dr.Cells[0].Value.ToString() || universityID == dr.Cells[2].Value.ToString())
                 {
                     flag = false;
                 }
@@ -180,14 +182,16 @@ namespace StudenInformationStoringApp
             try
             {
                 txtFirstName.Text = dgvStudentDetails.Rows[e.RowIndex].Cells[clmFirstName.Name].Value.ToString();
-                txtLastName.Text = dgvStudentDetails.Rows[e.RowIndex].Cells[clmLastName.Name].Value.ToString();
                 txtUniversityID.Text = dgvStudentDetails.Rows[e.RowIndex].Cells[clmUniversityID.Name].Value.ToString();
                 txtAge.Text = dgvStudentDetails.Rows[e.RowIndex].Cells[clmAge.Name].Value.ToString();
                 txtAdress.Text = dgvStudentDetails.Rows[e.RowIndex].Cells[clmAddress.Name].Value.ToString();
-                cmbDepartment.Text = dgvStudentDetails.Rows[e.RowIndex].Cells[cmbDepartment.Name].Value.ToString();
-                dtpBirthDate.Value = Convert.ToDateTime(dgvStudentDetails.Rows[e.RowIndex].Cells[cmbDepartment.Name].Value);
-               // txtUniversityID = Convert.ToInt32(dgvStudentDetails.Rows[e.RowIndex].Cells[clm.Name].Value);
-               // btnInsert.Enabled = false;
+                //cmbDepartment.Text = dgvStudentDetails.Rows[e.RowIndex].Cells[cmbDepartment.Name].Value.ToString();
+                dtpBirthDate.Value = Convert.ToDateTime(dgvStudentDetails.Rows[e.RowIndex].Cells[clmDataOfBirth.Name].Value);
+                SelectedStudentID = Convert.ToInt32(dgvStudentDetails.Rows[e.RowIndex].Cells[clmStudentID.Name].Value);
+                SelectedDeptID = Convert.ToInt32(dgvStudentDetails.Rows[e.RowIndex].Cells[clmDepartmentID.Name].Value);
+
+
+                btnStudentDetailsInsert.Enabled = false;
                 isSelected = true;
 
             }
@@ -195,6 +199,28 @@ namespace StudenInformationStoringApp
             {
 
                 throw ex;
+            }
+        }
+
+        public void selectedStuRowDetails()
+        {
+            if (isSelected == true)
+            {
+                Student objUpdateStudens = new Student();
+                objUpdateStudens.firstName = txtFirstName.Text;
+                objUpdateStudens.universityID = txtUniversityID.Text;
+                objUpdateStudens.age = Convert.ToInt32(txtAge.Text);
+                objUpdateStudens.adress = txtAdress.Text;
+                objUpdateStudens.dateOfBirth = dtpBirthDate.Value;
+
+                objUpdateStudens.ObjDepartment = new Department();
+                objUpdateStudens.ObjDepartment.DepartmentID = SelectedDeptID;
+                
+                objUpdateStudens.StudentID = SelectedStudentID;
+
+                systemManager objsystemManagerUpdateSem = new systemManager();
+                objsystemManagerUpdateSem.passStudentDetails(objUpdateStudens);
+
             }
         }
 
@@ -236,6 +262,51 @@ namespace StudenInformationStoringApp
                 throw ex;
             }
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                selectedStuRowDetails();
+                MessageBox.Show(txtFirstName.Text + "\nhas been updated successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                setDataSourceToGrid();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                selectedStuRowDetails();
+                MessageBox.Show(txtFirstName.Text + "\nhas been updated successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                setDataSourceToGrid();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+    }
+
+    public class studentDetails
+    {
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+        public int age { get; set; }
+        public DateTime dateOfBirth { get; set; }
+        public string universityID { get; set; }
+        public int StudentID { get; set; }
+        public string adress { get; set; }
+        public string DepartmentName { get; set; }
+        public string DepartmenCode { get; set; }
+        public int DepartmentID { get; set; } 
+        public string FullName { get; set; }
     }
 
 }

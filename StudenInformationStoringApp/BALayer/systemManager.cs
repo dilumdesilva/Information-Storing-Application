@@ -12,11 +12,13 @@ namespace BALayer
 {
     public class systemManager
     {
-        public void insertStudentDetails(Student student)
+        public void passStudentDetails(Student student)
         {
 
             dataAccessWorkplace objdataAccessWorkplace1 = new dataAccessWorkplace();
             objdataAccessWorkplace1.studentDetailsInToDb(student);
+            objdataAccessWorkplace1.updateStudentsDetails(student);
+            objdataAccessWorkplace1.deleteStudentsDetails(student);
 
         }
 
@@ -34,7 +36,14 @@ namespace BALayer
             objdataAccessWorkplace3.SemesterDataInToDb(objSemesters);
         }
 
-        public void passSemesterDetails(Semesters objSemesters)
+        public void passSemesterDetailsUpdate(Semesters objSemesters)
+        {
+            //passing the values as object to the dataAccessLayer to store in b
+            dataAccessWorkplace objdataAccessWorkplaceUpdate = new dataAccessWorkplace();
+            objdataAccessWorkplaceUpdate.updateSemesterDetails(objSemesters);
+        }
+
+        public void passSemesterDetailsDelete(Semesters objSemesters)
         {
             //passing the values as object to the dataAccessLayer to store in b
             dataAccessWorkplace objdataAccessWorkplaceUpdate = new dataAccessWorkplace();
@@ -115,7 +124,10 @@ namespace BALayer
                     objStudent.StudentID = (int)dr["StudentID"]; 
                     objStudent.universityID = dr["StudentCode"].ToString();
                     objStudent.FullName = dr["StdentName"].ToString();
-                    objStudent.
+                    objStudent.age = Convert.ToInt32(dr["StudentAge"].ToString());
+                    objStudent.dateOfBirth = Convert.ToDateTime(dr["DateOfBirth"]);
+                    objStudent.adress = dr["Address"].ToString();
+                    objStudent.DepartmentID = Convert.ToInt32(dr["DepartmentID"].ToString());
                     lstStudent.Add(objStudent);
                 }
             }

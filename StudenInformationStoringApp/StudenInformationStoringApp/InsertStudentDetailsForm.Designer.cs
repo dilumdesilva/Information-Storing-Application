@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInsertStudentDetails));
             this.picBoxLogoMainForm = new System.Windows.Forms.PictureBox();
             this.btnReset = new System.Windows.Forms.Button();
-            this.txtLastName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblCopyright2 = new System.Windows.Forms.Label();
             this.lblCopyright1 = new System.Windows.Forms.Label();
             this.btnStudentDetailsInsert = new System.Windows.Forms.Button();
@@ -50,16 +48,16 @@
             this.lblDepartment = new System.Windows.Forms.Label();
             this.cmbDepartment = new System.Windows.Forms.ComboBox();
             this.dgvStudentDetails = new System.Windows.Forms.DataGridView();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.clmUniversityID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmStudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDepartmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDataOfBirth = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentDetails)).BeginInit();
             this.SuspendLayout();
@@ -77,17 +75,6 @@
             this.btnReset.Name = "btnReset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // txtLastName
-            // 
-            resources.ApplyResources(this.txtLastName, "txtLastName");
-            this.txtLastName.Name = "txtLastName";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Name = "label1";
             // 
             // lblCopyright2
             // 
@@ -189,8 +176,8 @@
             this.dgvStudentDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStudentDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmUniversityID,
+            this.clmStudentID,
             this.clmFirstName,
-            this.clmLastName,
             this.clmDepartment,
             this.clmDepartmentID,
             this.clmDataOfBirth,
@@ -201,6 +188,20 @@
             this.dgvStudentDetails.ReadOnly = true;
             this.dgvStudentDetails.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvStudentDetails_RowHeaderMouseDoubleClick);
             // 
+            // btnUpdate
+            // 
+            resources.ApplyResources(this.btnUpdate, "btnUpdate");
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnDelete
+            // 
+            resources.ApplyResources(this.btnDelete, "btnDelete");
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // clmUniversityID
             // 
             this.clmUniversityID.DataPropertyName = "universityID";
@@ -208,19 +209,19 @@
             this.clmUniversityID.Name = "clmUniversityID";
             this.clmUniversityID.ReadOnly = true;
             // 
+            // clmStudentID
+            // 
+            this.clmStudentID.DataPropertyName = "StudentID";
+            resources.ApplyResources(this.clmStudentID, "clmStudentID");
+            this.clmStudentID.Name = "clmStudentID";
+            this.clmStudentID.ReadOnly = true;
+            // 
             // clmFirstName
             // 
-            this.clmFirstName.DataPropertyName = "firstName";
+            this.clmFirstName.DataPropertyName = "FullName";
             resources.ApplyResources(this.clmFirstName, "clmFirstName");
             this.clmFirstName.Name = "clmFirstName";
             this.clmFirstName.ReadOnly = true;
-            // 
-            // clmLastName
-            // 
-            this.clmLastName.DataPropertyName = "lastName";
-            resources.ApplyResources(this.clmLastName, "clmLastName");
-            this.clmLastName.Name = "clmLastName";
-            this.clmLastName.ReadOnly = true;
             // 
             // clmDepartment
             // 
@@ -257,18 +258,6 @@
             this.clmAddress.Name = "clmAddress";
             this.clmAddress.ReadOnly = true;
             // 
-            // btnUpdate
-            // 
-            resources.ApplyResources(this.btnUpdate, "btnUpdate");
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            resources.ApplyResources(this.btnDelete, "btnDelete");
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
             // frmInsertStudentDetails
             // 
             resources.ApplyResources(this, "$this");
@@ -285,8 +274,6 @@
             this.Controls.Add(this.txtAge);
             this.Controls.Add(this.lblAge);
             this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.txtLastName);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCopyright2);
             this.Controls.Add(this.lblCopyright1);
             this.Controls.Add(this.btnStudentDetailsInsert);
@@ -310,8 +297,6 @@
 
         private System.Windows.Forms.PictureBox picBoxLogoMainForm;
         private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.TextBox txtLastName;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblCopyright2;
         private System.Windows.Forms.Label lblCopyright1;
         private System.Windows.Forms.Button btnStudentDetailsInsert;
@@ -330,14 +315,14 @@
         private System.Windows.Forms.ComboBox cmbDepartment;
         private System.Windows.Forms.DataGridView dgvStudentDetails;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmUniversityID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmStudentID;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmFirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmLastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDepartment;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDepartmentID;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDataOfBirth;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmAge;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmAddress;
-        private System.Windows.Forms.Button btnDelete;
     }
 }

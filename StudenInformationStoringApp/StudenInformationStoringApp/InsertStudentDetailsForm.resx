@@ -1082,10 +1082,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;picBoxLogoMainForm.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>20</value>
   </data>
   <data name="btnReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 456</value>
+    <value>125, 433</value>
   </data>
   <data name="btnReset.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 27</value>
@@ -1108,54 +1108,6 @@
   <data name="&gt;&gt;btnReset.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="txtLastName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 171</value>
-  </data>
-  <data name="txtLastName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 20</value>
-  </data>
-  <data name="txtLastName.TabIndex" type="System.Int32, mscorlib">
-    <value>69</value>
-  </data>
-  <data name="&gt;&gt;txtLastName.Name" xml:space="preserve">
-    <value>txtLastName</value>
-  </data>
-  <data name="&gt;&gt;txtLastName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtLastName.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;txtLastName.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 174</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>68</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Last Name</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
   <data name="lblCopyright2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1163,7 +1115,7 @@
     <value>Microsoft Sans Serif, 5.25pt</value>
   </data>
   <data name="lblCopyright2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 532</value>
+    <value>524, 499</value>
   </data>
   <data name="lblCopyright2.Size" type="System.Drawing.Size, System.Drawing">
     <value>27, 7</value>
@@ -1184,7 +1136,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblCopyright2.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>12</value>
   </data>
   <data name="lblCopyright1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1193,7 +1145,7 @@
     <value>Microsoft Sans Serif, 6.75pt</value>
   </data>
   <data name="lblCopyright1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>517, 528</value>
+    <value>481, 495</value>
   </data>
   <data name="lblCopyright1.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 12</value>
@@ -1214,10 +1166,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblCopyright1.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>13</value>
   </data>
   <data name="btnStudentDetailsInsert.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 456</value>
+    <value>39, 433</value>
   </data>
   <data name="btnStudentDetailsInsert.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 27</value>
@@ -1238,10 +1190,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnStudentDetailsInsert.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>14</value>
   </data>
   <data name="txtUniversityID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 207</value>
+    <value>157, 174</value>
   </data>
   <data name="txtUniversityID.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 20</value>
@@ -1259,7 +1211,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtUniversityID.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>15</value>
   </data>
   <data name="txtFirstName.Location" type="System.Drawing.Point, System.Drawing">
     <value>157, 138</value>
@@ -1280,13 +1232,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtFirstName.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>16</value>
   </data>
   <data name="lblStudentID.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblStudentID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 210</value>
+    <value>37, 177</value>
   </data>
   <data name="lblStudentID.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 13</value>
@@ -1307,7 +1259,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblStudentID.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>17</value>
   </data>
   <data name="lblStudentName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1334,7 +1286,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblStudentName.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>18</value>
   </data>
   <data name="lblInstructions.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1361,13 +1313,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblInstructions.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>19</value>
   </data>
   <data name="lblDateOfBirth.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblDateOfBirth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 289</value>
+    <value>37, 256</value>
   </data>
   <data name="lblDateOfBirth.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 13</value>
@@ -1391,7 +1343,7 @@
     <value>8</value>
   </data>
   <data name="txtAge.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 322</value>
+    <value>157, 289</value>
   </data>
   <data name="txtAge.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 20</value>
@@ -1415,7 +1367,7 @@
     <value>True</value>
   </data>
   <data name="lblAge.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 325</value>
+    <value>37, 292</value>
   </data>
   <data name="lblAge.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 13</value>
@@ -1439,7 +1391,7 @@
     <value>10</value>
   </data>
   <data name="txtAdress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 357</value>
+    <value>157, 324</value>
   </data>
   <data name="txtAdress.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1466,7 +1418,7 @@
     <value>True</value>
   </data>
   <data name="lblAdress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 360</value>
+    <value>37, 327</value>
   </data>
   <data name="lblAdress.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
@@ -1490,7 +1442,7 @@
     <value>7</value>
   </data>
   <data name="dtpBirthDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 283</value>
+    <value>157, 250</value>
   </data>
   <data name="dtpBirthDate.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 20</value>
@@ -1517,7 +1469,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblDepartment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 249</value>
+    <value>37, 216</value>
   </data>
   <data name="lblDepartment.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 13</value>
@@ -1541,7 +1493,7 @@
     <value>4</value>
   </data>
   <data name="cmbDepartment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 246</value>
+    <value>157, 213</value>
   </data>
   <data name="cmbDepartment.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 21</value>
@@ -1567,17 +1519,17 @@
   <data name="clmUniversityID.HeaderText" xml:space="preserve">
     <value>University ID</value>
   </data>
+  <metadata name="clmStudentID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="clmStudentID.HeaderText" xml:space="preserve">
+    <value>StudentID</value>
+  </data>
   <metadata name="clmFirstName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="clmFirstName.HeaderText" xml:space="preserve">
     <value>FirstName</value>
-  </data>
-  <metadata name="clmLastName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="clmLastName.HeaderText" xml:space="preserve">
-    <value>LastName</value>
   </data>
   <metadata name="clmDepartment.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1616,7 +1568,7 @@
     <value>355, 41</value>
   </data>
   <data name="dgvStudentDetails.Size" type="System.Drawing.Size, System.Drawing">
-    <value>620, 386</value>
+    <value>628, 353</value>
   </data>
   <data name="dgvStudentDetails.TabIndex" type="System.Int32, mscorlib">
     <value>84</value>
@@ -1637,7 +1589,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>783, 456</value>
+    <value>783, 433</value>
   </data>
   <data name="btnUpdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 27</value>
@@ -1664,7 +1616,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnDelete.Location" type="System.Drawing.Point, System.Drawing">
-    <value>882, 456</value>
+    <value>882, 433</value>
   </data>
   <data name="btnDelete.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 27</value>
@@ -1694,7 +1646,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1018, 548</value>
+    <value>1018, 517</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2215,16 +2167,16 @@
   <data name="&gt;&gt;clmUniversityID.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;clmStudentID.Name" xml:space="preserve">
+    <value>clmStudentID</value>
+  </data>
+  <data name="&gt;&gt;clmStudentID.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;clmFirstName.Name" xml:space="preserve">
     <value>clmFirstName</value>
   </data>
   <data name="&gt;&gt;clmFirstName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clmLastName.Name" xml:space="preserve">
-    <value>clmLastName</value>
-  </data>
-  <data name="&gt;&gt;clmLastName.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;clmDepartment.Name" xml:space="preserve">
