@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInsertStudentDetails));
             this.picBoxLogoMainForm = new System.Windows.Forms.PictureBox();
-            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblCopyright2 = new System.Windows.Forms.Label();
@@ -71,12 +71,12 @@
             this.picBoxLogoMainForm.Name = "picBoxLogoMainForm";
             this.picBoxLogoMainForm.TabStop = false;
             // 
-            // btnRefresh
+            // btnReset
             // 
-            resources.ApplyResources(this.btnRefresh, "btnRefresh");
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            resources.ApplyResources(this.btnReset, "btnReset");
+            this.btnReset.Name = "btnReset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // txtLastName
             // 
@@ -199,6 +199,7 @@
             resources.ApplyResources(this.dgvStudentDetails, "dgvStudentDetails");
             this.dgvStudentDetails.Name = "dgvStudentDetails";
             this.dgvStudentDetails.ReadOnly = true;
+            this.dgvStudentDetails.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvStudentDetails_RowHeaderMouseDoubleClick);
             // 
             // clmUniversityID
             // 
@@ -283,7 +284,7 @@
             this.Controls.Add(this.lblDateOfBirth);
             this.Controls.Add(this.txtAge);
             this.Controls.Add(this.lblAge);
-            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCopyright2);
@@ -308,7 +309,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox picBoxLogoMainForm;
-        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblCopyright2;

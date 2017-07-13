@@ -115,7 +115,7 @@ namespace BALayer
                     objStudent.StudentID = (int)dr["StudentID"]; 
                     objStudent.universityID = dr["StudentCode"].ToString();
                     objStudent.FullName = dr["StdentName"].ToString();
-
+                    objStudent.
                     lstStudent.Add(objStudent);
                 }
             }

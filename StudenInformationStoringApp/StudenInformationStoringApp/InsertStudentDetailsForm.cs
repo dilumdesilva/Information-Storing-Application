@@ -14,7 +14,9 @@ namespace StudenInformationStoringApp
 {
     public partial class frmInsertStudentDetails : Form
     {
-       
+        bool isSelected = false;
+        int selectedSemID = 0;
+
         public frmInsertStudentDetails()
         {
             InitializeComponent();
@@ -95,7 +97,9 @@ namespace StudenInformationStoringApp
         {
             try
             {
+                setDataSourceToGrid();
                 setCmbDepartment();
+
             }
             catch (Exception ex)
             {
@@ -168,7 +172,69 @@ namespace StudenInformationStoringApp
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            reset();
+        }
 
+        private void dgvStudentDetails_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                txtFirstName.Text = dgvStudentDetails.Rows[e.RowIndex].Cells[clmFirstName.Name].Value.ToString();
+                txtLastName.Text = dgvStudentDetails.Rows[e.RowIndex].Cells[clmLastName.Name].Value.ToString();
+                txtUniversityID.Text = dgvStudentDetails.Rows[e.RowIndex].Cells[clmUniversityID.Name].Value.ToString();
+                txtAge.Text = dgvStudentDetails.Rows[e.RowIndex].Cells[clmAge.Name].Value.ToString();
+                txtAdress.Text = dgvStudentDetails.Rows[e.RowIndex].Cells[clmAddress.Name].Value.ToString();
+                cmbDepartment.Text = dgvStudentDetails.Rows[e.RowIndex].Cells[cmbDepartment.Name].Value.ToString();
+                dtpBirthDate.Value = Convert.ToDateTime(dgvStudentDetails.Rows[e.RowIndex].Cells[cmbDepartment.Name].Value);
+               // txtUniversityID = Convert.ToInt32(dgvStudentDetails.Rows[e.RowIndex].Cells[clm.Name].Value);
+               // btnInsert.Enabled = false;
+                isSelected = true;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private void setDataSourceToGrid()
+        {
+            //here um setting the data source for this data grid 
+            dgvStudentDetails.DataSource = null;
+            systemManager objsystemManager = new systemManager();
+            dgvStudentDetails.DataSource = objsystemManager.GetStudentBasicData();
+        }
+
+        public void reset()
+        {
+            try
+            {
+                Action<Control.ControlCollection> func = null;
+
+                func = (controls) =>
+                {
+                    foreach (Control ctrl in controls)
+                        if (ctrl is TextBox)
+                        {
+                            (ctrl as TextBox).Clear();
+                        }
+
+                        else if (ctrl is ComboBox)
+                        {
+                            (ctrl as ComboBox).SelectedValue = -1;
+                        }
+                        else
+                            func(ctrl.Controls);
+                };
+
+                func(Controls);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 
