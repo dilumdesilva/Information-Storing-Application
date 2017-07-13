@@ -20,7 +20,7 @@ namespace BALayer
             objdataAccessWorkplace1.updateStudentsDetails(student);
             objdataAccessWorkplace1.deleteStudentsDetails(student);
 
-        }
+        }                                                                                                                                                                                
 
         public void insertDepartments(Department objDepartment )
         {
@@ -121,13 +121,15 @@ namespace BALayer
                 foreach (DataRow dr in dt.Rows)
                 {
                     objStudent = new Student();
+                    objStudent.ObjDepartment = new Department();
                     objStudent.StudentID = (int)dr["StudentID"]; 
                     objStudent.universityID = dr["StudentCode"].ToString();
                     objStudent.FullName = dr["StdentName"].ToString();
                     objStudent.age = Convert.ToInt32(dr["StudentAge"].ToString());
                     objStudent.dateOfBirth = Convert.ToDateTime(dr["DateOfBirth"]);
                     objStudent.adress = dr["Address"].ToString();
-                    objStudent.DepartmentID = Convert.ToInt32(dr["DepartmentID"].ToString());
+                    objStudent.ObjDepartment.DepartmentID = Convert.ToInt32(dr["DepartmentID"].ToString());
+                    objStudent.ObjDepartment.DepartmentName = dr["DepartmentName"].ToString();
                     lstStudent.Add(objStudent);
                 }
             }

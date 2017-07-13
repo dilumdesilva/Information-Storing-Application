@@ -190,7 +190,7 @@ namespace StudenInformationStoringApp
                 SelectedStudentID = Convert.ToInt32(dgvStudentDetails.Rows[e.RowIndex].Cells[clmStudentID.Name].Value);
                 SelectedDeptID = Convert.ToInt32(dgvStudentDetails.Rows[e.RowIndex].Cells[clmDepartmentID.Name].Value);
 
-
+                cmbDepartment.SelectedValue = SelectedDeptID;
                 btnStudentDetailsInsert.Enabled = false;
                 isSelected = true;
 
@@ -215,7 +215,7 @@ namespace StudenInformationStoringApp
 
                 objUpdateStudens.ObjDepartment = new Department();
                 objUpdateStudens.ObjDepartment.DepartmentID = SelectedDeptID;
-                
+
                 objUpdateStudens.StudentID = SelectedStudentID;
 
                 systemManager objsystemManagerUpdateSem = new systemManager();
@@ -229,7 +229,27 @@ namespace StudenInformationStoringApp
             //here um setting the data source for this data grid 
             dgvStudentDetails.DataSource = null;
             systemManager objsystemManager = new systemManager();
-            dgvStudentDetails.DataSource = objsystemManager.GetStudentBasicData();
+            List<Student> lstStudent = new List<Student>();
+            lstStudent = objsystemManager.GetStudentBasicData();
+            StudentDetails objStudentDetails;
+            List<StudentDetails> lstStudentDetails = new List<StudentDetails>();
+
+            foreach (var item in lstStudent)
+            {
+                objStudentDetails = new StudentDetails();
+                objStudentDetails.firstName = item.FullName;
+                objStudentDetails.age = item.age;
+                objStudentDetails.dateOfBirth = item.dateOfBirth;
+                objStudentDetails.universityID = item.universityID;
+                objStudentDetails.StudentID = item.StudentID;
+                objStudentDetails.adress = item.adress;
+                objStudentDetails.DepartmentName = item.ObjDepartment.DepartmentName;
+                objStudentDetails.DepartmentID = item.ObjDepartment.DepartmentID;
+                lstStudentDetails.Add(objStudentDetails);
+            }
+
+
+            dgvStudentDetails.DataSource = lstStudentDetails;
         }
 
         public void reset()
@@ -294,7 +314,7 @@ namespace StudenInformationStoringApp
         }
     }
 
-    public class studentDetails
+    public class StudentDetails
     {
         public string firstName { get; set; }
         public string lastName { get; set; }
@@ -305,7 +325,7 @@ namespace StudenInformationStoringApp
         public string adress { get; set; }
         public string DepartmentName { get; set; }
         public string DepartmenCode { get; set; }
-        public int DepartmentID { get; set; } 
+        public int DepartmentID { get; set; }
         public string FullName { get; set; }
     }
 

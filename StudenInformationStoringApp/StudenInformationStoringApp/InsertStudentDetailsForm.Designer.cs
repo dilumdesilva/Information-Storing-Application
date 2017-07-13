@@ -218,7 +218,7 @@
             // 
             // clmFirstName
             // 
-            this.clmFirstName.DataPropertyName = "FullName";
+            this.clmFirstName.DataPropertyName = "firstName";
             resources.ApplyResources(this.clmFirstName, "clmFirstName");
             this.clmFirstName.Name = "clmFirstName";
             this.clmFirstName.ReadOnly = true;
