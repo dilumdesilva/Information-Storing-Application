@@ -257,7 +257,7 @@ namespace DALayer
                 cmd.Parameters.AddWithValue("@StuAge", student.age );
                 cmd.Parameters.AddWithValue("@Address", student.adress);
                 cmd.Parameters.AddWithValue("@DateIfBirth", student.dateOfBirth);
-                cmd.Parameters.AddWithValue("@DepartmentID", student.DepartmentID);
+                cmd.Parameters.AddWithValue("@DepartmentID", student.ObjDepartment.DepartmentID);
                 cmd.ExecuteNonQuery();
 
             }
@@ -276,7 +276,7 @@ namespace DALayer
                 query = "DeleteStudent";
                 cmd = commandTypeSelector(1);
                 cmd.CommandText = query;
-                cmd.Parameters.AddWithValue("@StuID", student.StudentID);
+                cmd.Parameters.AddWithValue("@StudentID", student.StudentID);
                 cmd.ExecuteNonQuery();
 
             }

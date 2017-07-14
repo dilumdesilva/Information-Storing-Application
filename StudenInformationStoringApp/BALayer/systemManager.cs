@@ -12,15 +12,28 @@ namespace BALayer
 {
     public class systemManager
     {
-        public void passStudentDetails(Student student)
+        public void InsertStudentDetails( Student student)
         {
 
             dataAccessWorkplace objdataAccessWorkplace1 = new dataAccessWorkplace();
             objdataAccessWorkplace1.studentDetailsInToDb(student);
+
+        }
+
+        public void UpdateStudentDetails(Student student)
+        {
+
+            dataAccessWorkplace objdataAccessWorkplace1 = new dataAccessWorkplace();
             objdataAccessWorkplace1.updateStudentsDetails(student);
+        }
+
+        public void DeleteStudentDetails(Student student)
+        {
+
+            dataAccessWorkplace objdataAccessWorkplace1 = new dataAccessWorkplace();
             objdataAccessWorkplace1.deleteStudentsDetails(student);
 
-        }                                                                                                                                                                                
+        }
 
         public void insertDepartments(Department objDepartment )
         {

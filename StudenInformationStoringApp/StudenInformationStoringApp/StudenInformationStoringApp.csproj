@@ -33,8 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +58,18 @@
     </Compile>
     <Compile Include="AboutMeForm.Designer.cs">
       <DependentUpon>AboutMeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SemesterReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SemesterReport.Designer.cs">
+      <DependentUpon>SemesterReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportViewer.Designer.cs">
+      <DependentUpon>frmReportViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="InsertDepartments.cs">
       <SubType>Form</SubType>
@@ -94,6 +113,12 @@
     <Compile Include="ReportGeneratorForm.Designer.cs">
       <DependentUpon>ReportGeneratorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\rptSemesterDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSemesterDetails.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SemSubConfig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +154,12 @@
     <EmbeddedResource Include="AboutMeForm.resx">
       <DependentUpon>AboutMeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SemesterReport.resx">
+      <DependentUpon>SemesterReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportViewer.resx">
+      <DependentUpon>frmReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InsertDepartments.resx">
       <DependentUpon>InsertDepartments.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +189,10 @@
     </Compile>
     <EmbeddedResource Include="ReportGeneratorForm.resx">
       <DependentUpon>ReportGeneratorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptSemesterDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSemesterDetails.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SemSubConfig.resx">
       <DependentUpon>SemSubConfig.cs</DependentUpon>
@@ -196,6 +231,9 @@
       <Project>{b24cb8fb-2bed-405d-9d3a-7a96ecc91f4d}</Project>
       <Name>Shared_Library</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

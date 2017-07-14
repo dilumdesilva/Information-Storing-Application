@@ -233,6 +233,8 @@ namespace StudenInformationStoringApp
             try
             {
                 reset();
+                btnInsert.Enabled = true;
+                isSelected = false;
             }
             catch (Exception ex)
             {

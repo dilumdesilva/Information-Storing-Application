@@ -16,8 +16,11 @@ namespace StudenInformationStoringApp
     {
         bool isSelected = false;
 
-        int SelectedStudentID = 0;
-        int SelectedDeptID = 0;
+        int SelectedStudentID;
+        int SelectedDeptID;
+
+        bool updateSelected = false;
+        bool deleteSelected = false;
 
         public frmInsertStudentDetails()
         {
@@ -44,7 +47,7 @@ namespace StudenInformationStoringApp
             objStudent.DepartmentID = Convert.ToInt32(cmbDepartment.SelectedValue);
 
             systemManager objsystemManager = new systemManager();
-            objsystemManager.passStudentDetails(objStudent);
+            objsystemManager.InsertStudentDetails(objStudent);
 
 
         }
@@ -57,8 +60,9 @@ namespace StudenInformationStoringApp
                 {
                     if (DtlduplicateValidation())
                     {
-                        fillToGrid();
+                        //fillToGrid();
                         getData();
+                        setDataSourceToGrid();
                         MessageBox.Show(txtFirstName.Text + " has been recorded successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -109,20 +113,20 @@ namespace StudenInformationStoringApp
                 MessageBox.Show(ex.Message);
             }
         }
-        public void fillToGrid()
-        {
-            //method to add data to the grid 
-            List<Student> alreadyGridList = new List<Student>();
-            if (dgvStudentDetails.DataSource != null)
-            {
-                alreadyGridList = (List<Student>)dgvStudentDetails.DataSource;
-            }
+        //public void fillToGrid()
+        //{
+        //    //method to add data to the grid 
+        //    List<StudentDetails> alreadyGridList = new List<StudentDetails>();
+        //    if (dgvStudentDetails.DataSource != null)
+        //    {
+        //        alreadyGridList = (List<StudentDetails>)dgvStudentDetails.DataSource;
+        //    }
 
-            Student objStudent = fillStudentDetailsObject();
-            alreadyGridList.Add(objStudent);
-            dgvStudentDetails.DataSource = null;
-            dgvStudentDetails.DataSource = alreadyGridList;
-        }
+        //    StudentDetails objStudent = fillStudentDetailsObject();
+        //    alreadyGridList.Add(objStudent);
+        //    dgvStudentDetails.DataSource = null;
+        //    dgvStudentDetails.DataSource = alreadyGridList;
+        //}
         private Student fillStudentDetailsObject()
         {
             Student objStudent = new Student();
@@ -175,6 +179,7 @@ namespace StudenInformationStoringApp
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             reset();
+            btnStudentDetailsInsert.Enabled = true;
         }
 
         private void dgvStudentDetails_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -189,6 +194,9 @@ namespace StudenInformationStoringApp
                 dtpBirthDate.Value = Convert.ToDateTime(dgvStudentDetails.Rows[e.RowIndex].Cells[clmDataOfBirth.Name].Value);
                 SelectedStudentID = Convert.ToInt32(dgvStudentDetails.Rows[e.RowIndex].Cells[clmStudentID.Name].Value);
                 SelectedDeptID = Convert.ToInt32(dgvStudentDetails.Rows[e.RowIndex].Cells[clmDepartmentID.Name].Value);
+
+                Student obj = new Student();
+                obj.StudentID = SelectedStudentID;
 
                 cmbDepartment.SelectedValue = SelectedDeptID;
                 btnStudentDetailsInsert.Enabled = false;
@@ -207,6 +215,7 @@ namespace StudenInformationStoringApp
             if (isSelected == true)
             {
                 Student objUpdateStudens = new Student();
+                objUpdateStudens.StudentID = SelectedStudentID;
                 objUpdateStudens.firstName = txtFirstName.Text;
                 objUpdateStudens.universityID = txtUniversityID.Text;
                 objUpdateStudens.age = Convert.ToInt32(txtAge.Text);
@@ -214,12 +223,21 @@ namespace StudenInformationStoringApp
                 objUpdateStudens.dateOfBirth = dtpBirthDate.Value;
 
                 objUpdateStudens.ObjDepartment = new Department();
-                objUpdateStudens.ObjDepartment.DepartmentID = SelectedDeptID;
+                objUpdateStudens.ObjDepartment.DepartmentID = Convert.ToInt32(cmbDepartment.SelectedValue);
 
-                objUpdateStudens.StudentID = SelectedStudentID;
+              
 
                 systemManager objsystemManagerUpdateSem = new systemManager();
-                objsystemManagerUpdateSem.passStudentDetails(objUpdateStudens);
+
+                if (updateSelected == true)
+                {
+                    objsystemManagerUpdateSem.UpdateStudentDetails(objUpdateStudens);
+                }
+                if (deleteSelected == true)
+                {
+                    objsystemManagerUpdateSem.DeleteStudentDetails(objUpdateStudens);
+                }
+               
 
             }
         }
@@ -287,9 +305,14 @@ namespace StudenInformationStoringApp
         {
             try
             {
-                selectedStuRowDetails();
-                MessageBox.Show(txtFirstName.Text + "\nhas been updated successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                setDataSourceToGrid();
+                updateSelected = true;
+                if (btnStudentDetailsInsert.Enabled == false)
+                {
+                    selectedStuRowDetails();
+                    MessageBox.Show(txtFirstName.Text + "\nhas been updated successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    setDataSourceToGrid();
+                }
+               
             }
             catch (Exception ex)
             {
@@ -302,9 +325,14 @@ namespace StudenInformationStoringApp
         {
             try
             {
-                selectedStuRowDetails();
-                MessageBox.Show(txtFirstName.Text + "\nhas been updated successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                setDataSourceToGrid();
+                deleteSelected = true;
+                if (btnStudentDetailsInsert.Enabled == false)
+                {
+                    selectedStuRowDetails();
+                    MessageBox.Show(txtFirstName.Text + "\nhas been updated successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    setDataSourceToGrid();
+                }
+               
             }
             catch (Exception ex)
             {
