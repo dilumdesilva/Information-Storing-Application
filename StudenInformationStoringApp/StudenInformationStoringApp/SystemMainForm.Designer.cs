@@ -45,10 +45,11 @@
             this.generateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.systemReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.semesterSubjectAllocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studentSemsterAllocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.semesterDetailsReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -167,6 +168,8 @@
             // 
             // systemReportToolStripMenuItem
             // 
+            this.systemReportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.semesterDetailsReportToolStripMenuItem});
             this.systemReportToolStripMenuItem.Name = "systemReportToolStripMenuItem";
             this.systemReportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.systemReportToolStripMenuItem.Text = "System report";
@@ -180,20 +183,6 @@
             this.configurationToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
             this.configurationToolStripMenuItem.Text = "Configuration";
             // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutSystemToolStripMenuItem});
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.aboutToolStripMenuItem.Text = "About";
-            // 
-            // aboutSystemToolStripMenuItem
-            // 
-            this.aboutSystemToolStripMenuItem.Name = "aboutSystemToolStripMenuItem";
-            this.aboutSystemToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.aboutSystemToolStripMenuItem.Text = "About system";
-            // 
             // semesterSubjectAllocationToolStripMenuItem
             // 
             this.semesterSubjectAllocationToolStripMenuItem.Name = "semesterSubjectAllocationToolStripMenuItem";
@@ -206,6 +195,27 @@
             this.studentSemsterAllocationToolStripMenuItem.Name = "studentSemsterAllocationToolStripMenuItem";
             this.studentSemsterAllocationToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.studentSemsterAllocationToolStripMenuItem.Text = "Student Semster allocation";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutSystemToolStripMenuItem});
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // aboutSystemToolStripMenuItem
+            // 
+            this.aboutSystemToolStripMenuItem.Name = "aboutSystemToolStripMenuItem";
+            this.aboutSystemToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.aboutSystemToolStripMenuItem.Text = "About system";
+            // 
+            // semesterDetailsReportToolStripMenuItem
+            // 
+            this.semesterDetailsReportToolStripMenuItem.Name = "semesterDetailsReportToolStripMenuItem";
+            this.semesterDetailsReportToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.semesterDetailsReportToolStripMenuItem.Text = "Semester Details Report";
+            this.semesterDetailsReportToolStripMenuItem.Click += new System.EventHandler(this.semesterDetailsReportToolStripMenuItem_Click);
             // 
             // SystemMainForm
             // 
@@ -250,6 +260,7 @@
         private System.Windows.Forms.ToolStripMenuItem subjectsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem semesterSubjectAllocationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem studentSemsterAllocationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem semesterDetailsReportToolStripMenuItem;
     }
 }
 

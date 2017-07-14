@@ -58,6 +58,7 @@
             this.Controls.Add(this.lblSemesterReport);
             this.Controls.Add(this.btnViewSemReport);
             this.Name = "SemesterReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();
 
