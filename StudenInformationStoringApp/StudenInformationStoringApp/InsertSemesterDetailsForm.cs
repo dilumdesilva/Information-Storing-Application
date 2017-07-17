@@ -14,8 +14,8 @@ namespace StudenInformationStoringApp
 {
     public partial class InsertSemesterDetailsForm : System.Windows.Forms.Form
     {
-        bool isSelected = false;
         int selectedSemID = 0;
+        bool isSelected = false;
         bool updateSelected = false;
         bool deleteSelected = false;
         public InsertSemesterDetailsForm()

@@ -15,6 +15,10 @@ namespace StudenInformationStoringApp
     public partial class InsertDepartments : System.Windows.Forms.Form
     {
         public int selectedDeptID;
+        bool isSelected = false;
+        bool updateSelected = false;
+        bool deleteSelected = false;
+
         public InsertDepartments()
         {
             InitializeComponent();
@@ -74,28 +78,6 @@ namespace StudenInformationStoringApp
             }
         }
 
-        public void getModifications()
-        {
-
-        }
-
-        //get selected data to update or delete
-        private void dgvDepartment_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            try
-            {
-               txtDeptCode.Text = dgvDepartment.Rows[e.RowIndex].Cells[clmDepartmentCode.Name].Value.ToString();
-               txtDeptName.Text = dgvDepartment.Rows[e.RowIndex].Cells[clmDepartmentName.Name].Value.ToString();
-               selectedDeptID = Convert.ToInt32(dgvDepartment.Rows[e.RowIndex].Cells[clmDepartmentID.Name].Value);
-               btnInsertDepartment.Enabled = false;
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -109,6 +91,66 @@ namespace StudenInformationStoringApp
         private void dgvDepartment_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                reset();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public void reset()
+        {
+            try
+            {
+                Action<Control.ControlCollection> func = null;
+
+                func = (controls) =>
+                {
+                    foreach (Control ctrl in controls)
+                        if (ctrl is TextBox)
+                        {
+                            (ctrl as TextBox).Clear();
+                        }
+
+                        else if (ctrl is ComboBox)
+                        {
+                            (ctrl as ComboBox).SelectedValue = -1;
+                        }
+                        else
+                            func(ctrl.Controls);
+                };
+
+                func(Controls);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private void dgvDepartment_RowHeaderMouseDoubleClick_1(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                txtDeptCode.Text = dgvDepartment.Rows[e.RowIndex].Cells[clmDepartmentCode.Name].Value.ToString();
+                txtDeptName.Text = dgvDepartment.Rows[e.RowIndex].Cells[clmDepartmentName.Name].Value.ToString();
+                selectedDeptID = Convert.ToInt32(dgvDepartment.Rows[e.RowIndex].Cells[clmDepartmentID.Name].Value);
+                btnInsertDepartment.Enabled = false;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 
