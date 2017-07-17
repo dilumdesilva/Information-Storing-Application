@@ -80,12 +80,41 @@ namespace StudenInformationStoringApp
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                
+                updateSelected = true;
+                if (btnInsertDepartment.Enabled == false)
+                {
+                    selectedStuRowDetails();
+                    MessageBox.Show(txtDeptName.Text + "\nhas been updated successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    setDataSourceToGrid();
+                }
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            try
+            {
+                deleteSelected = true;
+                if (btnInsertDepartment.Enabled == false)
+                {
+                    selectedStuRowDetails();
+                    MessageBox.Show(txtDeptName.Text + "\nhas been deleted successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    setDataSourceToGrid();
+                }
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
         }
 
         private void dgvDepartment_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -98,6 +127,7 @@ namespace StudenInformationStoringApp
             try
             {
                 reset();
+                btnInsertDepartment.Enabled = true;
             }
             catch (Exception)
             {
@@ -145,11 +175,37 @@ namespace StudenInformationStoringApp
                 txtDeptName.Text = dgvDepartment.Rows[e.RowIndex].Cells[clmDepartmentName.Name].Value.ToString();
                 selectedDeptID = Convert.ToInt32(dgvDepartment.Rows[e.RowIndex].Cells[clmDepartmentID.Name].Value);
                 btnInsertDepartment.Enabled = false;
+
+                isSelected = true;
             }
             catch (Exception)
             {
 
                 throw;
+            }
+        }
+
+        private void selectedStuRowDetails()
+        {
+            if (isSelected == true)
+            {
+                Department objDepartment = new Department();
+                objDepartment.DepartmentName = txtDeptName.Text;
+                objDepartment.DepartmenCode = txtDeptCode.Text;
+                objDepartment.DepartmentID = selectedDeptID;
+
+                systemManager objSystemManager = new systemManager();
+                if (updateSelected == true)
+                {
+                    objSystemManager.updateDepartments(objDepartment);
+                    updateSelected = false;
+                }
+                if (deleteSelected == true)
+                {
+                    objSystemManager.deleteDepartments(objDepartment);
+                    deleteSelected = false;
+                }
+
             }
         }
     }

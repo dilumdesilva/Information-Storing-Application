@@ -42,6 +42,18 @@ namespace BALayer
             objdataAccessWorkplace2.departmentsInToDb(objDepartment);
         }
 
+        public void updateDepartments(Department objDepartment)
+        {
+            dataAccessWorkplace objdataAccessWorkplace = new dataAccessWorkplace();
+            objdataAccessWorkplace.updateDepartments(objDepartment);
+        }
+
+        public void deleteDepartments(Department objDepartment)
+        {
+            dataAccessWorkplace objdataAccessWorkplace = new dataAccessWorkplace();
+            objdataAccessWorkplace.deleteDepartments(objDepartment);
+        }
+
         public void insertSemesters(Semesters objSemesters)
         {
             //passing the values as object to the dataAccessLayer to store in b

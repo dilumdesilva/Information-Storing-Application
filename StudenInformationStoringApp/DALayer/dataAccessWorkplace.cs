@@ -287,5 +287,45 @@ namespace DALayer
             }
         }
 
+        //method which perform students updates to db
+        public void updateDepartments(Department objDepartment)
+        {
+            try
+            {
+                query = "UpdateDepartment";
+                cmd = commandTypeSelector(1);
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@DeptID", objDepartment.DepartmentID);
+                cmd.Parameters.AddWithValue("@DeptName", objDepartment.DepartmentName);
+                cmd.Parameters.AddWithValue("@DeptCode", objDepartment.DepartmenCode);
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        //method which perform students delete from db
+        public void deleteDepartments(Department objDepartment)
+        {
+            try
+            {
+                query = "DeleteDepartment";
+                cmd = commandTypeSelector(1);
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@DeptID", objDepartment.DepartmentID);
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
     }
 }
