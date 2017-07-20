@@ -75,12 +75,24 @@ namespace BALayer
             objdataAccessWorkplaceUpdate.deleteSemesterDetails(objSemesters);
         }
 
-        public void insertSubjects(Subjects objsystemManager)
+        public void insertSubjects(Subjects objSubjects)
         {
             //passing the values as object to the dataAccessLayer to store in b
             dataAccessWorkplace objdataAccessWorkplace4 = new dataAccessWorkplace();
-            objdataAccessWorkplace4.SubjectDataInToDb(objsystemManager);
+            objdataAccessWorkplace4.SubjectDataInToDb(objSubjects);
         }
+
+        //public void updateSubjects(Subjects objSubjects)
+        //{
+        //    dataAccessWorkplace objdataAccessWorkplace = new dataAccessWorkplace();
+        //    objdataAccessWorkplace.updateDepartments(objSubjects);
+        //}
+
+        //public void deleteSubjects(Subjects objSubjects)
+        //{
+        //    dataAccessWorkplace objdataAccessWorkplace = new dataAccessWorkplace();
+        //    objdataAccessWorkplace.deleteDepartments(objSubjects);
+        //}
 
         private DataTable CreateItemTable()
         {
@@ -182,6 +194,16 @@ namespace BALayer
                 }
             }
             return lstSemesters;
+        }
+
+        public DataTable ViewSemestersData()
+        {
+            List<Semesters> lstSemesters = new List<Semesters>();
+            Semesters objSemesters = null;
+            dataAccessWorkplace objobjdataAccessWorkplace4 = new dataAccessWorkplace();
+            DataTable dt = new DataTable();
+            dt = objobjdataAccessWorkplace4.getSemestertData();        
+            return dt; ;
         }
 
         //create a list to store loded Subject data table from DAL

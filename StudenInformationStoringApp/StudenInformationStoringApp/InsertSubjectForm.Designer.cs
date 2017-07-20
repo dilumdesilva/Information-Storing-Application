@@ -38,12 +38,12 @@
             this.lblSemName = new System.Windows.Forms.Label();
             this.picBoxLogoMainForm = new System.Windows.Forms.PictureBox();
             this.dgvSubject = new System.Windows.Forms.DataGridView();
+            this.btnUpadate = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.clmSubjectCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSubjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSubjectGridInsertOnce = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubject)).BeginInit();
             this.SuspendLayout();
@@ -147,37 +147,15 @@
             this.dgvSubject.TabIndex = 85;
             this.dgvSubject.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSubject_RowHeaderMouseDoubleClick);
             // 
-            // clmSubjectCode
+            // btnUpadate
             // 
-            this.clmSubjectCode.DataPropertyName = "SubjectCode";
-            this.clmSubjectCode.HeaderText = "SubjectCode";
-            this.clmSubjectCode.Name = "clmSubjectCode";
-            this.clmSubjectCode.ReadOnly = true;
-            // 
-            // clmSubjectName
-            // 
-            this.clmSubjectName.DataPropertyName = "SubjectName";
-            this.clmSubjectName.HeaderText = "SubjectName";
-            this.clmSubjectName.Name = "clmSubjectName";
-            this.clmSubjectName.ReadOnly = true;
-            // 
-            // clmSubjectID
-            // 
-            this.clmSubjectID.DataPropertyName = "SubjectID";
-            this.clmSubjectID.HeaderText = "Subject ID";
-            this.clmSubjectID.Name = "clmSubjectID";
-            this.clmSubjectID.ReadOnly = true;
-            this.clmSubjectID.Visible = false;
-            // 
-            // btnSubjectGridInsertOnce
-            // 
-            this.btnSubjectGridInsertOnce.Location = new System.Drawing.Point(460, 258);
-            this.btnSubjectGridInsertOnce.Name = "btnSubjectGridInsertOnce";
-            this.btnSubjectGridInsertOnce.Size = new System.Drawing.Size(89, 23);
-            this.btnSubjectGridInsertOnce.TabIndex = 86;
-            this.btnSubjectGridInsertOnce.Text = "Update";
-            this.btnSubjectGridInsertOnce.UseVisualStyleBackColor = true;
-            this.btnSubjectGridInsertOnce.Click += new System.EventHandler(this.btnSubjectGridInsertOnce_Click);
+            this.btnUpadate.Location = new System.Drawing.Point(460, 258);
+            this.btnUpadate.Name = "btnUpadate";
+            this.btnUpadate.Size = new System.Drawing.Size(89, 23);
+            this.btnUpadate.TabIndex = 86;
+            this.btnUpadate.Text = "Update";
+            this.btnUpadate.UseVisualStyleBackColor = true;
+            this.btnUpadate.Click += new System.EventHandler(this.btnSubjectGridInsertOnce_Click);
             // 
             // btnReset
             // 
@@ -198,6 +176,29 @@
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
+            // clmSubjectCode
+            // 
+            this.clmSubjectCode.DataPropertyName = "SubjectCode";
+            this.clmSubjectCode.HeaderText = "SubjectCode";
+            this.clmSubjectCode.Name = "clmSubjectCode";
+            this.clmSubjectCode.ReadOnly = true;
+            // 
+            // clmSubjectName
+            // 
+            this.clmSubjectName.DataPropertyName = "SubjectName";
+            this.clmSubjectName.HeaderText = "SubjectName";
+            this.clmSubjectName.Name = "clmSubjectName";
+            this.clmSubjectName.ReadOnly = true;
+            this.clmSubjectName.Width = 200;
+            // 
+            // clmSubjectID
+            // 
+            this.clmSubjectID.DataPropertyName = "SubjectID";
+            this.clmSubjectID.HeaderText = "Subject ID";
+            this.clmSubjectID.Name = "clmSubjectID";
+            this.clmSubjectID.ReadOnly = true;
+            this.clmSubjectID.Visible = false;
+            // 
             // InsertSubjectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,7 +206,7 @@
             this.ClientSize = new System.Drawing.Size(681, 337);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.btnSubjectGridInsertOnce);
+            this.Controls.Add(this.btnUpadate);
             this.Controls.Add(this.dgvSubject);
             this.Controls.Add(this.lblCopyright2);
             this.Controls.Add(this.lblCopyright1);
@@ -237,7 +238,7 @@
         private System.Windows.Forms.Label lblSemName;
         private System.Windows.Forms.PictureBox picBoxLogoMainForm;
         private System.Windows.Forms.DataGridView dgvSubject;
-        private System.Windows.Forms.Button btnSubjectGridInsertOnce;
+        private System.Windows.Forms.Button btnUpadate;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSubjectCode;

@@ -81,7 +81,7 @@ namespace StudenInformationStoringApp
         private void button1_Click(object sender, EventArgs e)
         {
             try
-            {
+             {
                 
                 updateSelected = true;
                 if (btnInsertDepartment.Enabled == false)

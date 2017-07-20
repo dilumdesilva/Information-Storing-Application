@@ -40,6 +40,7 @@
             this.btnViewSemReport.TabIndex = 0;
             this.btnViewSemReport.Text = "View";
             this.btnViewSemReport.UseVisualStyleBackColor = true;
+            this.btnViewSemReport.Click += new System.EventHandler(this.btnViewSemReport_Click);
             // 
             // lblSemesterReport
             // 

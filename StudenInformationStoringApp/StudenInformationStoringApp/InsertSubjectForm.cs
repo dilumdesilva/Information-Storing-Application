@@ -14,7 +14,10 @@ namespace StudenInformationStoringApp
 {
     public partial class InsertSubjectForm : Form
     {
-        
+        public int selectedSubID;
+        bool isSelected = false;
+        bool updateSelected = false;
+        bool deleteSelected = false;
 
         Boolean flag;
         public InsertSubjectForm()
@@ -44,9 +47,9 @@ namespace StudenInformationStoringApp
 
                 if (Validation())
                 {
-                    //getSubjectDetails();
+                    getSubjectDetails();
                     fillToGrid();
-                    //MessageBox.Show(txtSubjectName.Text + "\nhas been recorded successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(txtSubjectName.Text + "\nhas been recorded successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
                 if(!Validation())
@@ -107,23 +110,57 @@ namespace StudenInformationStoringApp
 
         private void InsertSubjectForm_Load(object sender, EventArgs e)
         {
-            setDataSourceToGrid();
+            try
+            {
+                setDataSourceToGrid();
+            }
+            catch (Exception ex)
+            {
+
+               MessageBox.Show(ex.Message);
+            }
         }
 
         private void dgvSubject_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            //try
-            //{
-            //    txtSubjectName.Text = dgvDepartment.Rows[e.RowIndex].Cells[clmDepartmentCode.Name].Value.ToString();
-            //    txtSubjectCode.Text = dgvDepartment.Rows[e.RowIndex].Cells[clmDepartmentName.Name].Value.ToString();
-            //    selectedDeptID = Convert.ToInt32(dgvDepartment.Rows[e.RowIndex].Cells[clmDepartmentID.Name].Value);
-            //    btnInsertDepartment.Enabled = false;
-            //}
-            //catch (Exception ex)
-            //{
+            try
+            {
+                txtSubjectName.Text = dgvSubject.Rows[e.RowIndex].Cells[clmSubjectName.Name].Value.ToString();
+                txtSubjectCode.Text = dgvSubject.Rows[e.RowIndex].Cells[clmSubjectCode.Name].Value.ToString();
+                selectedSubID = Convert.ToInt32(dgvSubject.Rows[e.RowIndex].Cells[clmSubjectID.Name].Value);
+                btnInsertSubject.Enabled = false;
 
-            //    throw ex;
-            //}
+                isSelected = true;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void selectedStuRowDetails()
+        {
+            if (isSelected == true)
+            {
+                Subjects objSubjects = new Subjects();
+                objSubjects.SubjectName = txtSubjectName.Text;
+                objSubjects.SubjectCode = txtSubjectCode.Text;
+                objSubjects.SubjectID = selectedSubID;
+
+                systemManager objSystemManager = new systemManager();
+                if (updateSelected == true)
+                {
+                   // objSystemManager.updateSubjects(objSubjects);
+                    updateSelected = false;
+                }
+                if (deleteSelected == true)
+                {
+                    //objSystemManager.deleteSubjects(objSubjects);
+                    deleteSelected = false;
+                }
+
+            }
         }
 
         private void btnReset_Click(object sender, EventArgs e)

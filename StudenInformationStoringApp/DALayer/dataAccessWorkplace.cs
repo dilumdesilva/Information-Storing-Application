@@ -95,15 +95,15 @@ namespace DALayer
         }
 
         //method which inserts subject datails to the db.
-        public void SubjectDataInToDb(Subjects objsystemManager)
+        public void SubjectDataInToDb(Subjects objSubjects)
         {
             try
             {
                 query = "StoreSubjectDetails";
                 cmd = commandTypeSelector(1);
                 cmd.CommandText = query;
-                cmd.Parameters.AddWithValue("@SubjectCode", objsystemManager.SubjectCode);
-                cmd.Parameters.AddWithValue("@SubjectName", objsystemManager.SubjectName);
+                cmd.Parameters.AddWithValue("@SubjectCode", objSubjects.SubjectCode);
+                cmd.Parameters.AddWithValue("@SubjectName", objSubjects.SubjectName);
                 cmd.ExecuteNonQuery();
 
             }
@@ -317,6 +317,46 @@ namespace DALayer
                 cmd = commandTypeSelector(1);
                 cmd.CommandText = query;
                 cmd.Parameters.AddWithValue("@DeptID", objDepartment.DepartmentID);
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        //method which perform students updates to db
+        public void updateSubjects(Subjects objSubjects)
+        {
+            try
+            {
+                query = "UpdateSubject";
+                cmd = commandTypeSelector(1);
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@DeptID", objSubjects.SubjectID);
+                cmd.Parameters.AddWithValue("@DeptName", objSubjects.SubjectName);
+                cmd.Parameters.AddWithValue("@DeptCode", objSubjects.SubjectCode);
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        //method which perform students delete from db
+        public void deleteSubjects(Subjects objSubjects)
+        {
+            try
+            {
+                query = "DeleteSubject";
+                cmd = commandTypeSelector(1);
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@DeptID", objSubjects.SubjectID);
                 cmd.ExecuteNonQuery();
 
             }

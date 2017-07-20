@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BALayer;
+using CrystalDecisions.CrystalReports.Engine;
+using StudenInformationStoringApp.Reports;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +18,36 @@ namespace StudenInformationStoringApp
         public SemesterReport()
         {
             InitializeComponent();
+        }
+
+        private void btnViewSemReport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                systemManager objsystemManager = new systemManager();
+                dt = objsystemManager.ViewSemestersData();
+
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    ReportDocument rptDoc = new ReportDocument();
+                    rptSemesterDetails rpt = new rptSemesterDetails();
+                    rptDoc = rpt;
+                    rptDoc.SetDataSource(dt);
+                    frmReportViewer objfrmReportViewer = new frmReportViewer(rptDoc);
+                    objfrmReportViewer.Show();
+                }
+                else
+                {
+
+                    MessageBox.Show("No Records");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex; 
+            }
         }
     }
 }

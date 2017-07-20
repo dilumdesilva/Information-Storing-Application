@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace StudenInformationStoringApp
         public frmReportGenerator()
         {
             InitializeComponent();
+        }
+
+
+        public frmReportGenerator(ReportDocument rptReportDocument)
+        {
+            
+
         }
     }
 }
