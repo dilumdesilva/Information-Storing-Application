@@ -41,7 +41,7 @@ namespace StudenInformationStoringApp
         }
 
         private void btnInsertSubject_Click(object sender, EventArgs e)
-                    {
+        {
             try
             {
 

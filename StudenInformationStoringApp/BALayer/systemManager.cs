@@ -94,6 +94,11 @@ namespace BALayer
             objdataAccessWorkplace.deleteSubjects(objSubjects);
         }
 
+        public void stuMarksInsert( )
+        {
+
+        }
+
         private DataTable CreateItemTable()
         {
             DataTable dt = new DataTable();
@@ -143,6 +148,12 @@ namespace BALayer
                 }
             }
             return lstDepartment;
+        }
+
+        public bool SaveMarks(Student student)
+        {
+            dataAccessWorkplace objobjdataAccessWorkplace3 = new dataAccessWorkplace();
+            return objobjdataAccessWorkplace3.SaveMarks(student);
         }
 
         //create a list to store loded student basic data table from DAL

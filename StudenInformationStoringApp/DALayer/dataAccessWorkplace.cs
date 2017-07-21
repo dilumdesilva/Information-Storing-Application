@@ -202,6 +202,15 @@ namespace DALayer
 
         }
 
+        public bool SaveMarks(Student student)
+        {
+            bool res = false;
+            cmd.Parameters.AddWithValue("", student.ObjDepartment.DepartmentID);
+            res = true;
+
+            return res;
+        }
+
         //method which perform semester updates to db
         public void updateSemesterDetails(Semesters objSemesters)
         {

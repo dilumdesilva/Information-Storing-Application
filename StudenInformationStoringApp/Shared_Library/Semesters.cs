@@ -11,6 +11,8 @@ namespace Shared_Library
         public int SemesterID { get; set; }
         public string SemesterCode { get; set; }
         public string SemesterName { get; set; }
-       
+
+        public int year { get; set; }
+
     }
 }

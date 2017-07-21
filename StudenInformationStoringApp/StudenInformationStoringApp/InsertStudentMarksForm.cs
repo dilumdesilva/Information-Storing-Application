@@ -134,6 +134,12 @@ namespace StudenInformationStoringApp
 
         }
 
+        public void sendStuMarks()
+        {
+            systemManager objsystemManager = new systemManager();
+            bool res = objsystemManager.SaveMarks(this.FillStudent());
+        }
+
         private formDetails fillStuMarksObject()
         {
             formDetails objformDetails = new formDetails();
@@ -152,6 +158,29 @@ namespace StudenInformationStoringApp
 
             return objformDetails;
         }
+        private Student FillStudent()
+        {
+            Student objStudent = new Student();
+            objStudent.ObjDepartment = new Department();
+            objStudent.ObjSemesters = new Semesters();
+            objStudent.ObjSubjects = new Subjects();
+            objStudent.ObjDepartment.DepartmentID = (int)cmbDepartment.SelectedValue;
+            objStudent.ObjDepartment.DepartmentName = cmbDepartment.Text.ToString();
+            objStudent.StudentID = (int)cmbStudentID.SelectedValue;
+            objStudent.FullName = txtStudentName.Text;
+            objStudent.ObjSemesters.SemesterID  = (int)cmbSemester.SelectedValue; 
+            objStudent.ObjSemesters.SemesterCode = cmbSemester.Text.ToString();
+            objStudent.ObjSubjects.SubjectID  = (int)cmbSubject.SelectedValue;
+            objStudent.ObjSubjects.SubjectCode = cmbSubject.Text.ToString();
+            objStudent.ObjSemesters.year = Convert.ToInt32(txtYear.Text);
+            objStudent.ObjSubjects.Mark = Convert.ToInt32(txtMarks.Text);
+            objStudent.ObjSubjects.Grade = cmbGrade.Text;
+
+            return objStudent;
+        }
+
+
+
 
         private void btnInsertMarks_Click(object sender, EventArgs e)
         {
@@ -183,7 +212,7 @@ namespace StudenInformationStoringApp
         private void duplicationValidate()
         {
             //int SubjectID = Convert.ToInt32(cmbSubject.SelectedValue);
-             String SubjectName  = cmbSubject.Text.ToString();
+            String SubjectName  = cmbSubject.Text.ToString();
             string SemesterName = cmbSemester.Text.ToString();
             string Year = txtYear.Text;
 
@@ -200,6 +229,16 @@ namespace StudenInformationStoringApp
                 }
             }
         }
+
+        //private void setDataSourceToGrid()
+        //{
+        //    //here um setting the data source for this data grid 
+        //    dgvStuMarks.DataSource = null;
+        //    systemManager objsystemManager = new systemManager();
+        //    dgvStuMarks.DataSource = objsystemManager
+
+
+        //}
     }
 
     public class formDetails
