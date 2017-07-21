@@ -36,7 +36,7 @@ namespace StudenInformationStoringApp
             objSubjects.SubjectName = txtSubjectName.Text;
            
                 systemManager objsystemManager = new systemManager();
-               objsystemManager.insertSubjects(objSubjects);
+                objsystemManager.insertSubjects(objSubjects);
            
         }
 
@@ -49,6 +49,7 @@ namespace StudenInformationStoringApp
                 {
                     getSubjectDetails();
                     fillToGrid();
+                    setDataSourceToGrid();
                     MessageBox.Show(txtSubjectName.Text + "\nhas been recorded successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
@@ -96,7 +97,22 @@ namespace StudenInformationStoringApp
 
         private void btnSubjectGridInsertOnce_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+                updateSelected = true;
+                if (btnInsertSubject.Enabled == false)
+                {
+                    selectedStuRowDetails();
+                    MessageBox.Show(txtSubjectName.Text + "\nhas been updated successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    setDataSourceToGrid();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void setDataSourceToGrid()
@@ -167,14 +183,8 @@ namespace StudenInformationStoringApp
         {
             try
             {
-
-                updateSelected = true;
-                if (btnInsertSubject.Enabled == false)
-                {
-                    selectedStuRowDetails();
-                    MessageBox.Show(txtSubjectName.Text + "\nhas been updated successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    setDataSourceToGrid();
-                }
+                reset();
+                btnInsertSubject.Enabled = true;
             }
             catch (Exception)
             {
@@ -199,6 +209,37 @@ namespace StudenInformationStoringApp
             {
 
                 throw;
+            }
+        }
+
+        public void reset()
+        {
+            try
+            {
+                Action<Control.ControlCollection> func = null;
+
+                func = (controls) =>
+                {
+                    foreach (Control ctrl in controls)
+                        if (ctrl is TextBox)
+                        {
+                            (ctrl as TextBox).Clear();
+                        }
+
+                        else if (ctrl is ComboBox)
+                        {
+                            (ctrl as ComboBox).SelectedValue = -1;
+                        }
+                        else
+                            func(ctrl.Controls);
+                };
+
+                func(Controls);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
     }
