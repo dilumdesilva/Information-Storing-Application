@@ -165,7 +165,41 @@ namespace StudenInformationStoringApp
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            try
+            {
 
+                updateSelected = true;
+                if (btnInsertSubject.Enabled == false)
+                {
+                    selectedStuRowDetails();
+                    MessageBox.Show(txtSubjectName.Text + "\nhas been updated successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    setDataSourceToGrid();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                deleteSelected = true;
+                if (btnInsertSubject.Enabled == false)
+                {
+                    selectedStuRowDetails();
+                    MessageBox.Show(txtSubjectName.Text + "\nhas been deleted successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    setDataSourceToGrid();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 
