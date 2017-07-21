@@ -151,12 +151,12 @@ namespace StudenInformationStoringApp
                 systemManager objSystemManager = new systemManager();
                 if (updateSelected == true)
                 {
-                   // objSystemManager.updateSubjects(objSubjects);
+                    objSystemManager.updateSubjects(objSubjects);
                     updateSelected = false;
                 }
                 if (deleteSelected == true)
                 {
-                    //objSystemManager.deleteSubjects(objSubjects);
+                    objSystemManager.deleteSubjects(objSubjects);
                     deleteSelected = false;
                 }
 

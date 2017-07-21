@@ -335,9 +335,9 @@ namespace DALayer
                 query = "UpdateSubject";
                 cmd = commandTypeSelector(1);
                 cmd.CommandText = query;
-                cmd.Parameters.AddWithValue("@DeptID", objSubjects.SubjectID);
-                cmd.Parameters.AddWithValue("@DeptName", objSubjects.SubjectName);
-                cmd.Parameters.AddWithValue("@DeptCode", objSubjects.SubjectCode);
+                cmd.Parameters.AddWithValue("@subID", objSubjects.SubjectID);
+                cmd.Parameters.AddWithValue("@subName", objSubjects.SubjectName);
+                cmd.Parameters.AddWithValue("@subCode", objSubjects.SubjectCode);
                 cmd.ExecuteNonQuery();
 
             }
@@ -356,7 +356,7 @@ namespace DALayer
                 query = "DeleteSubject";
                 cmd = commandTypeSelector(1);
                 cmd.CommandText = query;
-                cmd.Parameters.AddWithValue("@DeptID", objSubjects.SubjectID);
+                cmd.Parameters.AddWithValue("@subID", objSubjects.SubjectID);
                 cmd.ExecuteNonQuery();
 
             }

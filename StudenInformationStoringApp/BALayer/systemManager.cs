@@ -82,17 +82,17 @@ namespace BALayer
             objdataAccessWorkplace4.SubjectDataInToDb(objSubjects);
         }
 
-        //public void updateSubjects(Subjects objSubjects)
-        //{
-        //    dataAccessWorkplace objdataAccessWorkplace = new dataAccessWorkplace();
-        //    objdataAccessWorkplace.updateDepartments(objSubjects);
-        //}
+        public void updateSubjects(Subjects objSubjects)
+        {
+            dataAccessWorkplace objdataAccessWorkplace = new dataAccessWorkplace();
+            objdataAccessWorkplace.updateSubjects(objSubjects);
+        }
 
-        //public void deleteSubjects(Subjects objSubjects)
-        //{
-        //    dataAccessWorkplace objdataAccessWorkplace = new dataAccessWorkplace();
-        //    objdataAccessWorkplace.deleteDepartments(objSubjects);
-        //}
+        public void deleteSubjects(Subjects objSubjects)
+        {
+            dataAccessWorkplace objdataAccessWorkplace = new dataAccessWorkplace();
+            objdataAccessWorkplace.deleteSubjects(objSubjects);
+        }
 
         private DataTable CreateItemTable()
         {
