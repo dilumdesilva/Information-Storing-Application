@@ -38,7 +38,6 @@
             this.subjectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.veiwToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studentDetailsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.marksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.systemReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.semesterDetailsReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -115,8 +114,7 @@
             // veiwToolStripMenuItem
             // 
             this.veiwToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.studentDetailsToolStripMenuItem1,
-            this.marksToolStripMenuItem});
+            this.studentDetailsToolStripMenuItem1});
             this.veiwToolStripMenuItem.Name = "veiwToolStripMenuItem";
             this.veiwToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.veiwToolStripMenuItem.Text = "Veiw";
@@ -124,14 +122,9 @@
             // studentDetailsToolStripMenuItem1
             // 
             this.studentDetailsToolStripMenuItem1.Name = "studentDetailsToolStripMenuItem1";
-            this.studentDetailsToolStripMenuItem1.Size = new System.Drawing.Size(155, 22);
-            this.studentDetailsToolStripMenuItem1.Text = "Student Details";
-            // 
-            // marksToolStripMenuItem
-            // 
-            this.marksToolStripMenuItem.Name = "marksToolStripMenuItem";
-            this.marksToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.marksToolStripMenuItem.Text = "Marks";
+            this.studentDetailsToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.studentDetailsToolStripMenuItem1.Text = "System";
+            this.studentDetailsToolStripMenuItem1.Click += new System.EventHandler(this.studentDetailsToolStripMenuItem1_Click);
             // 
             // generateToolStripMenuItem
             // 
@@ -221,7 +214,6 @@
         private System.Windows.Forms.ToolStripMenuItem studentMarksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem veiwToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem studentDetailsToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem marksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem systemReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configurationToolStripMenuItem;

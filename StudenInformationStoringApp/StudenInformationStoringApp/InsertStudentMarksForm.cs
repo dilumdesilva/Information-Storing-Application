@@ -223,7 +223,7 @@ namespace StudenInformationStoringApp
 
             foreach (DataGridViewRow dr in dgvStuMarks.Rows)
             {
-                if (SemesterName == dr.Cells[4].Value.ToString() && SubjectName == dr.Cells[5].Value.ToString())
+                //if (SemesterName == dr.Cells[4].Value.ToString() && SubjectName == dr.Cells[5].Value.ToString())
                 {
                     throw new ApplicationException("Record duplication found!\nA student Cannot have multiple mark records for the same subject in " + SemesterName);
                 }

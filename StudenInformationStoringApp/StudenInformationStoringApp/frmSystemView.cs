@@ -1,5 +1,4 @@
-﻿using CrystalDecisions.CrystalReports.Engine;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,18 +10,11 @@ using System.Windows.Forms;
 
 namespace StudenInformationStoringApp
 {
-    public partial class frmReportGenerator : Form
+    public partial class frmSystemView : Form
     {
-        public frmReportGenerator()
+        public frmSystemView()
         {
             InitializeComponent();
-        }
-
-
-        public frmReportGenerator(ReportDocument rptReportDocument)
-        {
-            
-
         }
     }
 }

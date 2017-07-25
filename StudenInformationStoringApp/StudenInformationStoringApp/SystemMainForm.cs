@@ -162,5 +162,21 @@ namespace StudenInformationStoringApp
                 MessageBox.Show("Please save and close the current window !", "System warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void studentDetailsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmSystemView objfrmSystemView = new frmSystemView();
+            //frm
+
+            //this condition will check whether there is any forms loded before system loads another form.
+            if (!IsAlreadyLoded(objfrmSystemView))
+            {
+                objfrmSystemView.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please save and close the current window !", "System warnning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

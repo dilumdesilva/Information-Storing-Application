@@ -59,6 +59,18 @@
     <Compile Include="AboutMeForm.Designer.cs">
       <DependentUpon>AboutMeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStudentSemSubCofig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStudentSemSubCofig.Designer.cs">
+      <DependentUpon>frmStudentSemSubCofig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSystemView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSystemView.Designer.cs">
+      <DependentUpon>frmSystemView.cs</DependentUpon>
+    </Compile>
     <Compile Include="SemesterReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,18 +113,6 @@
     <Compile Include="InsertSubjectForm.Designer.cs">
       <DependentUpon>InsertSubjectForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="InsertToConfigForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InsertToConfigForm.Designer.cs">
-      <DependentUpon>InsertToConfigForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ReportGeneratorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReportGeneratorForm.Designer.cs">
-      <DependentUpon>ReportGeneratorForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reports\rptSemesterDetails.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -133,26 +133,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UpdateStudentRecordsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UpdateStudentRecordsForm.Designer.cs">
-      <DependentUpon>UpdateStudentRecordsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VeiwStudenMarksForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VeiwStudenMarksForm.Designer.cs">
-      <DependentUpon>VeiwStudenMarksForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewStudentDetailsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ViewStudentDetailsForm.Designer.cs">
-      <DependentUpon>ViewStudentDetailsForm.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AboutMeForm.resx">
       <DependentUpon>AboutMeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStudentSemSubCofig.resx">
+      <DependentUpon>frmStudentSemSubCofig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSystemView.resx">
+      <DependentUpon>frmSystemView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SemesterReport.resx">
       <DependentUpon>SemesterReport.cs</DependentUpon>
@@ -175,9 +163,6 @@
     <EmbeddedResource Include="InsertSubjectForm.resx">
       <DependentUpon>InsertSubjectForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InsertToConfigForm.resx">
-      <DependentUpon>InsertToConfigForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -187,9 +172,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ReportGeneratorForm.resx">
-      <DependentUpon>ReportGeneratorForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptSemesterDetails.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptSemesterDetails.cs</LastGenOutput>
@@ -199,15 +181,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SystemMainForm.resx">
       <DependentUpon>SystemMainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UpdateStudentRecordsForm.resx">
-      <DependentUpon>UpdateStudentRecordsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VeiwStudenMarksForm.resx">
-      <DependentUpon>VeiwStudenMarksForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewStudentDetailsForm.resx">
-      <DependentUpon>ViewStudentDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
