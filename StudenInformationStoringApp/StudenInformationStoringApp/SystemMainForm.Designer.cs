@@ -170,6 +170,7 @@
             this.studentSemsterAllocationToolStripMenuItem.Name = "studentSemsterAllocationToolStripMenuItem";
             this.studentSemsterAllocationToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.studentSemsterAllocationToolStripMenuItem.Text = "Student Semster allocation";
+            this.studentSemsterAllocationToolStripMenuItem.Click += new System.EventHandler(this.studentSemsterAllocationToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 

@@ -59,11 +59,11 @@
     <Compile Include="AboutMeForm.Designer.cs">
       <DependentUpon>AboutMeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmStudentSemSubCofig.cs">
+    <Compile Include="frmStudentSemCofig.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmStudentSemSubCofig.Designer.cs">
-      <DependentUpon>frmStudentSemSubCofig.cs</DependentUpon>
+    <Compile Include="frmStudentSemCofig.Designer.cs">
+      <DependentUpon>frmStudentSemCofig.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSystemView.cs">
       <SubType>Form</SubType>
@@ -136,8 +136,8 @@
     <EmbeddedResource Include="AboutMeForm.resx">
       <DependentUpon>AboutMeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmStudentSemSubCofig.resx">
-      <DependentUpon>frmStudentSemSubCofig.cs</DependentUpon>
+    <EmbeddedResource Include="frmStudentSemCofig.resx">
+      <DependentUpon>frmStudentSemCofig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSystemView.resx">
       <DependentUpon>frmSystemView.cs</DependentUpon>

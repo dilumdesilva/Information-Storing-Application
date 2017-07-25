@@ -35,8 +35,8 @@
             this.txtStudentName = new System.Windows.Forms.TextBox();
             this.txtDepartment = new System.Windows.Forms.TextBox();
             this.lblSemsters = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cmbSemster = new System.Windows.Forms.ComboBox();
+            this.dgvStuSubSemConfig = new System.Windows.Forms.DataGridView();
             this.btnUpdateSysConfig = new System.Windows.Forms.Button();
             this.lblCopyright2 = new System.Windows.Forms.Label();
             this.lblCopyright1 = new System.Windows.Forms.Label();
@@ -44,7 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStuSubSemConfig)).BeginInit();
             this.SuspendLayout();
             // 
             // lblStudentID
@@ -98,21 +98,21 @@
             this.lblSemsters.TabIndex = 1;
             this.lblSemsters.Text = "Semester";
             // 
-            // comboBox2
+            // cmbSemster
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(107, 253);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(189, 21);
-            this.comboBox2.TabIndex = 3;
+            this.cmbSemster.FormattingEnabled = true;
+            this.cmbSemster.Location = new System.Drawing.Point(107, 253);
+            this.cmbSemster.Name = "cmbSemster";
+            this.cmbSemster.Size = new System.Drawing.Size(189, 21);
+            this.cmbSemster.TabIndex = 3;
             // 
-            // dataGridView1
+            // dgvStuSubSemConfig
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(328, 23);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(462, 251);
-            this.dataGridView1.TabIndex = 9;
+            this.dgvStuSubSemConfig.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStuSubSemConfig.Location = new System.Drawing.Point(328, 23);
+            this.dgvStuSubSemConfig.Name = "dgvStuSubSemConfig";
+            this.dgvStuSubSemConfig.Size = new System.Drawing.Size(462, 251);
+            this.dgvStuSubSemConfig.TabIndex = 9;
             // 
             // btnUpdateSysConfig
             // 
@@ -185,18 +185,19 @@
             this.Controls.Add(this.lblCopyright2);
             this.Controls.Add(this.lblCopyright1);
             this.Controls.Add(this.btnUpdateSysConfig);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvStuSubSemConfig);
             this.Controls.Add(this.txtDepartment);
             this.Controls.Add(this.txtStudentName);
             this.Controls.Add(this.picBoxLogoMainForm);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cmbSemster);
             this.Controls.Add(this.cmbStudentID);
             this.Controls.Add(this.lblSemsters);
             this.Controls.Add(this.lblStudentID);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStuSubSemConfig)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,8 +211,8 @@
         private System.Windows.Forms.TextBox txtStudentName;
         private System.Windows.Forms.TextBox txtDepartment;
         private System.Windows.Forms.Label lblSemsters;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox cmbSemster;
+        private System.Windows.Forms.DataGridView dgvStuSubSemConfig;
         private System.Windows.Forms.Button btnUpdateSysConfig;
         private System.Windows.Forms.Label lblCopyright2;
         private System.Windows.Forms.Label lblCopyright1;
