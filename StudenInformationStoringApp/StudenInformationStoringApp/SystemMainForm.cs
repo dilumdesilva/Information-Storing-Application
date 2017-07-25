@@ -181,13 +181,13 @@ namespace StudenInformationStoringApp
 
         private void studentSemsterAllocationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm
-           
+            StudentSemConfig objStudentSemConfig = new StudentSemConfig();
+
 
             //this condition will check whether there is any forms loded before system loads another form.
-            if (!IsAlreadyLoded(objfrmStudentSemSubCofig))
+            if (!IsAlreadyLoded(objStudentSemConfig))
             {
-                objfrmStudentSemSubCofig.Show();
+                objStudentSemConfig.Show();
             }
             else
             {

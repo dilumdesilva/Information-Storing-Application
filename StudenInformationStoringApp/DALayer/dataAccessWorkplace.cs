@@ -174,6 +174,20 @@ namespace DALayer
 
         }
 
+        //Method which load student data from db to a data table
+        public DataTable getSemSubConfig()
+        {
+            query = "GetSemSubConfigData";
+            cmd = commandTypeSelector(1);
+            cmd.CommandText = query;
+
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+
+            return dt;
+
+        }
+
         //Method which load semester data from db to a data table
         public DataTable getSemestertData()
         {

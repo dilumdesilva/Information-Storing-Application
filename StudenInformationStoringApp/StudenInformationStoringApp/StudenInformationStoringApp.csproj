@@ -59,12 +59,6 @@
     <Compile Include="AboutMeForm.Designer.cs">
       <DependentUpon>AboutMeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmStudentSemCofig.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmStudentSemCofig.Designer.cs">
-      <DependentUpon>frmStudentSemCofig.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmSystemView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +119,12 @@
     <Compile Include="SemSubConfig.Designer.cs">
       <DependentUpon>SemSubConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentSemConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentSemConfig.Designer.cs">
+      <DependentUpon>StudentSemConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="SystemMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,9 +135,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutMeForm.resx">
       <DependentUpon>AboutMeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmStudentSemCofig.resx">
-      <DependentUpon>frmStudentSemCofig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSystemView.resx">
       <DependentUpon>frmSystemView.cs</DependentUpon>
@@ -178,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SemSubConfig.resx">
       <DependentUpon>SemSubConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentSemConfig.resx">
+      <DependentUpon>StudentSemConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SystemMainForm.resx">
       <DependentUpon>SystemMainForm.cs</DependentUpon>
