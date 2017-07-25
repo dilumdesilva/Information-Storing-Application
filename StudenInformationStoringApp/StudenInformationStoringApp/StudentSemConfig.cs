@@ -52,6 +52,7 @@ namespace StudenInformationStoringApp
             {
                 var xxx = (List<Student>)cmbStudentID.DataSource;
 
+                //linq query
                 //var xxxxx = from t in xxx
                 //            where t.StudentID == (int)cmbStudentID.SelectedValue
                 //            select t.ObjDepartment.DepartmentName;
@@ -60,7 +61,7 @@ namespace StudenInformationStoringApp
                 //             where t.StudentID == (int)cmbStudentID.SelectedValue
                 //             select t.ObjDepartment.DepartmentName).ToList(); 
 
-                //here i've write the above code using a lamda expression
+                //lamda expression
                 txtDepartment.Text = xxx.Find(g => g.StudentID == (int)cmbStudentID.SelectedValue).ObjDepartment.DepartmentName;
 
                 //you can do it without declaring a varible 
