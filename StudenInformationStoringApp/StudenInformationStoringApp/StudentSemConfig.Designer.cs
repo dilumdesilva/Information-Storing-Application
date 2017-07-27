@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentSemConfig));
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnInsert = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblStudentName = new System.Windows.Forms.Label();
             this.lblCopyright2 = new System.Windows.Forms.Label();
             this.lblCopyright1 = new System.Windows.Forms.Label();
-            this.btnUpdateSysConfig = new System.Windows.Forms.Button();
             this.dgvStuSubSemConfig = new System.Windows.Forms.DataGridView();
             this.txtDepartment = new System.Windows.Forms.TextBox();
             this.txtStudentName = new System.Windows.Forms.TextBox();
@@ -47,14 +46,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnInsert
             // 
-            this.button1.Location = new System.Drawing.Point(32, 309);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 23);
-            this.button1.TabIndex = 89;
-            this.button1.Text = "Set to Grid ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnInsert.Location = new System.Drawing.Point(32, 309);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(88, 23);
+            this.btnInsert.TabIndex = 89;
+            this.btnInsert.Text = "Insert ";
+            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // label3
             // 
@@ -97,15 +97,6 @@
             this.lblCopyright1.Size = new System.Drawing.Size(45, 12);
             this.lblCopyright1.TabIndex = 85;
             this.lblCopyright1.Text = "Copyright";
-            // 
-            // btnUpdateSysConfig
-            // 
-            this.btnUpdateSysConfig.Location = new System.Drawing.Point(704, 309);
-            this.btnUpdateSysConfig.Name = "btnUpdateSysConfig";
-            this.btnUpdateSysConfig.Size = new System.Drawing.Size(88, 23);
-            this.btnUpdateSysConfig.TabIndex = 84;
-            this.btnUpdateSysConfig.Text = "Update System";
-            this.btnUpdateSysConfig.UseVisualStyleBackColor = true;
             // 
             // dgvStuSubSemConfig
             // 
@@ -180,12 +171,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 365);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblStudentName);
             this.Controls.Add(this.lblCopyright2);
             this.Controls.Add(this.lblCopyright1);
-            this.Controls.Add(this.btnUpdateSysConfig);
             this.Controls.Add(this.dgvStuSubSemConfig);
             this.Controls.Add(this.txtDepartment);
             this.Controls.Add(this.txtStudentName);
@@ -206,12 +196,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblStudentName;
         private System.Windows.Forms.Label lblCopyright2;
         private System.Windows.Forms.Label lblCopyright1;
-        private System.Windows.Forms.Button btnUpdateSysConfig;
         private System.Windows.Forms.DataGridView dgvStuSubSemConfig;
         private System.Windows.Forms.TextBox txtDepartment;
         private System.Windows.Forms.TextBox txtStudentName;

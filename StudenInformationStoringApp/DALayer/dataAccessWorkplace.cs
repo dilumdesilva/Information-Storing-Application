@@ -74,6 +74,25 @@ namespace DALayer
             }
         }
 
+        public void stuSemConfigToDB(Student objStudent)
+        {
+            try
+            {
+                query = "StoreStuSemConfigData";
+                cmd = commandTypeSelector(1);
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@StuID", objStudent.StudentID);
+                cmd.Parameters.AddWithValue("@SemesterID", objStudent.ObjSemesters.SemesterID);
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         //method which inserts semester datails to the db.
         public void SemesterDataInToDb(Semesters objSemesters)
         {
@@ -177,7 +196,7 @@ namespace DALayer
         //Method which load student data from db to a data table
         public DataTable getSemSubConfig()
         {
-            query = "GetSemSubConfigData";
+            query = "getSubSemConfigData";
             cmd = commandTypeSelector(1);
             cmd.CommandText = query;
 

@@ -13,6 +13,8 @@ namespace Shared_Library
         public string SemesterName { get; set; }
 
         public int year { get; set; }
+        public int SemSubConfigID { get; set; }
+        public Subjects objSubjects { get; set; }
 
     }
 }

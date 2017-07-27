@@ -61,6 +61,12 @@ namespace BALayer
             objdataAccessWorkplace3.SemesterDataInToDb(objSemesters);
         }
 
+        public void sendStuSemConfig(Student objStudent)
+        {
+            dataAccessWorkplace objdataAccessWorkplace = new dataAccessWorkplace();
+            objdataAccessWorkplace.stuSemConfigToDB(objStudent);
+        }
+
         public void passSemesterDetailsUpdate(Semesters objSemesters)
         {
             //passing the values as object to the dataAccessLayer to store in b
@@ -182,6 +188,32 @@ namespace BALayer
                 }
             }
             return lstStudent;
+        }
+
+        public List<Semesters> GetSemeSubConfigData()
+         {
+            List<Semesters> lstSemSubConfigData = new List<Semesters>();
+            Semesters objSemester = null;
+            dataAccessWorkplace objobjdataAccessWorkplace3 = new dataAccessWorkplace();
+            DataTable dt = new DataTable();
+            dt = objobjdataAccessWorkplace3.getSemSubConfig();
+            if (dt != null)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    objSemester = new Semesters();
+                    objSemester.objSubjects = new Subjects();
+                    objSemester.SemSubConfigID = (int)dr["SemSubConfigID"];
+                    objSemester.SemesterID = (int)dr["SemesterID"];
+                    objSemester.SemesterCode = dr["SemesterCode"].ToString();
+                    objSemester.SemesterName = dr["SemesterName"].ToString();
+                    objSemester.objSubjects.SubjectID = Convert.ToInt32(dr["SubjectID"].ToString());
+                    objSemester.objSubjects.SubjectCode = dr["SubjectCode"].ToString();
+                    //objSemester.objSubjects.SubjectName = dr["SubjectName"].ToString();
+                    lstSemSubConfigData.Add(objSemester);
+                }
+            }
+            return lstSemSubConfigData;
         }
 
         //create a list to store loded semester data table from DAL

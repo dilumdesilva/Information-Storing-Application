@@ -64,12 +64,19 @@ namespace StudenInformationStoringApp
         {
             List<SemesterSubject> alreadyGridList = (List<SemesterSubject>)dgvSemesterSubject.DataSource;
             SemesterSubject objSemesterSubject = FillSemesterObject();
-            alreadyGridList.Add(objSemesterSubject);
+
+            if(alreadyGridList != null)
+            {
+                alreadyGridList.Add(objSemesterSubject);
+                
+            }
+            else
+            {
+                alreadyGridList = new List<SemesterSubject>();
+                alreadyGridList.Add(objSemesterSubject);                
+            }
             dgvSemesterSubject.DataSource = null;
             dgvSemesterSubject.DataSource = alreadyGridList;
-            
-            
-            
 
             // an alternative way to get grid values to a list.
 

@@ -33,11 +33,45 @@ namespace StudenInformationStoringApp
             cmbStudentID.SelectedIndex = -1;
         }
 
+        public void setCmbSemester()
+        {
+            systemManager objsystemManager = new systemManager();
+            cmbSemster.DataSource = objsystemManager.GetSemeSubConfigData();
+            cmbSemster.ValueMember = "SemesterID"; 
+            cmbSemster.DisplayMember = "SemesterCode";
+
+
+
+            //because of this department combo's display inedex will shown as a blank index
+            cmbSemster.SelectedIndex = -1;
+        }
+
+        public void SendDataToBAL()
+        {
+            Student objStudent = new Student();
+            objStudent.ObjSemesters = new Semesters();
+
+            //objStudent.ObjSemesters.SemSubConfigID = Convert.ToInt32(cmbSemster.SelectedValue);
+            objStudent.ObjSemesters.SemesterCode = cmbSemster.Text;
+            objStudent.ObjSemesters.SemesterID = Convert.ToInt32(cmbSemster.SelectedValue);
+            objStudent.StudentID = Convert.ToInt32(cmbStudentID.SelectedValue);
+            objStudent.universityID = cmbStudentID.Text;
+
+            systemManager objsystemManager = new systemManager();
+            objsystemManager.sendStuSemConfig(objStudent);
+
+            MessageBox.Show("Student configuration data has been recorded successfully");
+
+        }
+
+
+
         private void StudentSemConfig_Load(object sender, EventArgs e)
         {
             try
             {
                 setCmbStudent();
+                setCmbSemester();
             }
             catch (Exception ex)
             {
@@ -73,5 +107,29 @@ namespace StudenInformationStoringApp
                 throw ex;
             }
         }
+
+        private void btnUpdateSysConfig_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SendDataToBAL();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
+        }
+    }
+
+    public class SubSemConfigData
+    {
+                
     }
 }
