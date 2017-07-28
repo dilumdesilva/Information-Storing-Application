@@ -36,11 +36,9 @@ namespace StudenInformationStoringApp
         public void setCmbSemester()
         {
             systemManager objsystemManager = new systemManager();
-            cmbSemster.DataSource = objsystemManager.GetSemeSubConfigData();
+            cmbSemster.DataSource = objsystemManager.GetSemestersData();
             cmbSemster.ValueMember = "SemesterID"; 
             cmbSemster.DisplayMember = "SemesterCode";
-
-
 
             //because of this department combo's display inedex will shown as a blank index
             cmbSemster.SelectedIndex = -1;

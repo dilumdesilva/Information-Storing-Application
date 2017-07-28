@@ -65,6 +65,12 @@
     <Compile Include="frmSystemView.Designer.cs">
       <DependentUpon>frmSystemView.cs</DependentUpon>
     </Compile>
+    <Compile Include="InsertStudentMarkFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertStudentMarkFinal.Designer.cs">
+      <DependentUpon>InsertStudentMarkFinal.cs</DependentUpon>
+    </Compile>
     <Compile Include="SemesterReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSystemView.resx">
       <DependentUpon>frmSystemView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertStudentMarkFinal.resx">
+      <DependentUpon>InsertStudentMarkFinal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SemesterReport.resx">
       <DependentUpon>SemesterReport.cs</DependentUpon>

@@ -16,5 +16,7 @@ namespace Shared_Library
         public int SemSubConfigID { get; set; }
         public Subjects objSubjects { get; set; }
 
+       
+
     }
 }
