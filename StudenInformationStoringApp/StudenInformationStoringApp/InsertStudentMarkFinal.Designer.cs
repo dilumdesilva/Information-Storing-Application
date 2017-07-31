@@ -46,8 +46,6 @@
             this.dgvStuMarks = new System.Windows.Forms.DataGridView();
             this.clmStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmStudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSemester = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmMarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -191,8 +189,6 @@
             this.dgvStuMarks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmStudent,
             this.clmStudentID,
-            this.clmDepartment,
-            this.clmYear,
             this.clmSemester,
             this.clmSubject,
             this.clmMarks,
@@ -216,20 +212,6 @@
             this.clmStudentID.HeaderText = "Student ID";
             this.clmStudentID.Name = "clmStudentID";
             this.clmStudentID.ReadOnly = true;
-            // 
-            // clmDepartment
-            // 
-            this.clmDepartment.DataPropertyName = "DepartmentName";
-            this.clmDepartment.HeaderText = "Department";
-            this.clmDepartment.Name = "clmDepartment";
-            this.clmDepartment.ReadOnly = true;
-            // 
-            // clmYear
-            // 
-            this.clmYear.DataPropertyName = "Year";
-            this.clmYear.HeaderText = "Year";
-            this.clmYear.Name = "clmYear";
-            this.clmYear.ReadOnly = true;
             // 
             // clmSemester
             // 
@@ -307,8 +289,6 @@
         private System.Windows.Forms.DataGridView dgvStuMarks;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmStudent;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmStudentID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDepartment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmYear;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSemester;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSubject;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmMarks;
