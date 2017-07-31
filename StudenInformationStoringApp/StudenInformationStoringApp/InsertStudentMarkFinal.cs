@@ -21,10 +21,58 @@ namespace StudenInformationStoringApp
 
         private void InsertStudentMarkFinal_Load(object sender, EventArgs e)
         {
+            try
+            {
+                GetStudentAllocatedData();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private List<Student> GetStudentAllocatedData()
+        {
             systemManager objsystemManager = new systemManager();
-           
-            List<Student> lstStudent = new List<Student>();
-            lstStudent = objsystemManager.GetStudentAllocationData();
+
+            List<Student> lstStudentData = new List<Student>();
+            lstStudentData = objsystemManager.GetStudentAllocationData();
+
+            return lstStudentData;
+        }
+
+        public List<ViewModelStudentMarkAllocation> GetStuData()
+        {
+            
+            List<Student> StuAllocatedData = new List<Student>();
+            StuAllocatedData = this.GetStudentAllocatedData();
+
+            List<ViewModelStudentMarkAllocation> lstStuData = new List<ViewModelStudentMarkAllocation>();
+            ViewModelStudentMarkAllocation objViewModelStudentMarkAllocation = null;
+
+            foreach (var item in StuAllocatedData)
+            {
+                objViewModelStudentMarkAllocation = new ViewModelStudentMarkAllocation();
+                objViewModelStudentMarkAllocation.StudentID = item.StudentID;
+                objViewModelStudentMarkAllocation.SubjectCode = item.universityID;
+                objViewModelStudentMarkAllocation.StdentName = item.FullName;
+
+                objViewModelStudentMarkAllocation.SemesterID = item.ObjSemesters.SemesterID;
+                objViewModelStudentMarkAllocation.SemesterCode = item.ObjSemesters.SemesterCode;
+                objViewModelStudentMarkAllocation.SemesterName = item.ObjSemesters.SemesterName;
+
+                objViewModelStudentMarkAllocation.SubjectID = item.ObjSubjects.SubjectID;
+                objViewModelStudentMarkAllocation.SubjectCode = item.ObjSubjects.SubjectCode;
+                objViewModelStudentMarkAllocation.SubjectName = item.ObjSubjects.SubjectName;
+
+                objViewModelStudentMarkAllocation.SemSubConfigID = item.ObjSemesters.SemSubConfigID;
+                objViewModelStudentMarkAllocation.StuSemConfigID = item.StuSemConfigID;
+
+
+                lstStuData.Add(objViewModelStudentMarkAllocation);
+            }
+            return lstStuData;
         }
 
     }
@@ -37,7 +85,7 @@ namespace StudenInformationStoringApp
 
         public int SemesterID { get; set; }
         public string SemesterCode { get; set; }
-        public int SemesterName { get; set; }
+        public string SemesterName { get; set; }
 
         public int SubjectID { get; set; }
         public string SubjectCode { get; set; }
