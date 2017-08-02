@@ -42,13 +42,26 @@
             this.cmbStudentID = new System.Windows.Forms.ComboBox();
             this.lblSemsters = new System.Windows.Forms.Label();
             this.lblStudentID = new System.Windows.Forms.Label();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.clmFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmuniversityID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSemesterCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSubjectCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmStudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmStuSemConfigID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSemesterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSemesterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSubjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStuSubSemConfig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
             this.SuspendLayout();
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(32, 296);
+            this.btnInsert.Location = new System.Drawing.Point(32, 358);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(88, 23);
             this.btnInsert.TabIndex = 89;
@@ -80,7 +93,7 @@
             this.lblCopyright2.BackColor = System.Drawing.Color.Transparent;
             this.lblCopyright2.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F);
             this.lblCopyright2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCopyright2.Location = new System.Drawing.Point(602, 349);
+            this.lblCopyright2.Location = new System.Drawing.Point(610, 433);
             this.lblCopyright2.Name = "lblCopyright2";
             this.lblCopyright2.Size = new System.Drawing.Size(27, 7);
             this.lblCopyright2.TabIndex = 86;
@@ -92,7 +105,7 @@
             this.lblCopyright1.BackColor = System.Drawing.Color.Transparent;
             this.lblCopyright1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
             this.lblCopyright1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCopyright1.Location = new System.Drawing.Point(559, 345);
+            this.lblCopyright1.Location = new System.Drawing.Point(567, 429);
             this.lblCopyright1.Name = "lblCopyright1";
             this.lblCopyright1.Size = new System.Drawing.Size(45, 12);
             this.lblCopyright1.TabIndex = 85;
@@ -101,6 +114,17 @@
             // dgvStuSubSemConfig
             // 
             this.dgvStuSubSemConfig.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStuSubSemConfig.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clmFullName,
+            this.clmuniversityID,
+            this.clmSemesterCode,
+            this.clmSubjectCode,
+            this.clmSubjectName,
+            this.clmStudentID,
+            this.clmStuSemConfigID,
+            this.clmSemesterID,
+            this.clmSemesterName,
+            this.clmSubjectID});
             this.dgvStuSubSemConfig.Location = new System.Drawing.Point(330, 21);
             this.dgvStuSubSemConfig.Name = "dgvStuSubSemConfig";
             this.dgvStuSubSemConfig.Size = new System.Drawing.Size(739, 298);
@@ -166,11 +190,106 @@
             this.lblStudentID.TabIndex = 76;
             this.lblStudentID.Text = "Student ID";
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(878, 358);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(88, 23);
+            this.btnUpdate.TabIndex = 90;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(981, 358);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(88, 23);
+            this.btnDelete.TabIndex = 91;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(136, 358);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(88, 23);
+            this.btnReset.TabIndex = 92;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            // 
+            // clmFullName
+            // 
+            this.clmFullName.DataPropertyName = "FullName";
+            this.clmFullName.HeaderText = "Student\'s Name";
+            this.clmFullName.Name = "clmFullName";
+            // 
+            // clmuniversityID
+            // 
+            this.clmuniversityID.DataPropertyName = "universityID";
+            this.clmuniversityID.HeaderText = "university ID";
+            this.clmuniversityID.Name = "clmuniversityID";
+            // 
+            // clmSemesterCode
+            // 
+            this.clmSemesterCode.DataPropertyName = "SemesterCode";
+            this.clmSemesterCode.HeaderText = "Semester Code";
+            this.clmSemesterCode.Name = "clmSemesterCode";
+            // 
+            // clmSubjectCode
+            // 
+            this.clmSubjectCode.DataPropertyName = "SubjectCode";
+            this.clmSubjectCode.HeaderText = "Subject Code";
+            this.clmSubjectCode.Name = "clmSubjectCode";
+            // 
+            // clmSubjectName
+            // 
+            this.clmSubjectName.DataPropertyName = "SubjectName";
+            this.clmSubjectName.HeaderText = "Subject Name";
+            this.clmSubjectName.Name = "clmSubjectName";
+            // 
+            // clmStudentID
+            // 
+            this.clmStudentID.DataPropertyName = "StudentID";
+            this.clmStudentID.HeaderText = "Student ID";
+            this.clmStudentID.Name = "clmStudentID";
+            this.clmStudentID.Visible = false;
+            // 
+            // clmStuSemConfigID
+            // 
+            this.clmStuSemConfigID.DataPropertyName = "StuSemConfigID";
+            this.clmStuSemConfigID.HeaderText = "StuSemConfigID";
+            this.clmStuSemConfigID.Name = "clmStuSemConfigID";
+            this.clmStuSemConfigID.Visible = false;
+            // 
+            // clmSemesterID
+            // 
+            this.clmSemesterID.DataPropertyName = "SemesterID";
+            this.clmSemesterID.HeaderText = "Semester ID";
+            this.clmSemesterID.Name = "clmSemesterID";
+            this.clmSemesterID.Visible = false;
+            // 
+            // clmSemesterName
+            // 
+            this.clmSemesterName.DataPropertyName = "SemesterName";
+            this.clmSemesterName.HeaderText = "Semester Name";
+            this.clmSemesterName.Name = "clmSemesterName";
+            this.clmSemesterName.Visible = false;
+            // 
+            // clmSubjectID
+            // 
+            this.clmSubjectID.DataPropertyName = "SubjectID";
+            this.clmSubjectID.HeaderText = "Subject ID";
+            this.clmSubjectID.Name = "clmSubjectID";
+            this.clmSubjectID.Visible = false;
+            // 
             // StudentSemConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1093, 365);
+            this.ClientSize = new System.Drawing.Size(1093, 449);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblStudentName);
@@ -209,5 +328,18 @@
         private System.Windows.Forms.ComboBox cmbStudentID;
         private System.Windows.Forms.Label lblSemsters;
         private System.Windows.Forms.Label lblStudentID;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmFullName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmuniversityID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSemesterCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSubjectCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSubjectName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmStudentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmStuSemConfigID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSemesterID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSemesterName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSubjectID;
     }
 }

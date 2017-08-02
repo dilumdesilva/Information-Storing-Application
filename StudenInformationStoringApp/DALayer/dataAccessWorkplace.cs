@@ -442,5 +442,19 @@ namespace DALayer
             return dt;
 
         }
+
+        //Method which loads data to student semester allocation form's grid
+        public DataTable getStuSemDataToGrid()
+        {
+            query = "getDataToStuSSemGrid";
+            cmd = commandTypeSelector(1);
+            cmd.CommandText = query;
+
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+
+            return dt;
+
+        }
     }
 }

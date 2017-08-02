@@ -68,6 +68,7 @@ namespace StudenInformationStoringApp
         {
             try
             {
+                setDataSourceToGrid();
                 setCmbStudent();
                 setCmbSemester();
             }
@@ -116,6 +117,8 @@ namespace StudenInformationStoringApp
             try
             {
                 SendDataToBAL();
+                setDataSourceToGrid();
+
             }
             catch (Exception ex)
             {
@@ -124,10 +127,55 @@ namespace StudenInformationStoringApp
             }
             
         }
+
+        private void setDataSourceToGrid()
+        {
+            dgvStuSubSemConfig.AutoGenerateColumns = false;
+            dgvStuSubSemConfig.DataSource = null;
+            systemManager objsystemManager = new systemManager();
+            List<Student> lststuSemAllocationData = new List<Student>();
+            lststuSemAllocationData = objsystemManager.getStuSemDataToGrid();
+            stuSemAllocationData objstuSemAllocationData;
+            List<stuSemAllocationData> lstStuSem = new List<stuSemAllocationData>();
+
+            foreach (var item in lststuSemAllocationData)
+            {
+                objstuSemAllocationData = new stuSemAllocationData();
+                objstuSemAllocationData.StuSemConfigID = item.StuSemConfigID;
+                objstuSemAllocationData.StudentID = item.StudentID;
+                objstuSemAllocationData.universityID = item.universityID;
+                objstuSemAllocationData.FullName = item.FullName;
+                objstuSemAllocationData.SemesterID = item.ObjSemesters.SemesterID;
+                objstuSemAllocationData.SemesterCode = item.ObjSemesters.SemesterCode;
+                objstuSemAllocationData.SemesterName = item.ObjSemesters.SemesterName;
+                objstuSemAllocationData.SubjectID = item.ObjSubjects.SubjectID;
+                objstuSemAllocationData.SubjectCode = item.ObjSubjects.SubjectCode;
+                objstuSemAllocationData.SubjectName = item.ObjSubjects.SubjectName;
+
+                lstStuSem.Add(objstuSemAllocationData);
+            }
+
+
+            dgvStuSubSemConfig.DataSource = lstStuSem;
+
+        }
     }
 
-    public class SubSemConfigData
+    public class stuSemAllocationData
     {
-                
+        public int StuSemConfigID { get; set; }
+
+        public int StudentID { get; set; }
+        public string FullName { get; set; }
+        public string universityID { get; set; }
+
+        public int SemesterID { get; set; }
+        public string SemesterCode { get; set; }
+        public string SemesterName { get; set; }
+
+        public int SubjectID { get; set; }
+        public string SubjectCode { get; set; }
+        public string SubjectName { get; set; }
+
     }
 }

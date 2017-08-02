@@ -356,5 +356,39 @@ namespace BALayer
             return lstSemesters;
         }
 
+        public List<Student> getStuSemDataToGrid()
+        {
+            List<Student> lstStuSemData = new List<Student>();
+            Student objStudent = null;
+            dataAccessWorkplace objobjdataAccessWorkplace3 = new dataAccessWorkplace();
+            DataTable dt = new DataTable();
+            dt = objobjdataAccessWorkplace3.getStuSemDataToGrid();
+            if (dt != null)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    objStudent = new Student();
+                    objStudent.ObjSubjects = new Subjects();
+                    objStudent.ObjSemesters = new Semesters();
+                    
+                    objStudent.StuSemConfigID = Convert.ToInt32(dr["StuSemConfigID"].ToString());
+                    objStudent.StudentID = Convert.ToInt32(dr["StudentID"].ToString());
+                    objStudent.FullName = dr["StdentName"].ToString();
+                    objStudent.universityID = dr["StudentCode"].ToString();
+
+                    objStudent.ObjSemesters.SemesterID = Convert.ToInt32(dr["SemesterID"].ToString());
+                    objStudent.ObjSemesters.SemesterCode = dr["SemesterCode"].ToString();
+                    objStudent.ObjSemesters.SemesterName = dr["SemesterName"].ToString();
+
+                    objStudent.ObjSubjects.SubjectID = Convert.ToInt32(dr["SubjectID"].ToString());
+                    objStudent.ObjSubjects.SubjectCode = dr["SubjectCode"].ToString();
+                    objStudent.ObjSubjects.SubjectName = dr["SubjectName"].ToString();
+
+                    lstStuSemData.Add(objStudent);
+                }
+            }
+            return lstStuSemData;
+        }
+
     }
 }
