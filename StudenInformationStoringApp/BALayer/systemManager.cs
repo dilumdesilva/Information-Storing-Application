@@ -133,6 +133,29 @@ namespace BALayer
             return objdataAccessWorkplace5.SubSemDataInToDb(dt);
         }
 
+        //public bool insertSubSem(List<Subjects> lstSubjects)
+        //{
+        //    List<Subjects> saveList = (List<Subjects>)lstSubjects;
+
+        //    if (saveList.Count != 0)
+        //    {
+        //        dataAccessWorkplace objdataAccessWorkplace5 = new dataAccessWorkplace();
+
+        //        Subjects objSubjects = null;
+        //        List<Subjects> lstSubjects2 = new List<Subjects>();
+        //        foreach (var item in saveList)
+        //        {
+        //            objSubjects = new Subjects();
+        //            objSubjects.ObjSemesters = new Semesters();
+        //            objSubjects.SubjectID = item.SubjectID;
+        //            objSubjects.ObjSemesters.SemesterID = item.SemesterID;
+        //            lstSubjects2.Add(objSubjects);
+        //        }
+        //        bool res = objdataAccessWorkplace5.SubSemDataInToDb(lstSubjects2);
+        //    }
+           
+        //}
+
 
         //create a list to store loded Department data table from DAL
         public List<Department> LoadDepartmentToGrid()
@@ -230,11 +253,11 @@ namespace BALayer
                     objStudent = new Student();
                     objStudent.ObjSubjects = new Subjects();
                     objStudent.ObjSemesters = new Semesters();
-                    string xxx = "sbsb";
-                    var i = Convert.ToInt16(xxx);
+                    //string xxx = "sbsb";
+                    //var i = Convert.ToInt16(xxx);
 
                     objStudent.StudentID = Convert.ToInt32(dr["StudentID"].ToString());
-                    objStudent.FullName = dr["SemesterName"].ToString();
+                    objStudent.FullName = dr["StdentName"].ToString();
                     objStudent.universityID = dr["StudentCode"].ToString();
 
                     objStudent.ObjSemesters.SemesterID = Convert.ToInt32(dr["SemesterID"].ToString());
@@ -308,6 +331,29 @@ namespace BALayer
                 }
             }
             return lstSubjects;
+        }
+
+        public List<Semesters> GetSemeDatatoStuSemAllocation()
+        {
+            List<Semesters> lstSemesters = new List<Semesters>();
+            Semesters objSemesters = null;
+            dataAccessWorkplace objobjdataAccessWorkplace3 = new dataAccessWorkplace();
+            DataTable dt = new DataTable();
+            dt = objobjdataAccessWorkplace3.GetSemDataStuSemAllocation();
+            if (dt != null)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    objSemesters = new Semesters();
+                    //objSemesters.ObjDepartment = new Department();
+                    objSemesters.SemesterID = (int)dr["SemesterID"];
+                    objSemesters.SemesterName = dr["SemesterName"].ToString();
+                    objSemesters.SemesterCode = dr["SemesterCode"].ToString();
+
+                    lstSemesters.Add(objSemesters);
+                }
+            }
+            return lstSemesters;
         }
 
     }

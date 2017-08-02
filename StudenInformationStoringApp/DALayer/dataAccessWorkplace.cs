@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using Shared_Library;
+using System.Transactions;
 
 namespace DALayer
 {
@@ -138,17 +139,22 @@ namespace DALayer
             bool res = false;
             try
             {
-                query = "spSaveSubjects";
-                cmd = commandTypeSelector(1);
+                using (TransactionScope ts = new TransactionScope())
+                {
+                    query = "spSaveSubjects";
+                    cmd = commandTypeSelector(1);
 
-                cmd.CommandText = query;
-                SqlParameter parameter = new SqlParameter();
-                parameter.ParameterName = "@dtSubjects";
-                parameter.SqlDbType = System.Data.SqlDbType.Structured;
-                parameter.Value = dt;
-                cmd.Parameters.Add(parameter);
-                cmd.ExecuteNonQuery();
-                res = true;
+                    cmd.CommandText = query;
+                    SqlParameter parameter = new SqlParameter();
+                    parameter.ParameterName = "@dtSubjects";
+                    parameter.SqlDbType = System.Data.SqlDbType.Structured;
+                    parameter.Value = dt;
+                    cmd.Parameters.Add(parameter);
+                    cmd.ExecuteNonQuery();
+                    res = true;
+                    ts.Complete();
+                }
+                                
             }
             catch (SqlException se)
             {
@@ -196,7 +202,7 @@ namespace DALayer
         //Method which load student data from db to a data table
         public DataTable getSemSubConfig()
         {
-            query = "getSubSemConfigData";
+            query = "GetStuSemSubAllocationData";
             cmd = commandTypeSelector(1);
             cmd.CommandText = query;
 
@@ -423,5 +429,18 @@ namespace DALayer
 
         }
 
+        //Method which load semsters data from db for student semester allocation form
+        public DataTable GetSemDataStuSemAllocation()
+        {
+            query = "LoadSemestersToStuSem";
+            cmd = commandTypeSelector(1);
+            cmd.CommandText = query;
+
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+
+            return dt;
+
+        }
     }
 }

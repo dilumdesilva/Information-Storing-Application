@@ -31,17 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InsertStudentMarkFinal));
             this.cmbGrade = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtStudentName = new System.Windows.Forms.TextBox();
             this.btnInsertMarks = new System.Windows.Forms.Button();
             this.cmbSubject = new System.Windows.Forms.ComboBox();
             this.cmbSemester = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMarks = new System.Windows.Forms.TextBox();
-            this.cmbStudentID = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.picBoxLogoMainForm = new System.Windows.Forms.PictureBox();
             this.dgvStuMarks = new System.Windows.Forms.DataGridView();
             this.clmStudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +46,10 @@
             this.clmSubject = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmMarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmGrade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtStudentName = new System.Windows.Forms.TextBox();
+            this.cmbStudentID = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStuMarks)).BeginInit();
             this.SuspendLayout();
@@ -78,22 +78,6 @@
             this.label7.TabIndex = 88;
             this.label7.Text = "Grade";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(44, 167);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 13);
-            this.label6.TabIndex = 87;
-            this.label6.Text = "Student Name";
-            // 
-            // txtStudentName
-            // 
-            this.txtStudentName.Location = new System.Drawing.Point(145, 164);
-            this.txtStudentName.Name = "txtStudentName";
-            this.txtStudentName.Size = new System.Drawing.Size(146, 20);
-            this.txtStudentName.TabIndex = 86;
-            // 
             // btnInsertMarks
             // 
             this.btnInsertMarks.Location = new System.Drawing.Point(47, 361);
@@ -106,7 +90,7 @@
             // cmbSubject
             // 
             this.cmbSubject.FormattingEnabled = true;
-            this.cmbSubject.Location = new System.Drawing.Point(145, 234);
+            this.cmbSubject.Location = new System.Drawing.Point(145, 156);
             this.cmbSubject.Name = "cmbSubject";
             this.cmbSubject.Size = new System.Drawing.Size(146, 21);
             this.cmbSubject.TabIndex = 84;
@@ -114,10 +98,11 @@
             // cmbSemester
             // 
             this.cmbSemester.FormattingEnabled = true;
-            this.cmbSemester.Location = new System.Drawing.Point(145, 200);
+            this.cmbSemester.Location = new System.Drawing.Point(145, 122);
             this.cmbSemester.Name = "cmbSemester";
             this.cmbSemester.Size = new System.Drawing.Size(146, 21);
             this.cmbSemester.TabIndex = 83;
+            this.cmbSemester.SelectedIndexChanged += new System.EventHandler(this.cmbSemester_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -131,7 +116,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(44, 237);
+            this.label4.Location = new System.Drawing.Point(44, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 81;
@@ -144,31 +129,14 @@
             this.txtMarks.Size = new System.Drawing.Size(146, 20);
             this.txtMarks.TabIndex = 80;
             // 
-            // cmbStudentID
-            // 
-            this.cmbStudentID.FormattingEnabled = true;
-            this.cmbStudentID.Location = new System.Drawing.Point(145, 128);
-            this.cmbStudentID.Name = "cmbStudentID";
-            this.cmbStudentID.Size = new System.Drawing.Size(146, 21);
-            this.cmbStudentID.TabIndex = 79;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 203);
+            this.label3.Location = new System.Drawing.Point(44, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 78;
             this.label3.Text = "Semester";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 131);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 77;
-            this.label1.Text = "Student ID";
             // 
             // picBoxLogoMainForm
             // 
@@ -241,26 +209,59 @@
             this.clmGrade.Name = "clmGrade";
             this.clmGrade.ReadOnly = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(44, 235);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 13);
+            this.label6.TabIndex = 97;
+            this.label6.Text = "Student Name";
+            // 
+            // txtStudentName
+            // 
+            this.txtStudentName.Location = new System.Drawing.Point(145, 232);
+            this.txtStudentName.Name = "txtStudentName";
+            this.txtStudentName.Size = new System.Drawing.Size(146, 20);
+            this.txtStudentName.TabIndex = 96;
+            // 
+            // cmbStudentID
+            // 
+            this.cmbStudentID.FormattingEnabled = true;
+            this.cmbStudentID.Location = new System.Drawing.Point(145, 196);
+            this.cmbStudentID.Name = "cmbStudentID";
+            this.cmbStudentID.Size = new System.Drawing.Size(146, 21);
+            this.cmbStudentID.TabIndex = 95;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(44, 199);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 94;
+            this.label1.Text = "Student ID";
+            // 
             // InsertStudentMarkFinal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(968, 422);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtStudentName);
+            this.Controls.Add(this.cmbStudentID);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvStuMarks);
             this.Controls.Add(this.picBoxLogoMainForm);
             this.Controls.Add(this.cmbGrade);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtStudentName);
             this.Controls.Add(this.btnInsertMarks);
             this.Controls.Add(this.cmbSubject);
             this.Controls.Add(this.cmbSemester);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtMarks);
-            this.Controls.Add(this.cmbStudentID);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
             this.Name = "InsertStudentMarkFinal";
             this.Text = "InsertStudentMarkFinal";
             this.Load += new System.EventHandler(this.InsertStudentMarkFinal_Load);
@@ -274,17 +275,13 @@
         #endregion
         private System.Windows.Forms.ComboBox cmbGrade;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtStudentName;
         private System.Windows.Forms.Button btnInsertMarks;
         private System.Windows.Forms.ComboBox cmbSubject;
         private System.Windows.Forms.ComboBox cmbSemester;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMarks;
-        private System.Windows.Forms.ComboBox cmbStudentID;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox picBoxLogoMainForm;
         private System.Windows.Forms.DataGridView dgvStuMarks;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmStudent;
@@ -293,5 +290,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSubject;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmMarks;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmGrade;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtStudentName;
+        private System.Windows.Forms.ComboBox cmbStudentID;
+        private System.Windows.Forms.Label label1;
     }
 }

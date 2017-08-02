@@ -48,7 +48,7 @@
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(32, 309);
+            this.btnInsert.Location = new System.Drawing.Point(32, 296);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(88, 23);
             this.btnInsert.TabIndex = 89;
@@ -80,7 +80,7 @@
             this.lblCopyright2.BackColor = System.Drawing.Color.Transparent;
             this.lblCopyright2.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F);
             this.lblCopyright2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCopyright2.Location = new System.Drawing.Point(437, 348);
+            this.lblCopyright2.Location = new System.Drawing.Point(602, 349);
             this.lblCopyright2.Name = "lblCopyright2";
             this.lblCopyright2.Size = new System.Drawing.Size(27, 7);
             this.lblCopyright2.TabIndex = 86;
@@ -92,7 +92,7 @@
             this.lblCopyright1.BackColor = System.Drawing.Color.Transparent;
             this.lblCopyright1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F);
             this.lblCopyright1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCopyright1.Location = new System.Drawing.Point(394, 344);
+            this.lblCopyright1.Location = new System.Drawing.Point(559, 345);
             this.lblCopyright1.Name = "lblCopyright1";
             this.lblCopyright1.Size = new System.Drawing.Size(45, 12);
             this.lblCopyright1.TabIndex = 85;
@@ -103,7 +103,7 @@
             this.dgvStuSubSemConfig.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStuSubSemConfig.Location = new System.Drawing.Point(330, 21);
             this.dgvStuSubSemConfig.Name = "dgvStuSubSemConfig";
-            this.dgvStuSubSemConfig.Size = new System.Drawing.Size(462, 251);
+            this.dgvStuSubSemConfig.Size = new System.Drawing.Size(739, 298);
             this.dgvStuSubSemConfig.TabIndex = 83;
             // 
             // txtDepartment
@@ -170,7 +170,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 365);
+            this.ClientSize = new System.Drawing.Size(1093, 365);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblStudentName);

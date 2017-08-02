@@ -87,13 +87,13 @@ namespace StudenInformationStoringApp
 
         private void studentMarksToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmInsertStudentMarks objfrmInsertStudentMarks = new frmInsertStudentMarks();
+            InsertStudentMarkFinal objInsertStudentMarkFinal = new InsertStudentMarkFinal();
            
 
             //this condition will check whether there is any forms loded before system loads another form.
-            if (!IsAlreadyLoded(objfrmInsertStudentMarks))
+            if (!IsAlreadyLoded(objInsertStudentMarkFinal))
             {
-                objfrmInsertStudentMarks.Show();
+                objInsertStudentMarkFinal.Show();
             }
             else
             {

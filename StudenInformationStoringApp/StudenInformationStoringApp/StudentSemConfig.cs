@@ -36,7 +36,7 @@ namespace StudenInformationStoringApp
         public void setCmbSemester()
         {
             systemManager objsystemManager = new systemManager();
-            cmbSemster.DataSource = objsystemManager.GetSemestersData();
+            cmbSemster.DataSource = objsystemManager.GetSemeDatatoStuSemAllocation();
             cmbSemster.ValueMember = "SemesterID"; 
             cmbSemster.DisplayMember = "SemesterCode";
 
