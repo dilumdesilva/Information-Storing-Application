@@ -129,6 +129,7 @@
             this.dgvStuSubSemConfig.Name = "dgvStuSubSemConfig";
             this.dgvStuSubSemConfig.Size = new System.Drawing.Size(739, 298);
             this.dgvStuSubSemConfig.TabIndex = 83;
+            this.dgvStuSubSemConfig.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvStuSubSemConfig_RowHeaderMouseDoubleClick);
             // 
             // txtDepartment
             // 

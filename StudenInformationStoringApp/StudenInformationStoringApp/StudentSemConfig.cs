@@ -14,6 +14,10 @@ namespace StudenInformationStoringApp
 {
     public partial class StudentSemConfig : Form
     {
+        bool isSelected = false;
+        bool updateSelected = false;
+        bool deleteSelected = false;
+
         public StudentSemConfig()
         {
             InitializeComponent();
@@ -158,6 +162,59 @@ namespace StudenInformationStoringApp
 
             dgvStuSubSemConfig.DataSource = lstStuSem;
 
+        }
+
+        private void dgvStuSubSemConfig_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                cmbStudentID.Text = dgvStuSubSemConfig.Rows[e.RowIndex].Cells[cmbStudentID.Name].Value.ToString();
+                txtStudentName.Text =dgvStuSubSemConfig.Rows[e.RowIndex].Cells[clmFullName.Name].Value.ToString();
+                txtDepartment.Text = "Select student ID";
+                cmbSemster.Text = dgvStuSubSemConfig.Rows[e.RowIndex].Cells[clmSemesterName.Name].Value.ToString();
+
+
+                btnInsert.Enabled = false;
+                isSelected = true;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void selectedStuRowDetails()
+        {
+            if (isSelected == true)
+            {
+                Student objUpdateStudens = new Student();
+                objUpdateStudens.StudentID = SelectedStudentID;
+                objUpdateStudens.firstName = txtFirstName.Text;
+                objUpdateStudens.universityID = txtUniversityID.Text;
+                objUpdateStudens.age = Convert.ToInt32(txtAge.Text);
+                objUpdateStudens.adress = txtAdress.Text;
+                objUpdateStudens.dateOfBirth = dtpBirthDate.Value;
+
+                objUpdateStudens.ObjDepartment = new Department();
+                objUpdateStudens.ObjDepartment.DepartmentID = Convert.ToInt32(cmbDepartment.SelectedValue);
+
+
+
+                systemManager objsystemManagerUpdateSem = new systemManager();
+
+                if (updateSelected == true)
+                {
+                    objsystemManagerUpdateSem.UpdateStudentDetails(objUpdateStudens);
+                }
+                if (deleteSelected == true)
+                {
+                    objsystemManagerUpdateSem.DeleteStudentDetails(objUpdateStudens);
+                }
+
+
+            }
         }
     }
 
