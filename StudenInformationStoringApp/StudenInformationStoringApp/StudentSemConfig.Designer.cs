@@ -35,16 +35,6 @@
             this.lblCopyright2 = new System.Windows.Forms.Label();
             this.lblCopyright1 = new System.Windows.Forms.Label();
             this.dgvStuSubSemConfig = new System.Windows.Forms.DataGridView();
-            this.txtDepartment = new System.Windows.Forms.TextBox();
-            this.txtStudentName = new System.Windows.Forms.TextBox();
-            this.picBoxLogoMainForm = new System.Windows.Forms.PictureBox();
-            this.cmbSemster = new System.Windows.Forms.ComboBox();
-            this.cmbStudentID = new System.Windows.Forms.ComboBox();
-            this.lblSemsters = new System.Windows.Forms.Label();
-            this.lblStudentID = new System.Windows.Forms.Label();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
             this.clmFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmuniversityID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSemesterCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +45,16 @@
             this.clmSemesterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSemesterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSubjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtDepartment = new System.Windows.Forms.TextBox();
+            this.txtStudentName = new System.Windows.Forms.TextBox();
+            this.picBoxLogoMainForm = new System.Windows.Forms.PictureBox();
+            this.cmbSemster = new System.Windows.Forms.ComboBox();
+            this.cmbStudentID = new System.Windows.Forms.ComboBox();
+            this.lblSemsters = new System.Windows.Forms.Label();
+            this.lblStudentID = new System.Windows.Forms.Label();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStuSubSemConfig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLogoMainForm)).BeginInit();
             this.SuspendLayout();
@@ -131,6 +131,71 @@
             this.dgvStuSubSemConfig.TabIndex = 83;
             this.dgvStuSubSemConfig.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvStuSubSemConfig_RowHeaderMouseDoubleClick);
             // 
+            // clmFullName
+            // 
+            this.clmFullName.DataPropertyName = "FullName";
+            this.clmFullName.HeaderText = "Student\'s Name";
+            this.clmFullName.Name = "clmFullName";
+            // 
+            // clmuniversityID
+            // 
+            this.clmuniversityID.DataPropertyName = "universityID";
+            this.clmuniversityID.HeaderText = "university ID";
+            this.clmuniversityID.Name = "clmuniversityID";
+            // 
+            // clmSemesterCode
+            // 
+            this.clmSemesterCode.DataPropertyName = "SemesterCode";
+            this.clmSemesterCode.HeaderText = "Semester Code";
+            this.clmSemesterCode.Name = "clmSemesterCode";
+            // 
+            // clmSubjectCode
+            // 
+            this.clmSubjectCode.DataPropertyName = "SubjectCode";
+            this.clmSubjectCode.HeaderText = "Subject Code";
+            this.clmSubjectCode.Name = "clmSubjectCode";
+            // 
+            // clmSubjectName
+            // 
+            this.clmSubjectName.DataPropertyName = "SubjectName";
+            this.clmSubjectName.HeaderText = "Subject Name";
+            this.clmSubjectName.Name = "clmSubjectName";
+            // 
+            // clmStudentID
+            // 
+            this.clmStudentID.DataPropertyName = "StudentID";
+            this.clmStudentID.HeaderText = "Student ID";
+            this.clmStudentID.Name = "clmStudentID";
+            this.clmStudentID.Visible = false;
+            // 
+            // clmStuSemConfigID
+            // 
+            this.clmStuSemConfigID.DataPropertyName = "StuSemConfigID";
+            this.clmStuSemConfigID.HeaderText = "StuSemConfigID";
+            this.clmStuSemConfigID.Name = "clmStuSemConfigID";
+            this.clmStuSemConfigID.Visible = false;
+            // 
+            // clmSemesterID
+            // 
+            this.clmSemesterID.DataPropertyName = "SemesterID";
+            this.clmSemesterID.HeaderText = "Semester ID";
+            this.clmSemesterID.Name = "clmSemesterID";
+            this.clmSemesterID.Visible = false;
+            // 
+            // clmSemesterName
+            // 
+            this.clmSemesterName.DataPropertyName = "SemesterName";
+            this.clmSemesterName.HeaderText = "Semester Name";
+            this.clmSemesterName.Name = "clmSemesterName";
+            this.clmSemesterName.Visible = false;
+            // 
+            // clmSubjectID
+            // 
+            this.clmSubjectID.DataPropertyName = "SubjectID";
+            this.clmSubjectID.HeaderText = "Subject ID";
+            this.clmSubjectID.Name = "clmSubjectID";
+            this.clmSubjectID.Visible = false;
+            // 
             // txtDepartment
             // 
             this.txtDepartment.Location = new System.Drawing.Point(109, 215);
@@ -199,6 +264,7 @@
             this.btnUpdate.TabIndex = 90;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
             // 
             // btnDelete
             // 
@@ -208,6 +274,7 @@
             this.btnDelete.TabIndex = 91;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnReset
             // 
@@ -217,71 +284,6 @@
             this.btnReset.TabIndex = 92;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
-            // 
-            // clmFullName
-            // 
-            this.clmFullName.DataPropertyName = "FullName";
-            this.clmFullName.HeaderText = "Student\'s Name";
-            this.clmFullName.Name = "clmFullName";
-            // 
-            // clmuniversityID
-            // 
-            this.clmuniversityID.DataPropertyName = "universityID";
-            this.clmuniversityID.HeaderText = "university ID";
-            this.clmuniversityID.Name = "clmuniversityID";
-            // 
-            // clmSemesterCode
-            // 
-            this.clmSemesterCode.DataPropertyName = "SemesterCode";
-            this.clmSemesterCode.HeaderText = "Semester Code";
-            this.clmSemesterCode.Name = "clmSemesterCode";
-            // 
-            // clmSubjectCode
-            // 
-            this.clmSubjectCode.DataPropertyName = "SubjectCode";
-            this.clmSubjectCode.HeaderText = "Subject Code";
-            this.clmSubjectCode.Name = "clmSubjectCode";
-            // 
-            // clmSubjectName
-            // 
-            this.clmSubjectName.DataPropertyName = "SubjectName";
-            this.clmSubjectName.HeaderText = "Subject Name";
-            this.clmSubjectName.Name = "clmSubjectName";
-            // 
-            // clmStudentID
-            // 
-            this.clmStudentID.DataPropertyName = "StudentID";
-            this.clmStudentID.HeaderText = "Student ID";
-            this.clmStudentID.Name = "clmStudentID";
-            this.clmStudentID.Visible = false;
-            // 
-            // clmStuSemConfigID
-            // 
-            this.clmStuSemConfigID.DataPropertyName = "StuSemConfigID";
-            this.clmStuSemConfigID.HeaderText = "StuSemConfigID";
-            this.clmStuSemConfigID.Name = "clmStuSemConfigID";
-            this.clmStuSemConfigID.Visible = false;
-            // 
-            // clmSemesterID
-            // 
-            this.clmSemesterID.DataPropertyName = "SemesterID";
-            this.clmSemesterID.HeaderText = "Semester ID";
-            this.clmSemesterID.Name = "clmSemesterID";
-            this.clmSemesterID.Visible = false;
-            // 
-            // clmSemesterName
-            // 
-            this.clmSemesterName.DataPropertyName = "SemesterName";
-            this.clmSemesterName.HeaderText = "Semester Name";
-            this.clmSemesterName.Name = "clmSemesterName";
-            this.clmSemesterName.Visible = false;
-            // 
-            // clmSubjectID
-            // 
-            this.clmSubjectID.DataPropertyName = "SubjectID";
-            this.clmSubjectID.HeaderText = "Subject ID";
-            this.clmSubjectID.Name = "clmSubjectID";
-            this.clmSubjectID.Visible = false;
             // 
             // StudentSemConfig
             // 

@@ -18,6 +18,15 @@ namespace StudenInformationStoringApp
         bool updateSelected = false;
         bool deleteSelected = false;
 
+        int SelectedStuSemConfigID;
+        int SelectedStudentID;
+        int SelectedSemesterID;
+        int SelectedSubjectID;
+        string selectedSubjectName;
+        string selectedSubCode;
+        string selectedSemesterName;
+
+
         public StudentSemConfig()
         {
             InitializeComponent();
@@ -168,11 +177,20 @@ namespace StudenInformationStoringApp
         {
             try
             {
-                cmbStudentID.Text = dgvStuSubSemConfig.Rows[e.RowIndex].Cells[cmbStudentID.Name].Value.ToString();
+                cmbStudentID.Text = dgvStuSubSemConfig.Rows[e.RowIndex].Cells[clmuniversityID.Name].Value.ToString();
                 txtStudentName.Text =dgvStuSubSemConfig.Rows[e.RowIndex].Cells[clmFullName.Name].Value.ToString();
                 txtDepartment.Text = "Select student ID";
-                cmbSemster.Text = dgvStuSubSemConfig.Rows[e.RowIndex].Cells[clmSemesterName.Name].Value.ToString();
+                cmbSemster.Text = dgvStuSubSemConfig.Rows[e.RowIndex].Cells[clmSemesterCode.Name].Value.ToString();
+                SelectedStudentID = Convert.ToInt32(dgvStuSubSemConfig.Rows[e.RowIndex].Cells[clmStudentID.Name].Value);
+                SelectedSemesterID = Convert.ToInt32(dgvStuSubSemConfig.Rows[e.RowIndex].Cells[clmSemesterID.Name].Value);
+                SelectedStuSemConfigID = Convert.ToInt32(dgvStuSubSemConfig.Rows[e.RowIndex].Cells[clmStuSemConfigID.Name].Value);
+                SelectedSubjectID = Convert.ToInt32(dgvStuSubSemConfig.Rows[e.RowIndex].Cells[clmSubjectID.Name].Value);
+                selectedSemesterName = dgvStuSubSemConfig.Rows[e.RowIndex].Cells[clmSemesterName.Name].Value.ToString();
+                selectedSubjectName = dgvStuSubSemConfig.Rows[e.RowIndex].Cells[clmSubjectName.Name].Value.ToString();
+                selectedSubCode = dgvStuSubSemConfig.Rows[e.RowIndex].Cells[clmSubjectCode.Name].Value.ToString();
 
+                cmbStudentID.SelectedValue = SelectedStudentID;
+                cmbSemster.SelectedValue = SelectedSemesterID;
 
                 btnInsert.Enabled = false;
                 isSelected = true;
@@ -189,31 +207,75 @@ namespace StudenInformationStoringApp
         {
             if (isSelected == true)
             {
-                Student objUpdateStudens = new Student();
-                objUpdateStudens.StudentID = SelectedStudentID;
-                objUpdateStudens.firstName = txtFirstName.Text;
-                objUpdateStudens.universityID = txtUniversityID.Text;
-                objUpdateStudens.age = Convert.ToInt32(txtAge.Text);
-                objUpdateStudens.adress = txtAdress.Text;
-                objUpdateStudens.dateOfBirth = dtpBirthDate.Value;
-
-                objUpdateStudens.ObjDepartment = new Department();
-                objUpdateStudens.ObjDepartment.DepartmentID = Convert.ToInt32(cmbDepartment.SelectedValue);
-
-
+                Student objstuSemAllocationData = new Student();
+                objstuSemAllocationData.ObjSemesters = new Semesters();
+                objstuSemAllocationData.ObjSubjects = new Subjects();
+                objstuSemAllocationData.StudentID = SelectedStudentID;
+                objstuSemAllocationData.universityID = cmbStudentID.Text;
+                objstuSemAllocationData.FullName = txtStudentName.Text;
+                objstuSemAllocationData.ObjSemesters.SemesterID = SelectedSemesterID;
+                objstuSemAllocationData.ObjSemesters.SemesterCode = cmbSemster.Text;
+                objstuSemAllocationData.ObjSemesters.SemesterName = selectedSemesterName;
+                objstuSemAllocationData.ObjSubjects.SubjectID = SelectedSubjectID;
+                objstuSemAllocationData.ObjSubjects.SubjectCode = selectedSubCode;
+                objstuSemAllocationData.StuSemConfigID = SelectedStuSemConfigID;
 
                 systemManager objsystemManagerUpdateSem = new systemManager();
 
                 if (updateSelected == true)
                 {
-                    objsystemManagerUpdateSem.UpdateStudentDetails(objUpdateStudens);
+                    objsystemManagerUpdateSem.updateStuSemConfig(objstuSemAllocationData);
                 }
                 if (deleteSelected == true)
                 {
-                    objsystemManagerUpdateSem.DeleteStudentDetails(objUpdateStudens);
+                    objsystemManagerUpdateSem.DeleteStuSemConfig(objstuSemAllocationData);
                 }
 
 
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+
+                updateSelected = true;
+                if (btnInsert.Enabled == false)
+                {
+                    selectedStuRowDetails();
+                    MessageBox.Show(txtStudentName.Text + "\nhas been updated successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    setDataSourceToGrid();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                deleteSelected = true;
+                if (btnInsert.Enabled == false)
+                {
+                    selectedStuRowDetails();
+                    MessageBox.Show(txtStudentName.Text + "\nhas been updated successfuly!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    setDataSourceToGrid();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
     }

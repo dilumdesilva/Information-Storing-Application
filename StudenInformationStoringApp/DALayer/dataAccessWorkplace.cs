@@ -335,6 +335,44 @@ namespace DALayer
             }
         }
 
+        public void deleteStuSemConfig(Student objstuSemAllocationData)
+        {
+            try
+            {
+                query = "deleteStuSemConfig";
+                cmd = commandTypeSelector(1);
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@stuSemConfigID", objstuSemAllocationData.StuSemConfigID);
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void updateStuSemConfig(Student objstuSemAllocationData)
+        {
+            try
+            {
+                query = "updateStuSemConfig";
+                cmd = commandTypeSelector(1);
+                cmd.CommandText = query;
+                cmd.Parameters.AddWithValue("@stuID", objstuSemAllocationData.StudentID);
+                cmd.Parameters.AddWithValue("@semID", objstuSemAllocationData.ObjSemesters.SemesterID);
+                cmd.Parameters.AddWithValue("@stuSemConfigID", objstuSemAllocationData.StuSemConfigID);
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         //method which perform students updates to db
         public void updateDepartments(Department objDepartment)
         {

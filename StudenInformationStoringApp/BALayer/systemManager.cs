@@ -239,6 +239,18 @@ namespace BALayer
             return lstSemSubConfigData;
         }
 
+        public void DeleteStuSemConfig(Student objstuSemAllocationData)
+        {
+            dataAccessWorkplace obj = new dataAccessWorkplace();
+            obj.deleteStuSemConfig(objstuSemAllocationData);
+        }
+
+        public void updateStuSemConfig(Student objstuSemAllocationData)
+        {
+            dataAccessWorkplace obj = new dataAccessWorkplace();
+            obj.updateStuSemConfig(objstuSemAllocationData);
+        }
+
         public List<Student> GetStudentAllocationData()
         {
             List<Student> lstSemSubConfigData = new List<Student>();
